@@ -1,76 +1,77 @@
-function Button(file, size_x, size_y, pos_x, pos_y)
-{
-        this.img = new Image();
-        this.img.src = file;
-        
-        this.visible = true;
-        
-        this.size_x = size_x;
-    this.size_y = size_y;
-    this.position_x = pos_x;
-    this.position_y = pos_y;
-    
-    this.update=function()
-    {
-    
-    };
-    
-    this.draw=function()
-    {
-        if(this.visible)
-        screen.drawImage(this.img, this.position_x, this.position_y);
-    };
-    
-    this.mouse_down=function(mouse)
-    {
-        
-    };
-    
-    
-    this.key_down=function(key)
-    {
-                
-        
-    };
-    
-        
-    this.mouse_up=function(mouse)
-    {
-        
-        
-    };
-    
-    this.key_up=function(key)
-    {
-        
-        
-    };
-    
-    this.mouse_move=function(mouse)
-    {
-        
-        
-    };
-    
-    this.clicked=function(mouse)
-    {
-        if(Collide(
-                mouse.x, 
-                mouse.y,
-                1,
-                1,
-                this.position_x,
-                this.position_y,
-                this.size_x,
-                this.size_y
-                
-        ))
-        {
-                return true;    
-        }
-        return false;
-        
-    }
+function BotaoGame2(arquivo, tamanho_w, tamanho_h, posicao_x, posicao_y)
+{//abre botao
+	
+	this.imagem = new Image();
+	this.imagem.src = arquivo;
+	
+	this.visivel = true;
 
- 
- }
+	this.tamanho_w = tamanho_w;
+	this.tamanho_h = tamanho_h;
+	
+	this.posicao_x = posicao_x;
+	this.posicao_y = posicao_y;
+		
+	this.Update = function()
+	{//abre update
+		
+		
+		
+	}//fecha update
+	
+	this.draw = function()
+	{//abre draw
+		
+		if(this.visivel)
+		screen.drawImage(this.imagem, this.posicao_x, this.posicao_y, this.tamanho_w, this.tamanho_h)
+		
+	}//fecha draw
+	
+	this.mouse_down=function(mouse)
+   {
+   	
+   };
+   
+   
+   this.key_down=function(key)
+   {
+   	   
+   	
+   };
+   
+       
+   this.mouse_up=function(mouse)
+   {
+   	
+   	
+   };
+   
+   this.key_up=function(key)
+   {
+   	
+   	
+   };
+   
+   this.mouse_move=function(mouse)
+   {
+   	
+   	
+   };
+   
+	
+	this.clicado = function(mouse)
+	{//abre botao clicado
+		
+		if(Collide(mouse.x-10, mouse.y-30, 1, 1,
+					this.posicao_x, this.posicao_y, this.tamanho_w, this.tamanho_h))
+		{
+		
+			return true;
+			
+		}
+		
+		return false;
+		
+	}//fecha botao clicado
+	
+}//fecha botao

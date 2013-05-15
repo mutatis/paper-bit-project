@@ -1,8 +1,6 @@
 function SceneMenu()
 {
-	this.background = new Image();
-	this.background.src="imgs/menu.png";
-	this.loaded = false;		
+	this.background = new Fundo_move_menu("imgs/fundo.png");		
     
     this.button_credit = new Button("imgs/button_credit.png", 295, 82);
     this.button_credit.position_x = 100;
@@ -27,19 +25,21 @@ function SceneMenu()
     this.button_game_5 = new Button("imgs/button_game_5.png", 295, 82);
     this.button_game_5.position_x = 627;
     this.button_game_5.position_y = 010;
+	
+	this.name_grupo = new Name ("imgs/nome.png",100, 50, 650, 500);
     
 	this.update=function()
    	{
-   	
+   	this.background.update();
    	};
    
    	this.draw=function()
 	{
-		screen.drawImage(this.background, 0, 0);
+		this.background.draw();
 		
 		screen.font = "20px Comic Sans MS";
 		screen.fillStyle="#000000";
-		screen.fillText("Testando", 20, 20);
+		screen.fillText("", 20, 20);
 		
 		this.button_credit.draw();
 		this.button_game_1.draw();
@@ -47,6 +47,7 @@ function SceneMenu()
 		this.button_game_3.draw();
 		this.button_game_4.draw();
 		this.button_game_5.draw();
+		this.name_grupo.draw();
 	};
    
    	this.mouse_down=function(mouse)

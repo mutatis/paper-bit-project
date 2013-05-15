@@ -12,8 +12,8 @@ function Fundo(file, size_x, size_y, posicao_x, posicao_y, velocity_y)
 	console.log("carregou fundo" + loaded);
 	}
 	
-	this.size_w;
-	this.size_h;
+	this.size_w = 800;
+	this.size_h = 600;
 	this.posicao_x = 0;
 	this.posicao_y = 0;
 	this.velocity_x = 5;

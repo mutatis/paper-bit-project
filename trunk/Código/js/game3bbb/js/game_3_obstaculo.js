@@ -1,4 +1,4 @@
-function Obstaculo_4(file, size_x, size_y, pos_x, pos_y, vel_x, vel_y)
+function Obstaculo(file, size_x, size_y, pos_x, pos_y, vel_x, vel_y)
 {//abre obstaculo
     this.img = new Image();
     this.img.src = file;

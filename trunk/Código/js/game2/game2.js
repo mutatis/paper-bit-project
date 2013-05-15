@@ -1,82 +1,121 @@
 function SceneGame2()
-{		
-	this.intro = new Game4SceneIntro();
-	this.leve1 = new Game4SceneLevel1();
-	this.theEnd = new Game4SceneTheEnd();
-	this.gameOver = new Game4SceneGameOver();
+{
 	
-	this.GAMESCENE = { INTRO: 0, LEVEL1: 1, THEEND: 2, GAMEOVER: 3};
-	
-	this.currentGameScene = this.GAMESCENE.INTRO; 
+	this.Intro = new SceneIntro();
+
+	this.level01 = new SceneLevel01();
+
+	this.SCENE = { INTRO: 0, LEVEL01: 1 }
+
+	this.currentScene = this.SCENE.INTRO;
 	
 	this.update=function()
-	{			
-		switch(this.currentGameScene)
+	{
+		
+		switch(this.currentScene)
 		{
-			case this.GAMESCENE.INTRO:
-				//intro.update();
-			break;
-			case this.GAMESCENE.LEVEL1:
-				//level1.update();
-			break;
-			case this.GAMESCENE.THEEND:
-				//theEnd.update();
-			break;
-			case this.GAMESCENE.GAMEOVER:
-				//gameOver.update();
-			break;
+		case this.SCENE.INTRO:
+		{
+			this.Intro.update();	
 		}
+		break;
+		case this.SCENE.LEVEL01:
+		{
+			this.level01.update();
+		}
+		break;
+		
+		}	
+		
 	}
-
+	
 	this.draw=function()
-	{			
-		switch(this.currentGameScene)
+	{
+		
+		
+		switch(this.currentScene)
 		{
-			case this.GAMESCENE.INTRO:
-				//intro.draw();
-				screen.font = "20px Comic Sans MS";
-				screen.fillStyle="#000000";
-				screen.fillText("GAME1 INTRO", 20, 20);
-			break;
-			case this.GAMESCENE.LEVEL1:
-				//level1.draw();
-				screen.font = "20px Comic Sans MS";
-				screen.fillStyle="#000000";
-				screen.fillText("GAME1 LEVEL1", 20, 20);
-			break;
-			case this.GAMESCENE.THEEND:
-				//theEnd.draw();
-				screen.font = "20px Comic Sans MS";
-				screen.fillStyle="#000000";
-				screen.fillText("GAME1 THEEND", 20, 20);
-			break;
-			case this.GAMESCENE.GAMEOVER:
-				//gameOver.draw();
-				screen.font = "20px Comic Sans MS";
-				screen.fillStyle="#000000";
-				screen.fillText("GAME1 GAMEOVER", 20, 20);
-			break;
+		case this.SCENE.INTRO:
+		{
+			this.Intro.draw();
 		}
+		break;
+		case this.SCENE.LEVEL01:
+		{
+			this.level01.draw();
+		}
+		break;
+		
+		}
+	
 	}
 	
 	this.mouse_down=function(mouse)
-   	{
-		switch(this.currentGameScene)
+	{
+		
+		console.log("mous x " + mouse.x, "mouse y " + mouse.y)	
+	
+		switch(this.currentScene)
 		{
-			case this.GAMESCENE.INTRO:
-				this.currentGameScene = this.GAMESCENE.LEVEL1;
-			break;
-			case this.GAMESCENE.LEVEL1:
-				this.currentGameScene = this.GAMESCENE.THEEND;
-			break;
-			case this.GAMESCENE.THEEND:
-				this.currentGameScene = this.GAMESCENE.GAMEOVER;
-			break;
-			case this.GAMESCENE.GAMEOVER:
-				this.currentGameScene = this.GAMESCENE.INTRO;
-				currentScene = SCENE.MENU;
-			break;
-		}	
-	}
+		case this.SCENE.INTRO:
+		{
+			this.Intro.mouse_down(mouse);
+		}
+		break;
+		case this.SCENE.LEVEL01:
+		{
+			this.level01.mouse_down(mouse);
+		}
+		break;
 
+		}
+		
+	}
+	
+	this.mouse_up=function(mouse)
+	{
+		
+	}
+	
+	this.key_down=function(key)
+	{
+		
+		switch(this.currentScene)
+		{
+		case this.SCENE.INTRO:
+		{
+			this.Intro.key_down(key);
+		}
+		break;
+		case this.SCENE.LEVEL01:
+		{
+			this.level01.key_down(key);
+		}
+		break;	
+	
+		}
+		
+	}
+	
+	this.key_up=function(key)
+	{
+		
+		switch(this.currentScene)
+		{
+		case this.SCENE.INTRO:
+		{
+			this.Intro.key_up(key);
+		}
+		break;
+		case this.SCENE.LEVEL01:
+		{
+			this.level01.key_up(key);
+		}
+		break;
+
+		}
+		
+	}	
+	
+	
 }

@@ -12,29 +12,35 @@
 		<script src="js/scene_menu.js"></script>
 		<script src="js/scene_credit.js"></script>
 		<script src="js/button.js"></script>
+		<script src="js/name.js"></script>
+		<script src="js/fundo_move_menu.js"></script>
 		
-		<!--Game 1-->
-		<script src="js/game1/game1.js"></script>
+		
+		<!--Game 1
+		<script src="js/game1/game1.js"></script>-->
 		
 		<!--Game 2-->
 		<script src="js/game2/game2.js"></script>
 		<script src="js/game2/js/game_2_scene_intro.js"></script>
+		<script src="js/game2/js/game_2_scene_level_1.js"></script>
 		<script src="js/game2/js/game_2_fundo.js"></script>
 		<script src="js/game2/js/game_2_button.js"></script>
-		<script src="js/game2/js/game_2_scene_level_1.js"></script>
 		<script src="js/game2/js/game_2_player.js"></script>
 		<script src="js/game2/js/game_2_obstaculo.js"></script>
-		<script src="js/game2/js/game_2_scene_game_over.js"></script>
-		<script src="js/game2/js/game_2_scene_the_end.js"></script>
+
 		
 		<!--Game 3-->
 		<script src="js/game3/game3.js"></script>
 		<script src="js/game3/js/game_3_scene_intro.js"></script>
+		<script src="js/game3/js/game_3_scene_level_1.js"></script>
+		<script src="js/game3/js/game_3_scene_game_over.js"></script>
+		<script src="js/game3/js/game_3_scene_the_end.js"></script>
 		<script src="js/game3/js/game_3_fundo.js"></script>
 		<script src="js/game3/js/game_3_button.js"></script>
-		<script src="js/game3/js/game_3_scene_level_1.js"></script>
 		<script src="js/game3/js/game_3_player.js"></script>
 		<script src="js/game3/js/game_3_obstaculo.js"></script>
+		<script src="js/game3/js/game_3_fundo_move.js"></script>
+		<script src="js/game3/js/gato.js"></script> 
 		
 		<!--Game 4-->
 		<script src="js/game4/game4.js"></script>
@@ -43,9 +49,10 @@
 		<script src="js/game4/js/game_4_button.js"></script>
 		<script src="js/game4/js/game_4_scene_level_1.js"></script>
 		<script src="js/game4/js/game_4_player.js"></script>
-		<script src="js/game4/js/game_4_obstaculo.js"></script>
 		<script src="js/game4/js/game_4_scene_game_over.js"></script>
 		<script src="js/game4/js/game_4_scene_the_end.js"></script>
+		<script src="js/game4/js/game_4_shoot.js"></script>
+		<script src="js/game4/js/game_4_asteroide.js"></script>
 		
 		<!--Game 5-->
 		<script src="js/game5/game5.js"></script>
@@ -54,7 +61,6 @@
 		<script src="js/game5/js/game_5_button.js"></script>
 		<script src="js/game5/js/game_5_scene_level_1.js"></script>
 		<script src="js/game5/js/game_5_player.js"></script>
-		<script src="js/game5/js/game_5_obstaculo.js"></script>
 		<script src="js/game5/js/game_5_scene_game_over.js"></script>
 		<script src="js/game5/js/game_5_scene_the_end.js"></script>
 		
@@ -63,6 +69,9 @@
         
    <body>
    <canvas width="800" height="600" id="main" style="border:1px solid #000000;"></canvas>
+      <audio controls="controls">
+    <source src="sounds/Rymdkraft - Sprinkler.mp3" type="audio/mp3" />
+	</audio>
    </body>
         
    	<script> 
@@ -79,7 +88,7 @@
 	
 	var credit = new SceneCredit();
 	
-	var game1 = new SceneGame1(); //Variavel para utilizar o primeiro jogo.
+	//var game1 = new SceneGame1(); //Variavel para utilizar o primeiro jogo.
 	
 	var game2 = new SceneGame2(); //Variavel utilizar o do segundo jogo.
 	

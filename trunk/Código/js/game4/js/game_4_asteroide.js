@@ -1,6 +1,6 @@
-function Obstaculo_4(file, size_x, size_y, pos_x, pos_y, vel_x, vel_y)
-{//abre obstaculo
-    this.img = new Image();
+function Asteroide(file, size_x, size_y, pos_x, pos_y, vel_x, vel_y)
+{
+	this.img = new Image();
     this.img.src = file;
         
     this.visible = true;
@@ -15,14 +15,7 @@ function Obstaculo_4(file, size_x, size_y, pos_x, pos_y, vel_x, vel_y)
     
     this.update=function()
     { //abre update          
-        this.position_x += this.velocity_x;     
-
-        this.position_y += this.velocity_y;     
-                        
-        if(this.position_y < 0)
-                {
-                        this.visible = false;   
-                }
+     
                 
                 
     } //fecha update
@@ -32,7 +25,5 @@ function Obstaculo_4(file, size_x, size_y, pos_x, pos_y, vel_x, vel_y)
         if(this.visible)
         screen.drawImage(this.img, this.position_x, this.position_y);
     } //fecha draw
-
-
- 
- }//fecha obstaculo
+	    
+}

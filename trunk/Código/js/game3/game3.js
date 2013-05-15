@@ -4,10 +4,10 @@ function SceneGame3()
 	this.level1 = new Game3SceneLevel1();
 	//this.theEnd = new Game3SceneTheEnd();
 	//this.gameOver = new Game3SceneGameOver();
-	//this.button_start = new Button("imgs/game_3/play1.png", 250, 80, 575, 380);
+
 
 	
-	this.GAMESCENE = { INTRO: 0, LEVEL1: 1, THEEND: 2, GAMEOVER: 3};
+	this.GAMESCENE = { INTRO: 0, LEVEL1: 1, THEEND: 2, GAMEOVER: 3, INSTRU:4};
 	
 	this.currentGameScene = this.GAMESCENE.INTRO; 
 	
@@ -68,12 +68,13 @@ function SceneGame3()
 		switch(this.currentGameScene)
 		{
 				
-				case this.GAMESCENE.INTRO:
-				this.currentGameScene = this.GAMESCENE.LEVEL1;
+			case this.GAMESCENE.INTRO:
+				this.intro.mouse_down(mouse);
 			break;
-			//case this.GAMESCENE.LEVEL1:
-			//	this.currentGameScene = this.GAMESCENE.THEEND;
-			//break;
+			case this.GAMESCENE.LEVEL1:
+				this.level1.mouse_down(mouse);
+
+			break;
 			//case this.GAMESCENE.THEEND:
 			//	this.currentGameScene = this.GAMESCENE.GAMEOVER;
 			//break;
@@ -81,6 +82,64 @@ function SceneGame3()
 				//this.currentGameScene = this.GAMESCENE.INTRO;
 				//currentScene = SCENE.MENU;
 			//break;
+		}	
+	}
+	
+	this.mouse_up=function(mouse)
+   	{
+		
+		switch(this.currentGameScene)
+		{
+				
+			case this.GAMESCENE.INTRO:
+				
+			break;
+			case this.GAMESCENE.LEVEL1:
+				this.level1.mouse_up(mouse);
+
+			break;
+			//case this.GAMESCENE.THEEND:
+			//	this.currentGameScene = this.GAMESCENE.GAMEOVER;
+			//break;
+			//case this.GAMESCENE.GAMEOVER:
+				//this.currentGameScene = this.GAMESCENE.INTRO;
+				//currentScene = SCENE.MENU;
+			//break;
+		}	
+	}
+	
+	this.key_down=function(key)
+   	{
+		
+		switch(this.currentGameScene)
+		{
+				
+			case this.GAMESCENE.INTRO:
+				
+			break;
+			case this.GAMESCENE.LEVEL1:
+				this.level1.key_down(key);
+
+			break;
+			
+		}	
+	}
+	
+	this.key_up=function(key)
+   	{
+		
+		switch(this.currentGameScene)
+		{
+				
+			case this.GAMESCENE.INTRO:
+				
+			break;
+			case this.GAMESCENE.LEVEL1:
+				this.level1.key_up(key);
+
+			break;
+
+			
 		}	
 	}
 

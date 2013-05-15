@@ -1,13 +1,13 @@
-function SceneGame4()
+       function SceneGame3()
 {		
-	this.intro = new Game4SceneIntro();
-	this.level4 = new Game4SceneLevel4();
-	//this.theEnd = new Game4SceneTheEnd();
-	//this.gameOver = new Game4SceneGameOver();
+	this.intro = new Game3SceneIntro();
+	this.level1 = new Game3SceneLevel1();
+	//this.theEnd = new Game3SceneTheEnd();
+	//this.gameOver = new Game3SceneGameOver();
 
 
 	
-	this.GAMESCENE = { INTRO: 0, LEVEL4: 1, THEEND: 2, GAMEOVER: 3, INSTRU:4};
+	this.GAMESCENE = { INTRO: 0, LEVEL1: 1, THEEND: 2, GAMEOVER: 3, INSTRU:4};
 	
 	this.currentGameScene = this.GAMESCENE.INTRO; 
 	
@@ -18,8 +18,8 @@ function SceneGame4()
 			case this.GAMESCENE.INTRO:
 					this.intro.update();
 			break;
-			case this.GAMESCENE.LEVEL4:
-					this.level4.update();
+			case this.GAMESCENE.LEVEL1:
+					this.level1.update();
 			break;
 			//case this.GAMESCENE.THEEND:
 				//theEnd.update();
@@ -43,8 +43,8 @@ function SceneGame4()
 				screen.fillStyle="#000000";
 				screen.fillText("", 20, 20);
 			break;
-			case this.GAMESCENE.LEVEL4:
-				this.level4.draw();
+			case this.GAMESCENE.LEVEL1:
+				this.level1.draw();
 
 			break;
 			//case this.GAMESCENE.THEEND:
@@ -71,8 +71,8 @@ function SceneGame4()
 			case this.GAMESCENE.INTRO:
 				this.intro.mouse_down(mouse);
 			break;
-			case this.GAMESCENE.LEVEL4:
-				this.level4.mouse_down(mouse);
+			case this.GAMESCENE.LEVEL1:
+				this.level1.mouse_down(mouse);
 
 			break;
 			//case this.GAMESCENE.THEEND:
@@ -94,8 +94,8 @@ function SceneGame4()
 			case this.GAMESCENE.INTRO:
 				
 			break;
-			case this.GAMESCENE.LEVEL4:
-				this.level4.mouse_up(mouse);
+			case this.GAMESCENE.LEVEL1:
+				this.level1.mouse_up(mouse);
 
 			break;
 			//case this.GAMESCENE.THEEND:
@@ -117,8 +117,8 @@ function SceneGame4()
 			case this.GAMESCENE.INTRO:
 				
 			break;
-			case this.GAMESCENE.LEVEL4:
-				this.level4.key_down(key);
+			case this.GAMESCENE.LEVEL1:
+				this.level1.key_down(key);
 
 			break;
 			
@@ -134,8 +134,8 @@ function SceneGame4()
 			case this.GAMESCENE.INTRO:
 				
 			break;
-			case this.GAMESCENE.LEVEL4:
-				this.level4.key_up(key);
+			case this.GAMESCENE.LEVEL1:
+				this.level1.key_up(key);
 
 			break;
 
