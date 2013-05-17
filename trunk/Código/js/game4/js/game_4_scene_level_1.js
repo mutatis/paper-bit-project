@@ -28,7 +28,7 @@ function Game4SceneLevel4()
 		
         screen.font = "20px Comic Sans MS";
         screen.fillStyle="#000000";
-		screen.fillText("gAME4 porra", 20, 20);
+		screen.fillText("Pontos:", 20, 20);
                 
 				
         //this.button_credits.draw();

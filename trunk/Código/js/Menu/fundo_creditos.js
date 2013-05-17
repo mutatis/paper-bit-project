@@ -1,4 +1,4 @@
-function FundoGame2(source, posicao_x, posicao_y)
+function Fundo_creditos(source)
 {
 	this.img = new Image();
 	this.img.src = source;
@@ -11,12 +11,12 @@ function FundoGame2(source, posicao_x, posicao_y)
 		console.log("carregamento pela classe BACKGROUND" + loaded);
 	};
 	
-	this.size_x = 800;
-    this.size_y = 1200;
-    this.position_x = 0;
+	this.size_x = 600;
+    this.size_y = 1500;
+    this.position_x = 100;
     this.position_y = 0;
     this.velocity_x = 0;
-    this.velocity_y = 2;
+    this.velocity_y = -1;
     this.velocity_MAX = 15;
     
     this.update=function()
@@ -28,7 +28,7 @@ function FundoGame2(source, posicao_x, posicao_y)
     	
     	if(this.position_y >= 0)
     	{
-    		this.position_y = SCREENHEIGHT - this.size_y;
+    		this.position_x = SCREENHEIGHT - this.size_y;
     	}
     	
     };

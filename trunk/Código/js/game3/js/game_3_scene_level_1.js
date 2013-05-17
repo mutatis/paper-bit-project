@@ -3,7 +3,7 @@ function Game3SceneLevel1()
 		this.fundo = new Fundo("", 600, 800, 0, 0);
 		this.toy = new Player ("imgs/game_3/spencer_boy.png", 60, 70, ((SCREENWIDTH-94)/2)-40, 0);
 		this.fundo = new Fundo_move ("imgs/game_3/fundo_move.png",1200, 800, 0, 0);
-		this.button_back = new Button("imgs/game_3/close.png",500, 90, 720, 10);
+		this.button_back = new Button("imgs/close.png",50, 50, 720, 10);
 		
 		this.gato_list = new Array();
 		

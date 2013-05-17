@@ -9,16 +9,25 @@
                 
         </title>        
                 
-		<script src="js/scene_menu.js"></script>
-		<script src="js/scene_credit.js"></script>
-		<script src="js/button.js"></script>
-		<script src="js/name.js"></script>
-		<script src="js/fundo_move_menu.js"></script>
+		<script src="js/menu/scene_menu.js"></script>
+		<script src="js/menu/scene_credit.js"></script>
+		<script src="js/menu/button.js"></script>
+		<script src="js/menu/name.js"></script>
+		<script src="js/menu/fundo_move_menu.js"></script>
+		<script src="js/menu/fundo_creditos.js"></script>
 		
 		
-		<!--Game 1
-		<script src="js/game1/game1.js"></script>-->
-		
+		<!--Game 1-->
+		<script src="js/game1/game1.js"></script>
+		<script src="js/game1/js/game_1_scene_intro.js"></script>
+		<script src="js/game1/js/game_1_fundo.js"></script>
+		<script src="js/game1/js/game_1_button.js"></script>
+		<script src="js/game1/js/game_1_scene_level_1.js"></script>
+		<!--<script src="js/game1/js/game_1_player.js"></script>-->
+		<script src="js/game1/js/game_1_obstaculo.js"></script>
+		<script src="js/game1/js/game_1_scene_game_over.js"></script>
+		<script src="js/game1/js/game_1_scene_the_end.js"></script>
+	
 		<!--Game 2-->
 		<script src="js/game2/game2.js"></script>
 		<script src="js/game2/js/game_2_scene_intro.js"></script>
@@ -27,6 +36,7 @@
 		<script src="js/game2/js/game_2_button.js"></script>
 		<script src="js/game2/js/game_2_player.js"></script>
 		<script src="js/game2/js/game_2_obstaculo.js"></script>
+		<script src="js/game2/js/fundo_paisagem.js"></script>
 
 		
 		<!--Game 3-->
@@ -58,7 +68,6 @@
 		<script src="js/game5/game5.js"></script>
 		<script src="js/game5/js/game_5_scene_intro.js"></script>
 		<script src="js/game5/js/game_5_fundo.js"></script>
-		<script src="js/game5/js/game_5_button.js"></script>
 		<script src="js/game5/js/game_5_scene_level_1.js"></script>
 		<script src="js/game5/js/game_5_player.js"></script>
 		<script src="js/game5/js/game_5_scene_game_over.js"></script>
@@ -88,7 +97,7 @@
 	
 	var credit = new SceneCredit();
 	
-	//var game1 = new SceneGame1(); //Variavel para utilizar o primeiro jogo.
+	var game1 = new SceneGame1(); //Variavel para utilizar o primeiro jogo.
 	
 	var game2 = new SceneGame2(); //Variavel utilizar o do segundo jogo.
 	
@@ -337,12 +346,88 @@
 	}
 	function mouse_move(mouse)
 	{
+		switch(currentScene)
+		{
+			case SCENE.MENU:
+			{
+				menu.mouse_move(mouse);	
+			}
+			break;
+			case SCENE.CREDIT:
+			{
+				credit.mouse_move(mouse);
+			}
+			break;
+			case SCENE.GAME1:
+			{
+				game1.mouse_move(mouse);
+			}
+			break;
+			case SCENE.GAME2:
+			{
+				//game2.mouse_move(mouse);
+			}
+			break;
+			case SCENE.GAME3:
+			{
+				//game3.mouse_move(mouse);
+			}
+			break;
+			case SCENE.GAME4:
+			{
+				//game4.mouse_move(mouse);
+			}
+			break;
+			case SCENE.GAME5:
+			{
+				//game5.mouse_move(mouse);
+			}
+			break;
 
+		}
 	}
 
 	function mouse_up(mouse)
 	{
+		switch(currentScene)
+		{
+			case SCENE.MENU:
+			{
+				menu.mouse_up(mouse);	
+			}
+			break;
+			case SCENE.CREDIT:
+			{
+				//credit.mouse_up(mouse);
+			}
+			break;
+			case SCENE.GAME1:
+			{
+				//game1.mouse_up(mouse);
+			}
+			break;
+			case SCENE.GAME2:
+			{
+				//game2.mouse_up(mouse);
+			}
+			break;
+			case SCENE.GAME3:
+			{
+				//game3.mouse_up(mouse);
+			}
+			break;
+			case SCENE.GAME4:
+			{
+				//game4.mouse_up(mouse);
+			}
+			break;
+			case SCENE.GAME5:
+			{
+				//game5.mouse_up(mouse);
+			}
+			break;
 
+		}
 	}
 
 

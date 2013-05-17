@@ -1,6 +1,8 @@
 function SceneLevel01()
 {
-	this.fundo = new FundoGame2("imgs/game_2/Floresta.jpg", 0, 0)
+	this.fundo = new FundoGame2("imgs/game_2/fundo_catch.png", 0, 0)
+	
+	
 	
 	this.heroi = new PlayerGame2("imgs/game_2/bambu.png", 200, 100)
 	
@@ -18,6 +20,7 @@ function SceneLevel01()
 	
 	this.update = function()
 	{
+		this.fundo.update();
 		
 		this.heroi.update();
 	

@@ -142,5 +142,6 @@ function SceneGame3()
 			
 		}	
 	}
+	
 
 }
