@@ -14,13 +14,13 @@ function SceneMenu()
     this.button_game_2.position_x = 170;
     this.button_game_2.position_y = 010;
         
-    this.button_game_3 = new Button("imgs/button_game_3.png", 150, 150);
+    this.button_game_3 = new MyButton("imgs/button_game_3.png", 150, 150);
     this.button_game_3.position_x = 322;
-    this.button_game_3.position_y = 010;
+    this.button_game_3.position_y = 250;
     
-    this.button_game_4 = new Button("imgs/button_game_4.png", 150, 150);
+    this.button_game_4 = new MyButton("imgs/button_game_4.png", 150, 150);
     this.button_game_4.position_x = 474;
-    this.button_game_4.position_y = 010;
+    this.button_game_4.position_y = 250;
     
     this.button_game_5 = new Button("imgs/button_game_5.png", 295, 82);
     this.button_game_5.position_x = 627;
@@ -111,6 +111,24 @@ function SceneMenu()
   		else
   		{
   			this.button_credit.current_frame = 1;
+  		}
+		
+		if(this.button_game_3.mouse_over(mouse))
+  		{
+  			this.button_game_3.current_frame = 0;
+  		}
+  		else
+  		{
+  			this.button_game_3.current_frame = 1;
+  		}
+		
+		if(this.button_game_4.mouse_over(mouse))
+  		{
+  			this.button_game_4.current_frame = 0;
+  		}
+  		else
+  		{
+  			this.button_game_4.current_frame = 1;
   		}
   	};
    
