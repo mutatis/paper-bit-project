@@ -5,14 +5,15 @@ function Game4SceneLevel4()
 		//this.toy = new Player ("imgs/game_3/spencer_boy.png", 60, 70, ((SCREENWIDTH-94)/2)-40, 0);
 		//this.fundo = new Fundo_move ("imgs/game_3/fundo_move.png",1200, 800, 0, 0);
 		this.nave1 = new Player4("imgs/game_4/nave.png", 60, 40, 10, 200);
-		this.ast = new Asteroide("imgs/game_4/asteroid.png", 40, 32,400,300);
+		//file, size_x, size_y, pos_x, pos_y, vel_x, vel_y
+		this.ast = new Asteroide("imgs/game_4/asteroid.png", 40, 32,400,300,-2,2);
 
 		
     this.update=function()
     {
 		
         this.nave1.update();
-		//this.fundo.update();
+		this.ast.update();
 		
 		
 		

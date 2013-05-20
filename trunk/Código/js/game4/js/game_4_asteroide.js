@@ -14,11 +14,42 @@ function Asteroide(file, size_x, size_y, pos_x, pos_y, vel_x, vel_y)
     this.velocity_MAX = 15;
     
     this.update=function()
-    { //abre update          
-     
-                
+    { //abre update    
+
+		
+        this.position_x += this.velocity_x;     
+
+        this.position_y += this.velocity_y;  
                 
     } //fecha update
+	
+	   
+    {
+    	//saida pela direita volta pra esquerda
+    	if(this.position_x + this.size_x*this.scale_x < 0)
+    	{
+    		this.position_x = SCREENWIDTH;
+    	}
+    	
+    	//saida por cima volta por baixo
+    	if(this.position_y + this.size_y*this.scale_y < 0)
+    	{
+    		this.position_y = SCREENHEIGHT;
+    	}
+    	
+    	//saida pela esquerda volta pela direita
+    	if(this.position_x > SCREENWIDTH)
+    	{
+    		this.position_x = - this.size_x*this.scale_x;
+    	}
+    	
+    	//saida por baixo volta por cima
+    	if(this.position_y > SCREENHEIGHT)
+    	{
+    		this.position_y = - this.size_y*this.scale_y;
+    	}
+		 
+    }
     
     this.draw=function()
     { //abre draw
