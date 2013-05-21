@@ -6,7 +6,7 @@ function Player(file, size_x, size_y, position_x, position_y, velocity_y)
         
     this.visible = true;
 	
-	this.pontos = 0;
+	this.ponints = 0;
                 
     this.position_x_dst = position_x; 
     this.position_y_dst = position_y;

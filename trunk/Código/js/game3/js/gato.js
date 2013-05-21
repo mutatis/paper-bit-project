@@ -3,8 +3,6 @@
 SCREEN_WIDTH = 800;
 SCREEN_HEIGHT = 600;
 
-
-
 function Gato ( file , size_x, size_y, pontos)
 {
 	this.img = new Image
@@ -27,7 +25,7 @@ function Gato ( file , size_x, size_y, pontos)
     
     this.velocity_MAX = 15;
     
-    this.pontos = pontos;
+    this.points = pontos;
     
     this.draw=function()
     {
