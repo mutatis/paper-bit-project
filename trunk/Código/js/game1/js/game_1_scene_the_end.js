@@ -27,10 +27,10 @@ this.mouse_down=function(mouse)
         	game1.currentGameScene = game1.GAMESCENE.LEVEL1;  
         }
         
-        //if(this.button_menu.clicked(mouse))
-        //{
-        //	game1.currentGameScene = game1.GAMESCENE.LEVEL1;  
-        //}
+       if(this.button_menu.clicked(mouse))
+       {
+       	game1.currentGameScene = game1.GAMESCENE.LEVEL1;  
+       }
         
         
         if(this.button_menu.clicked(mouse))
