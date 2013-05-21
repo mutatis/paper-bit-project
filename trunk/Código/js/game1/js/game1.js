@@ -45,10 +45,10 @@ function SceneGame1()
 				screen.fillText("GAME1 LEVEL1", 20, 20);
 			break;
 			case this.GAMESCENE.THEEND:
-				theEnd.draw();
-				//screen.font = "20px Comic Sans MS";
-				//screen.fillStyle="#000000";
-				//screen.fillText("GAME1 THEEND", 20, 20);
+				//theEnd.draw();
+				screen.font = "20px Comic Sans MS";
+				screen.fillStyle="#000000";
+				screen.fillText("GAME1 THEEND", 20, 20);
 			break;
 			case this.GAMESCENE.GAMEOVER:
 				//gameOver.draw();

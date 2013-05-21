@@ -1,120 +1,118 @@
 function Game1SceneLevel1()
 {
 	   
-		this.button = new Button("imgs/button_credit.png", 250, 80, 200, 380);
+		this.button = new Button("imgs/close.png", 50, 50, 720, 10);
 
 	   
-	    this.tela_tamanho_w = 800;
-	    this.tela_tamanho_h = 600;
+	    var tela_tamanho_w = 800;
+	    var tela_tamanho_h = 600;
 	    	    
-		this.tempoSeg1 = 0
-		this.tempoSeg2 = 0
-		this.tempoSeg3 = 0
-		this.tempoSeg4 = 0
+		var tempoSeg1 = 0
+		var tempoSeg2 = 0
+		var tempoSeg3 = 0
+		var tempoSeg4 = 0
 		this.pontos = 0
-		this.cronometro = 0
-		this.game_over = false;
-		this.game_win = false;
+		var cronometro = 0
+		var game_over = false;
+		var game_win = false;
 		
-		/*this.som_fundo = new Audio();
-		this.som_acertar = new Audio();
-		this.som_errar = new Audio();
-		this.som_perder = new Audio();
-		this.som_vencer = new Audio();*/
+		var som_fundo = new Audio();
+		var som_acertar = new Audio();
+		var som_errar = new Audio();
+		var som_perder = new Audio();
+		var som_vencer = new Audio();
 		
-		this.fundo_imagem = new Image();
-		this.fundo_carregada = false;
-		this.fundo_tamanho_w = 800;
-		this.fundo_tamanho_h = 600;
-		this.fundo_posicao_x = 0;
-		this.fundo_posicao_y = 0;
-		this.fundo_visivel = true;
+		var fundo_imagem = new Image();
+		var fundo_carregada = false;
+		var fundo_tamanho_w = 800;
+		var fundo_tamanho_h = 600;
+		var fundo_posicao_x = 0;
+		var fundo_posicao_y = 0;
+		var fundo_visivel = true;
 		
-		this.play_imagem = new Image();
-		this.play_carregada = false;
-		this.play_tamanho_w = 800;
-		this.play_tamanho_h = 600;
-		this.play_posicao_x = 0;
-		this.play_posicao_y = 0;
-		this.play_visivel = true;
+		var play_imagem = new Image();
+		var play_carregada = false;
+		var play_tamanho_w = 800;
+		var play_tamanho_h = 600;
+		var play_posicao_x = 0;
+		var play_posicao_y = 0;
+		var play_visivel = true;
 			  
-	    this.alvo1_imagem = new Image();
-	    this.alvo1_carregada = false;
-        this.alvo1_HP = 25;
-        this.alvo1_tamanho_w = 100;
-        this.alvo1_tamanho_h = 100;
-        this.alvo1_posicao_x = Math.floor((Math.random()*(this.tela_tamanho_w - this.alvo1_tamanho_w))+1);
-        this.alvo1_posicao_y = Math.floor((Math.random()*(this.tela_tamanho_h - this.alvo1_tamanho_h))+1);
-        this.alvo1_pontos = 10;
-        this.alvo1_velocidade;
-        this.alvo1_permanece = 20;
-        this.alvo1_reaparece = false;
-        this.alvo1_visivel = true;
-		
-		
-		
-        this.alvo2_imagem = new Image();
-        this.alvo2_carregada = false;
-	    this.alvo2_HP = 50;
-		this.alvo2_tamanho_w = 100;
-		this.alvo2_tamanho_h = 100;
-		this.alvo2_posicao_x = Math.floor((Math.random()*(this.tela_tamanho_w - this.alvo2_tamanho_w))+1);
-		this.alvo2_posicao_y = Math.floor((Math.random()*(this.tela_tamanho_h - this.alvo2_tamanho_h))+1);
-		this.alvo2_pontos = 25;
-		this.alvo2_velocidade;
-		this.alvo2_permanecer = 15;
-		this.alvo2_reaparecer = 15;
-		this.alvo2_visivel = true;		
+	    var alvo1_imagem = new Image();
+	    var alvo1_carregada = false;
+        var alvo1_HP = 25;
+        var alvo1_tamanho_w = 100;
+        var alvo1_tamanho_h = 100;
+        var alvo1_posicao_x = Math.floor((Math.random()*(tela_tamanho_w - alvo1_tamanho_w))+1);
+        var alvo1_posicao_y = Math.floor((Math.random()*(tela_tamanho_h - alvo1_tamanho_h))+1);
+        var alvo1_pontos = 10;
+        var alvo1_velocidade;
+        var alvo1_permanece = 20;
+        var alvo1_reaparece = false;
+        var alvo1_visivel = true;
 
-		this.alvo3_imagem = new Image();
-		this.alvo3_carregada = false;
-		this.alvo3_HP = 75;
-		this.alvo3_tamanho_w = 100;
-		this.alvo3_tamanho_h = 100;
-		this.alvo3_posicao_x = Math.floor((Math.random()*(this.tela_tamanho_w - this.alvo3_tamanho_w))+1);
-		this.alvo3_posicao_y = Math.floor((Math.random()*(this.tela_tamanho_h - this.alvo3_tamanho_h))+1);
-		this.alvo3_pontos = 50;
-		this.alvo3_velocidade;
-		this.alvo3_permanecer = 10;
-		this.alvo3_reaparecer = 20;
-		this.alvo3_visivel = true;
+        var alvo2_imagem = new Image();
+        var alvo2_carregada = false;
+	    var alvo2_HP = 50;
+		var alvo2_tamanho_w = 100;
+		var alvo2_tamanho_h = 100;
+		var alvo2_posicao_x = Math.floor((Math.random()*(tela_tamanho_w - alvo2_tamanho_w))+1);
+		var alvo2_posicao_y = Math.floor((Math.random()*(tela_tamanho_h - alvo2_tamanho_h))+1);
+		var alvo2_pontos = 25;
+		var alvo2_velocidade;
+		var alvo2_permanecer = 15;
+		var alvo2_reaparecer = 15;
+		var alvo2_visivel = true;		
 
-		this.alvo4_imagem = new Image();
-		this.alvo4_carregada = false;
-		this.alvo4_HP;
-		this.alvo4_tamanho_w = 100;
-		this.alvo4_tamanho_h = 100;
-		this.alvo4_posicao_x = Math.floor((Math.random()*(this.tela_tamanho_w - this.alvo4_tamanho_w))+1);
-		this.alvo4_posicao_y = Math.floor((Math.random()*(this.tela_tamanho_h - this.alvo4_tamanho_h))+1);
-		this.alvo4_pontos = -15;
-		this.alvo4_velocidade;
-		this.alvo4_pemanecer = 25;
-		this.alvo4_reaparecer = 20;
-		this.alvo4_visivel = true;
+		var alvo3_imagem = new Image();
+		var alvo3_carregada = false;
+		var alvo3_HP = 75;
+		var alvo3_tamanho_w = 100;
+		var alvo3_tamanho_h = 100;
+		var alvo3_posicao_x = Math.floor((Math.random()*(tela_tamanho_w - alvo3_tamanho_w))+1);
+		var alvo3_posicao_y = Math.floor((Math.random()*(tela_tamanho_h - alvo3_tamanho_h))+1);
+		var alvo3_pontos = 50;
+		var alvo3_velocidade;
+		var alvo3_permanecer = 10;
+		var alvo3_reaparecer = 20;
+		var alvo3_visivel = true;
+
+		var alvo4_imagem = new Image();
+		var alvo4_carregada = false;
+		var alvo4_HP;
+		var alvo4_tamanho_w = 100;
+		var alvo4_tamanho_h = 100;
+		var alvo4_posicao_x = Math.floor((Math.random()*(tela_tamanho_w - alvo4_tamanho_w))+1);
+		var alvo4_posicao_y = Math.floor((Math.random()*(tela_tamanho_h - alvo4_tamanho_h))+1);
+		var alvo4_pontos = -15;
+		var alvo4_velocidade;
+		var alvo4_pemanecer = 25;
+		var alvo4_reaparecer = 20;
+		var alvo4_visivel = true;
 
 		//var SCENEGAME1 = {INTRO: 0, GAME: 1};
 		//var currentSceneGame1 = SCENEGAME1.GAME;
 		
-////Load();
+Load();
 	  	
-//this.function.Load()
-//{
+function Load()
+{
 	
 	
-	this.alvo1_imagem.src="imgs/game_1/alvo1_imagem.png"
-	this.alvo1_imagem.onload = function() { this.alvo1_carregada = true; 
+	alvo1_imagem.src="imgs/game_1/alvo1_imagem.png"
+	alvo1_imagem.onload = function() { alvo1_carregada = true; 
 	console.log("alvo1_imagem")}
 	
-	this.alvo2_imagem.src="imgs/game_1/alvo2_imagem.png"
-	this.alvo2_imagem.onload = function() { this.alvo2_carregada = true; 
+	alvo2_imagem.src="imgs/game_1/alvo2_imagem.png"
+	alvo2_imagem.onload = function() { alvo2_carregada = true; 
 	console.log("alvo2_imagem")}
 	
-	this.alvo3_imagem.src="imgs/game_1/alvo3_imagem.png"
-	this.alvo3_imagem.onload = function() { this.alvo3_carregada = true; 
+	alvo3_imagem.src="imgs/game_1/alvo3_imagem.png"
+	alvo3_imagem.onload = function() { alvo3_carregada = true; 
 	console.log("alvo3_imagem")}
 	
-	this.alvo4_imagem.src="imgs/game_1/alvo4_imagem.png"
-	this.alvo4_imagem.onload = function() { this.alvo4_carregada = true; 
+	alvo4_imagem.src="imgs/game_1/alvo4_imagem.png"
+	alvo4_imagem.onload = function() { alvo4_carregada = true; 
 	console.log("alvo4_imagem")}
 		
 	console.log("Load");
@@ -125,7 +123,7 @@ function Game1SceneLevel1()
 	//som_fundo.volume = 0.25;
 	//som_fundo.play();
 	
-	/*som_perder.src= "sounds/game_1/som_perder.mp3"
+	som_perder.src= "sounds/game_1/som_perder.mp3"
 	som_perder.load();
 	som_perder.loop = true;
 	som_perder.volume = 1.0
@@ -141,110 +139,112 @@ function Game1SceneLevel1()
 		
 	som_errar.src= "sounds/game_1/som_errar.mp3"
 	som_errar.load();
-	som_errar.volume = 1.0*/
+	som_errar.volume = 1.0
 	
-	if((this.alvo1_carregada)&&(this.alvo2_carregada)&&(this.alvo3_carregada)&&(this.alvo4_carregada))
+	if((alvo1_carregada)&&(alvo2_carregada)&&(alvo3_carregada)&&(alvo4_carregada))
 	{
-		this.Loop();		
+		Loop();		
 	}
 	else
-	/*{
+	{
 		setTimeout(Load, 30 ) ;
-	}*/
-//}
+	}
+}
 
 this.update=function()
 {
 	
 					
-			if(this.game_over == true)
+			if(game_over == true)
 			{
+			currentGameScene = SCENE.THEEND;
+			game1.currentGameScene = game1.GAMESCENE.THEEND;
 			
 			}
 			
 			
-			this.tempoSeg1++;
-			this.tempoSeg2++;
-			this.tempoSeg3++;
-			this.tempoSeg4++;
-			this.cronometro++;
+			tempoSeg1++;
+			tempoSeg2++;
+			tempoSeg3++;
+			tempoSeg4++;
+			cronometro++;
 					
-			if(this.tempoSeg1 > 20)
+			if(tempoSeg1 > 20)
 			{
-				this.alvo1_visivel = false;
+				alvo1_visivel = false;
 			}
-			if(this.tempoSeg1 > 50)
+			if(tempoSeg1 > 50)
 			{
-				this.alvo1_visivel = true;
-				this.alvo1_posicao_x = Math.floor((Math.random()*(this.tela_tamanho_w - this.alvo1_tamanho_w))+1);
-				this.alvo1_posicao_y = Math.floor((Math.random()*(this.tela_tamanho_h - this.alvo1_tamanho_h))+1);
-				this.tempoSeg1 = 0
+				alvo1_visivel = true;
+				alvo1_posicao_x = Math.floor((Math.random()*(tela_tamanho_w - alvo1_tamanho_w))+1);
+				alvo1_posicao_y = Math.floor((Math.random()*(tela_tamanho_h - alvo1_tamanho_h))+1);
+				tempoSeg1 = 0
 			}
-			if(this.tempoSeg2 > 40)
+			if(tempoSeg2 > 40)
 			{
-				this.alvo2_visivel = false;
+				alvo2_visivel = false;
 			}
-			if(this.tempoSeg2 > 70)
+			if(tempoSeg2 > 70)
 			{
-				this.alvo2_visivel = true;
-				this.alvo2_posicao_x = Math.floor((Math.random()*(this.tela_tamanho_w - this.alvo2_tamanho_w))+1);
-				this.alvo2_posicao_y = Math.floor((Math.random()*(this.tela_tamanho_h - this.alvo2_tamanho_h))+1);
-				this.tempoSeg2 = 0
+				alvo2_visivel = true;
+				alvo2_posicao_x = Math.floor((Math.random()*(tela_tamanho_w - alvo2_tamanho_w))+1);
+				alvo2_posicao_y = Math.floor((Math.random()*(tela_tamanho_h - alvo2_tamanho_h))+1);
+				tempoSeg2 = 0
 			}
-			if(this.tempoSeg3 > 60)
+			if(tempoSeg3 > 60)
 			{
-				this.alvo3_visivel = false;
+				alvo3_visivel = false;
 			}
-			if(this.tempoSeg3 > 90)
+			if(tempoSeg3 > 90)
 			{
-				this.alvo3_visivel = true;
-				this.alvo3_posicao_x = Math.floor((Math.random()*(this.tela_tamanho_w - this.alvo3_tamanho_w))+1);
-				this.alvo3_posicao_y = Math.floor((Math.random()*(this.tela_tamanho_h - this.alvo3_tamanho_h))+1);
-				this.tempoSeg3 = 0
+				alvo3_visivel = true;
+				alvo3_posicao_x = Math.floor((Math.random()*(tela_tamanho_w - alvo3_tamanho_w))+1);
+				alvo3_posicao_y = Math.floor((Math.random()*(tela_tamanho_h - alvo3_tamanho_h))+1);
+				tempoSeg3 = 0
 			}
-			if(this.tempoSeg4 > 80)
+			if(tempoSeg4 > 80)
 			{
-				this.alvo4_visivel = false;
+				alvo4_visivel = false;
 			}
-			if(this.tempoSeg4 > 110)
+			if(tempoSeg4 > 110)
 			{
-				this.alvo4_visivel = true;
-				this.alvo4_posicao_x = Math.floor((Math.random()*(this.tela_tamanho_w - this.alvo4_tamanho_w))+1);
-				this.alvo4_posicao_y = Math.floor((Math.random()*(this.tela_tamanho_h - this.alvo4_tamanho_h))+1);
-				this.tempoSeg4 = 0
+				alvo4_visivel = true;
+				alvo4_posicao_x = Math.floor((Math.random()*(tela_tamanho_w - alvo4_tamanho_w))+1);
+				alvo4_posicao_y = Math.floor((Math.random()*(tela_tamanho_h - alvo4_tamanho_h))+1);
+				tempoSeg4 = 0
 			}	
 			
-			if(this.cronometro > 1000)
+			if(cronometro > 1000)
 			{	
 				if(this.pontos >= 1000)
 				{
-					this.alvo1_visivel = false
-					this.alvo2_visivel = false
-					this.alvo3_visivel = false
-					this.alvo4_visivel = false
-					this.tempoSeg1 = 0
-					this.tempoSeg2 = 0
-					this.tempoSeg3 = 0
-					this.tempoSeg4 = 0
-					this.cronometro = 1000
-					//som_fundo.pause();
-					//som_vencer.play();
-					this.game_win = true
+					alvo1_visivel = false
+					alvo2_visivel = false
+					alvo3_visivel = false
+					alvo4_visivel = false
+					tempoSeg1 = 0
+					tempoSeg2 = 0
+					tempoSeg3 = 0
+					tempoSeg4 = 0
+					cronometro = 1000
+					som_fundo.pause();
+					som_vencer.play();
+					game_win = true
 				}
 				else
 				{
-					this.alvo1_visivel = false
-					this.alvo2_visivel = false
-					this.alvo3_visivel = false
-					this.alvo4_visivel = false
-					this.tempoSeg1 = 0
-					this.tempoSeg2 = 0
-					this.tempoSeg3 = 0
-					this.tempoSeg4 = 0
-					this.cronometro = 1000
-					//som_fundo.pause();
-					//som_perder.play();
-					this.game_over = true
+					alvo1_visivel = false
+					alvo2_visivel = false
+					alvo3_visivel = false
+					alvo4_visivel = false
+					tempoSeg1 = 0
+					tempoSeg2 = 0
+					tempoSeg3 = 0
+					tempoSeg4 = 0
+					cronometro = 1000
+					som_fundo.pause();
+					som_perder.play();
+					game_over = true
 				}
 			}
 			
@@ -275,40 +275,40 @@ this.draw=function()
 				
 		this.button.draw();
 		
-		if(this.fundo_visivel == true)
+		if(fundo_visivel == true)
 		{
-			screen.drawImage(this.fundo_imagem, this.fundo_posicao_x, this.fundo_posicao_y);
+			screen.drawImage(fundo_imagem, fundo_posicao_x, fundo_posicao_y);
 		}
-		if(this.alvo1_visivel == true)
+		if(alvo1_visivel == true)
 		{ 
-			screen.drawImage(this.alvo1_imagem, this.alvo1_posicao_x, this.alvo1_posicao_y);
+			screen.drawImage(alvo1_imagem, alvo1_posicao_x, alvo1_posicao_y);
 		}	
-		if(this.alvo2_visivel == true)
+		if(alvo2_visivel == true)
 		{
-			screen.drawImage(this.alvo2_imagem, this.alvo2_posicao_x, this.alvo2_posicao_y);;
+			screen.drawImage(alvo2_imagem, alvo2_posicao_x, alvo2_posicao_y);;
 		}
-		if(this.alvo3_visivel == true)
+		if(alvo3_visivel == true)
 		{
-			screen.drawImage(this.alvo3_imagem, this.alvo3_posicao_x, this.alvo3_posicao_y);
+			screen.drawImage(alvo3_imagem, alvo3_posicao_x, alvo3_posicao_y);
 		}
-		if(this.alvo4_visivel == true)
+		if(alvo4_visivel == true)
 		{
-			screen.drawImage(this.alvo4_imagem, this.alvo4_posicao_x, this.alvo4_posicao_y);
+			screen.drawImage(alvo4_imagem, alvo4_posicao_x, alvo4_posicao_y);
 		}
 			
 		screen.font = "40px Arial";
 		screen.fillStyle="ED1C24";
-		screen.fillText("Tempo: "+this.cronometro,  20, 40);
+		screen.fillText("Tempo: "+cronometro,  20, 40);
 		screen.fillText("Pontos: "+this.pontos, 500, 40);
 		
-		if(this.game_win == true)
+		if(game_win == true)
 		{
 			screen.font = "30px Arial";
 			screen.fillStyle="FFFFFF";
 			screen.fillText("Boa pontuação", 280, 200)
 			screen.fillText("Salvou seu planeta. Qual a sensação de ser um heroi?", 30, 300)
 		}
-		else if(this.game_over == true)
+		else if(game_over == true)
 		{
 			screen.font = "30px Arial";
 			screen.fillStyle="FFFFFF";
@@ -321,13 +321,13 @@ this.draw=function()
 	}
 
 
-this.Loop=function()
+function Loop()
 {
 	//console.log("Loop");
 
-	this.update();
+	update();
 		
-	this.draw();
+	draw();
 	
 	setTimeout(Loop, 30 );
 }
@@ -359,47 +359,47 @@ this.mouse_down=function(mouse)
     		game1.currentGameScene = game1.GAMESCENE.INTRO; 
     		//colocamos 5 porque ele perde pontos ao clicar na tela fora dos alvos...
     		this.pontos = 5;
-    		this.cronometro = 0;
+    		cronometro = 0;
     		
-    	 //som_fundo.pause(); 
-		 //som_acertar.pause();
-		 //som_errar.pause();
-		 //som_perder.pause();
-		 //som_vencer.pause();
+    	 som_fundo.pause(); 
+		 som_acertar.pause();
+		 som_errar.pause();
+		 som_perder.pause();
+		 som_vencer.pause();
     		
     		
 		  
     	}
 
 		
-		if(Collide(mouse.x-10, mouse.y-30, 1, 1, this.alvo1_posicao_x, this.alvo1_posicao_y, this.alvo1_tamanho_w, this.alvo1_tamanho_h))
+		if(Collide(mouse.x-10, mouse.y-30, 1, 1, alvo1_posicao_x, alvo1_posicao_y, alvo1_tamanho_w, alvo1_tamanho_h))
 		{
 			this.pontos+= 15;
-			this.alvo1_visivel = false;
-			//som_acertar.play();
+			alvo1_visivel = false;
+			som_acertar.play();
 		}
-		else if(Collide(mouse.x-10, mouse.y-30, 1, 1, this.alvo2_posicao_x, this.alvo2_posicao_y, this.alvo2_tamanho_w, this.alvo2_tamanho_h))
+		else if(Collide(mouse.x-10, mouse.y-30, 1, 1, alvo2_posicao_x, alvo2_posicao_y, alvo2_tamanho_w, alvo2_tamanho_h))
 		{
 			this.pontos+= 25;
-			this.alvo2_visivel = false;
-			//som_acertar.play();
+			alvo2_visivel = false;
+			som_acertar.play();
 		}
-		else if(Collide(mouse.x-10, mouse.y-30, 1, 1, this.alvo3_posicao_x, this.alvo3_posicao_y, this.alvo3_tamanho_w, this.alvo3_tamanho_h))
+		else if(Collide(mouse.x-10, mouse.y-30, 1, 1, alvo3_posicao_x, alvo3_posicao_y, alvo3_tamanho_w, alvo3_tamanho_h))
 		{
 			this.pontos+= 35;
-			this.alvo3_visivel = false;
-			//som_acertar.play();
+			alvo3_visivel = false;
+			som_acertar.play();
 		}
-		else if(Collide(mouse.x-10, mouse.y-30, 1, 1, this.alvo4_posicao_x, this.alvo4_posicao_y, this.alvo4_tamanho_w, this.alvo4_tamanho_h))
+		else if(Collide(mouse.x-10, mouse.y-30, 1, 1, alvo4_posicao_x, alvo4_posicao_y, alvo4_tamanho_w, alvo4_tamanho_h))
 		{
 			this.pontos-= 10;
-			this.alvo4_visivel = false;
-			//som_errar.play();
+			alvo4_visivel = false;
+			som_errar.play();
 		}
 		else
 		{
 			this.pontos-= 5;
-			//som_errar.play();
+			som_errar.play();
 		}
 	
 			//break;

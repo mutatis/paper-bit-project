@@ -2,6 +2,7 @@ function Game3SceneLevel1()
 {
 		this.player = new Player ("imgs/game_3/spencer_boy.png", 60, 70, ((SCREENWIDTH-74)/2)-40, 0);
 		this.fundo = new Fundo_move ("imgs/game_3/fundo_move.png",1200, 800, 0, 0);
+		this.fundo_front = new Fundo3 ("imgs/game_3/fundo_front.png",600,800);
 		this.button_back = new Button("imgs/close.png",500, 90, 720, 10);
 		this.gato = new Gato ("imgs/game_3/gato.png",42,53,10)
 		this.player.points = 0;
@@ -147,8 +148,9 @@ function Game3SceneLevel1()
     this.draw=function()
     {
 		this.fundo.draw();
-		this.player.draw();
+		this.fundo_front.draw();
 		this.button_back.draw();
+		this.player.draw();
 					
 		
 		for(var i = 0; i < this.obstaculos_list.length ; i++)

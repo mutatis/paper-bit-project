@@ -16,11 +16,11 @@ function SceneMenu()
         
     this.button_game_3 = new MyButton("imgs/button_game_3.png", 150, 150);
     this.button_game_3.position_x = 322;
-    this.button_game_3.position_y = 250;
+    this.button_game_3.position_y = 10;
     
     this.button_game_4 = new MyButton("imgs/button_game_4.png", 150, 150);
     this.button_game_4.position_x = 474;
-    this.button_game_4.position_y = 250;
+    this.button_game_4.position_y = 10;
     
     this.button_game_5 = new Button("imgs/button_game_5.png", 295, 82);
     this.button_game_5.position_x = 627;

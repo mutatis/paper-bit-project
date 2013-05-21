@@ -1,4 +1,4 @@
-function Fundo(file, size_x, size_y, posicao_x, posicao_y, velocity_y)
+function Fundo3(file, size_x, size_y, posicao_x, posicao_y)
 {//abre fundo
 	
 	this.img = new Image();
