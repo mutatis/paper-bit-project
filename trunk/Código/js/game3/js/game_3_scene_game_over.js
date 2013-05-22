@@ -23,6 +23,8 @@ function Game3SceneGameOver()
     
 	this.mouse_down=function(mouse)
    	{   		
+   		//console.log("raquel ta arretada");
+   		
         if(this.button_start.clicked(mouse))
         {
         	game3.currentGameScene = game3.GAMESCENE.INSTRU;  

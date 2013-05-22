@@ -78,5 +78,16 @@ function SceneGame5()
 			break;
 		}	
 	}
+	
+		this.mouse_up=function(mouse)
+	{
+		
+	}
+	
+		  	this.mouse_move=function(mouse)
+  	{
+  		console.log("Game5 mouse X " + mouse.x + " mouse Y " + mouse.y );
+  		
+  	};
 
 }

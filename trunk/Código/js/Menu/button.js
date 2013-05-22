@@ -64,7 +64,7 @@ function MyButton(file, frame_x, frame_y, pos_x, pos_y)
     
     this.mouse_over = function(mouse)
     {
-    	console.log("adjfhad");
+    	console.log("MyButton");
     	if(Collide(
     		mouse.x,
     		mouse.y,

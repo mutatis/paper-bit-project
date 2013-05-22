@@ -6,11 +6,11 @@ function SceneMenu()
     this.button_credit.position_x = 50;
     this.button_credit.position_y = 500;
     
-    this.button_game_1 = new Button("imgs/button_game_1.png", 150, 150);
+    this.button_game_1 = new MyButton("imgs/button_game_1.png", 150, 150);
     this.button_game_1.position_x = 018;
     this.button_game_1.position_y = 010;
     
-    this.button_game_2 = new Button("imgs/button_game_2.png", 150, 150);
+    this.button_game_2 = new MyButton("imgs/button_game_2.png", 150, 150);
     this.button_game_2.position_x = 170;
     this.button_game_2.position_y = 010;
         
@@ -22,7 +22,7 @@ function SceneMenu()
     this.button_game_4.position_x = 474;
     this.button_game_4.position_y = 10;
     
-    this.button_game_5 = new Button("imgs/button_game_5.png", 295, 82);
+    this.button_game_5 = new MyButton("imgs/button_game_5.png", 150, 150);
     this.button_game_5.position_x = 627;
     this.button_game_5.position_y = 010;
 	
@@ -113,6 +113,24 @@ function SceneMenu()
   			this.button_credit.current_frame = 1;
   		}
 		
+		if(this.button_game_1.mouse_over(mouse))
+  		{
+  			this.button_game_1.current_frame = 0;
+  		}
+  		else
+  		{
+  			this.button_game_1.current_frame = 1;
+  		}
+		
+		if(this.button_game_2.mouse_over(mouse))
+  		{
+  			this.button_game_2.current_frame = 0;
+  		}
+  		else
+  		{
+  			this.button_game_2.current_frame = 1;
+  		}
+		
 		if(this.button_game_3.mouse_over(mouse))
   		{
   			this.button_game_3.current_frame = 0;
@@ -129,6 +147,15 @@ function SceneMenu()
   		else
   		{
   			this.button_game_4.current_frame = 1;
+  		}
+		
+				if(this.button_game_5.mouse_over(mouse))
+  		{
+  			this.button_game_5.current_frame = 0;
+  		}
+  		else
+  		{
+  			this.button_game_5.current_frame = 1;
   		}
   	};
    

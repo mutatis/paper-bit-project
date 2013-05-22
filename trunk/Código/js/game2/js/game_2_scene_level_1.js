@@ -1,8 +1,10 @@
 function SceneLevel01()
 {
+	this.reset=function()
+	{
 	this.fundo = new FundoGame2("imgs/game_2/fundo_catch.png", 0, 0)
 	
-	
+	this.button_back = new MyButton("imgs/close.png", 50, 50, 700, 50);
 	
 	this.heroi = new PlayerGame2("imgs/game_2/bambu.png", 200, 100)
 	
@@ -17,6 +19,9 @@ function SceneLevel01()
 	this.obstaculo.push(new ObstaculoGame2("imgs/game_2/panda4.png", 70, 70, 10, 0));
 	
 	this.obstaculo.push(new ObstaculoGame2("imgs/game_2/vida.png", 200, 50, 0, 1));
+	}//Fim do reset
+	
+	this.reset();
 	
 	this.update = function()
 	{
@@ -29,7 +34,7 @@ function SceneLevel01()
 		//faz o pessoa cairr 
 		this.obstaculo[i].update();
 		
-		//faz sfjk;ksfgks cjnf nhjkdfgznkj; dfz ncghk kb.fx mnbcvx
+		//faz o panda/pessoa/objeto subir ao passar da tela
 		if(Collide(this.obstaculo[i].posicao_x, this.obstaculo[i].posicao_y, this.obstaculo[i].tamanho_w, this.obstaculo[i].tamanho_h, this.heroi.posicao_x, this.heroi.posicao_y, this.heroi.tamanho_w, this.heroi.tamanho_h))	
 		{
 			this.obstaculo[i].reset();
@@ -67,6 +72,8 @@ function SceneLevel01()
 	
 		screen.drawImage(this.heroi.imagem, this.heroi.posicao_x, this.heroi.posicao_y);
 	
+	this.button_back.draw();
+	
 	for(var i = 0; i < this.obstaculo.length; i++)
 	{
 		screen.drawImage(this.obstaculo[i].imagem, this.obstaculo[i].posicao_x, this.obstaculo[i].posicao_y);	
@@ -82,7 +89,16 @@ function SceneLevel01()
 	
     this.mouse_down=function(mouse)
     {
-   	
+   			if(this.button_back.clicked(mouse)) //botão para voltar o menu
+        {
+        	currentScene = SCENE.MENU;
+        	
+        	game2.currentScene = game2.SCENE.INTRO;
+        	 
+        	//this.player.points = 0;
+        
+        	this.reset();
+        }
     };
 
     this.mouse_up=function(mouse)

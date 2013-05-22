@@ -1,76 +1,51 @@
-function Button(file, size_x, size_y, pos_x, pos_y)
+function Game3Button(file, size_x, size_y)
 {
-        this.img = new Image();
-        this.img.src = file;
-        
-        this.visible = true;
-        
-        this.size_x = size_x;
+	this.image = new Image();
+	this.image.src = file;
+	this.loaded = false;
+	
+	this.size_x = size_x;
     this.size_y = size_y;
-    this.position_x = pos_x;
-    this.position_y = pos_y;
+    this.position_x = 0;
+    this.position_y = 0;
+    
+    this.visible = true;
+
+	this.image.onload = function()
+	{
+		loaded = true; 
+	};
     
     this.update=function()
     {
-    
+    	
     };
     
     this.draw=function()
-    {
-        if(this.visible)
-        screen.drawImage(this.img, this.position_x, this.position_y);
+    {  	
+    	
+    console.log("yadsjgbsj ");
+    	
+    	if(this.visible)
+    	screen.drawImage(this.image, this.position_x, this.position_y)
     };
     
-    this.mouse_down=function(mouse)
+    this.clicked = function(mouse)
     {
-        
+    	if(Collide(
+    		mouse.x,
+    		mouse.y,
+    		1,
+    		1,
+    		this.position_x,
+    		this.position_y,
+    		this.size_x,
+    		this.size_y
+    	))
+    	{
+    		return true;
+    	}
+    	
+    	return false;
     };
-    
-    
-    this.key_down=function(key)
-    {
-                
-        
-    };
-    
-        
-    this.mouse_up=function(mouse)
-    {
-        
-        
-    };
-    
-    this.key_up=function(key)
-    {
-        
-        
-    };
-    
-    this.mouse_move=function(mouse)
-    {
-        
-        
-    };
-    
-    this.clicked=function(mouse)
-    {
-        if(Collide(
-                mouse.x, 
-                mouse.y,
-                1,
-                1,
-                this.position_x,
-                this.position_y,
-                this.size_x,
-                this.size_y
-                
-        ))
-        {
-                return true;    
-        }
-        return false;
-        
-    }
-
- 
- }
+}

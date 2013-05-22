@@ -1,7 +1,7 @@
 function Game1SceneLevel1()
 {
 	   
-		this.button = new Button("imgs/close.png", 50, 50, 720, 10);
+		this.button = new MyButton("imgs/close.png", 50, 50, 720, 10);
 
 	   
 	    var tela_tamanho_w = 800;

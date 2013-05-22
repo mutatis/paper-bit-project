@@ -115,7 +115,13 @@ function SceneGame2()
 
 		}
 		
-	}	
+	}
+
+	this.mouse_move=function(mouse)
+  	{
+  		console.log("Game2 mouse X " + mouse.x + " mouse Y " + mouse.y );
+  		
+  	};
 	
 	
 }

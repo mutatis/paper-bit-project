@@ -142,5 +142,11 @@ function SceneGame4()
 			
 		}	
 	}
+	
+		  	this.mouse_move=function(mouse)
+  	{
+  		console.log("Game4 mouse X " + mouse.x + " mouse Y " + mouse.y );
+  		
+  	};
 
 }

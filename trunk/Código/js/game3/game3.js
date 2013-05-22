@@ -47,18 +47,18 @@ function SceneGame3()
 				this.level1.draw();
 
 			break;
-			//case this.GAMESCENE.THEEND:
-				//theEnd.draw();
-				//screen.font = "20px Comic Sans MS";
-				//screen.fillStyle="#000000";
-				//screen.fillText("GAME1 THEEND", 20, 20);
-			//break;
-			//case this.GAMESCENE.GAMEOVER:
-				//gameOver.draw();
-				//screen.font = "20px Comic Sans MS";
-				//screen.fillStyle="#000000";
-				//screen.fillText("GAME1 GAMEOVER", 20, 20);
-			//break;
+			case this.GAMESCENE.THEEND:
+				theEnd.draw();
+				screen.font = "20px Comic Sans MS";
+				screen.fillStyle="#000000";
+				screen.fillText("GAME1 THEEND", 20, 20);
+			break;
+			case this.GAMESCENE.GAMEOVER:
+				gameOver.draw();
+				screen.font = "20px Comic Sans MS";
+				screen.fillStyle="#000000";
+				screen.fillText("GAME1 GAMEOVER", 20, 20);
+			break;
 		}
 	}
 	
@@ -75,13 +75,13 @@ function SceneGame3()
 				this.level1.mouse_down(mouse);
 
 			break;
-			//case this.GAMESCENE.THEEND:
-			//	this.currentGameScene = this.GAMESCENE.GAMEOVER;
-			//break;
-			//case this.GAMESCENE.GAMEOVER:
-				//this.currentGameScene = this.GAMESCENE.INTRO;
-				//currentScene = SCENE.MENU;
-			//break;
+			case this.GAMESCENE.THEEND:
+				this.currentGameScene = this.GAMESCENE.GAMEOVER;
+			break;
+			case this.GAMESCENE.GAMEOVER:
+				this.currentGameScene = this.GAMESCENE.INTRO;
+				currentScene = SCENE.MENU;
+			break;
 		}	
 	}
 	
@@ -98,13 +98,13 @@ function SceneGame3()
 				this.level1.mouse_up(mouse);
 
 			break;
-			//case this.GAMESCENE.THEEND:
-			//	this.currentGameScene = this.GAMESCENE.GAMEOVER;
-			//break;
-			//case this.GAMESCENE.GAMEOVER:
-				//this.currentGameScene = this.GAMESCENE.INTRO;
-				//currentScene = SCENE.MENU;
-			//break;
+			case this.GAMESCENE.THEEND:
+				this.currentGameScene = this.GAMESCENE.GAMEOVER;
+			break;
+			case this.GAMESCENE.GAMEOVER:
+				this.currentGameScene = this.GAMESCENE.INTRO;
+				currentScene = SCENE.MENU;
+			break;
 		}	
 	}
 	
@@ -143,5 +143,15 @@ function SceneGame3()
 		}	
 	}
 	
+	   	this.mouse_up=function(mouse)
+  	{
+	       //
+  	}	
+	
+	  	this.mouse_move=function(mouse)
+  	{
+  		console.log("Game3 mouse X " + mouse.x + " mouse Y " + mouse.y );
+  		
+  	};
 
 }

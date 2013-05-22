@@ -5,13 +5,9 @@ function Game3SceneLevel1()
 		this.player = new Player ("imgs/game_3/spencer_boy.png", 60, 70, ((SCREENWIDTH-74)/2)-40, 0);
 		this.fundo = new Fundo_move ("imgs/game_3/fundo_move.png",1200, 800, 0, 0);
 		this.fundo_front = new Fundo3 ("imgs/game_3/fundo_front.png",600,800);
-		
-		this.button_back = new Button("imgs/close.png", 50, 50);
-		this.button_back.position_x = 700;
-		this.button_back.position_y = 50;
-		
-		
+		this.button_back = new MyButton("imgs/close.png", 50, 50, 700, 50);
 		this.gato = new Gato ("imgs/game_3/gato.png",42,53,10)
+		this.gato_placa = new Gato_pontos ("imgs/game_3/placa_gato.png",180,80,0,0);
 		this.player.points = -20;
 		
 		this.gato_list = new Array();
@@ -220,6 +216,7 @@ function Game3SceneLevel1()
 		this.button_back.draw();
 		
 		this.player.draw();
+		this.gato_placa.draw();
 					
 		
 		for(var i = 0; i < this.obstaculos_list.length ; i++)
@@ -242,7 +239,7 @@ function Game3SceneLevel1()
 		
         screen.font = "20px Comic Sans MS";
         screen.fillStyle="#000000";
-		screen.fillText("" + this.player.points, 20, 20);
+		screen.fillText("" + this.player.points, 70, 45);
 		          
     }
     

@@ -6,9 +6,7 @@ function SceneCredit()
 	this.background.src="imgs/creditos.png";
 	this.loaded = false;		
 	
-    this.button_back = new MyButton("imgs/button_back.png", 70, 70);
-    this.button_back.position_x = 720;
-    this.button_back.position_y = 500;
+    this.button_back = new MyButton("imgs/button_back.png", 70, 70, 720, 500);
     
 	this.update=function()
    	{
@@ -44,9 +42,14 @@ function SceneCredit()
    		
    	};
 	
+		this.mouse_up=function(mouse)
+	{
+		
+	}
+	
 	  	this.mouse_move=function(mouse)
   	{
-  		console.log("MENU mouse X " + mouse.x + " mouse Y " + mouse.y );
+  		console.log("Creditos mouse X " + mouse.x + " mouse Y " + mouse.y );
   		
   		if(this.button_back.mouse_over(mouse))
   		{

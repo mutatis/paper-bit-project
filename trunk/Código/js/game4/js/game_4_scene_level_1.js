@@ -1,5 +1,7 @@
 function Game4SceneLevel4()
 {//abre Intro
+		this.reset=function()
+	    {
         //file, size_x, size_y, pos_x, pos_y
 		this.fundo = new Fundo("imgs/game_4/fundo1.png", 600, 800, 0, 0);
 		//this.toy = new Player ("imgs/game_3/spencer_boy.png", 60, 70, ((SCREENWIDTH-94)/2)-40, 0);
@@ -7,7 +9,11 @@ function Game4SceneLevel4()
 		this.nave1 = new Player4("imgs/game_4/nave.png", 60, 40, 10, 200);
 		//file, size_x, size_y, pos_x, pos_y, vel_x, vel_y
 		this.ast = new Asteroide("imgs/game_4/asteroid.png", 40, 32,400,300,-2,2);
-
+		this.button_back = new MyButton("imgs/close.png", 50, 50, 700, 50);
+		
+		}//fim reset
+		
+		this.reset();
 		
     this.update=function()
     {
@@ -24,6 +30,7 @@ function Game4SceneLevel4()
 		this.fundo.draw();
 		this.nave1.draw();
 		this.ast.draw();
+		this.button_back.draw();
 		
 
 		
@@ -42,8 +49,17 @@ function Game4SceneLevel4()
     
     this.mouse_down=function(mouse)
     {//abre down
+      		if(this.button_back.clicked(mouse)) //botão para voltar o menu
+        {
+        	currentScene = SCENE.MENU;
+        	
+        	game4.currentGameScene = game4.GAMESCENE.INTRO;
+        	 
+        	//this.player.points = 0;
         
-			//
+        	this.reset();
+        }  
+			
 		
     }//fecha down
     
