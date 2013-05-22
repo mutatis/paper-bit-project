@@ -60,8 +60,7 @@ function Game3SceneLevel1()
 		
     this.update=function()
     {
-	
-	
+
 		
         this.player.update();
 		this.fundo.update();
@@ -90,6 +89,7 @@ function Game3SceneLevel1()
 			}		
 
 		}
+
 
 		//faz as plataformas cairem e o player colidir
 		for(var i = 0; i < this.obstaculos_list.length ; i++)
