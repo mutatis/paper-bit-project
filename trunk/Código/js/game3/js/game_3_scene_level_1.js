@@ -1,11 +1,18 @@
 function Game3SceneLevel1()
 {
+	this.reset=function()
+	{
 		this.player = new Player ("imgs/game_3/spencer_boy.png", 60, 70, ((SCREENWIDTH-74)/2)-40, 0);
 		this.fundo = new Fundo_move ("imgs/game_3/fundo_move.png",1200, 800, 0, 0);
 		this.fundo_front = new Fundo3 ("imgs/game_3/fundo_front.png",600,800);
-		this.button_back = new Button("imgs/close.png",500, 90, 720, 10);
+		
+		this.button_back = new Button("imgs/close.png", 50, 50);
+		this.button_back.position_x = 700;
+		this.button_back.position_y = 50;
+		
+		
 		this.gato = new Gato ("imgs/game_3/gato.png",42,53,10)
-		this.player.points = 0;
+		this.player.points = -20;
 		
 		this.gato_list = new Array();
 		
@@ -16,7 +23,7 @@ function Game3SceneLevel1()
         var gato2 = new Gato("imgs/game_3/gato.png", 42,53,10);
         var gato3 = new Gato("imgs/game_3/gato.png", 42,53,10);
 		var gato4 = new Gato("imgs/game_3/gato.png", 42,53,10);
-		var gato5 = new Gato("imgs/game_3/gato.png", 42,53,10);
+		var gato5 = new Gato("", 42,53,10);
 		
 		this.gato_list.push(gato1);
 		this.gato_list.push(gato2);	
@@ -34,11 +41,11 @@ function Game3SceneLevel1()
 		{
 		 
         							//(file, size_x, size_y, pos_x, pos_y, vel_x, vel_y)
-        var obstaculo1 = new Obstaculo("imgs/game_3/obstaculo1.png", 150, 30, 50, 0, 0, 2);
-        var obstaculo2 = new Obstaculo("imgs/game_3/obstaculo1.png", 150, 30, 300, 300, 0, 2);
-        var obstaculo3 = new Obstaculo("imgs/game_3/obstaculo1.png", 150, 30, 150, 450, 0, 2);
-		var obstaculo4 = new Obstaculo("imgs/game_3/obstaculo1.png", 150, 30, 200, 200, 0, 2);
-		var obstaculo5 = new Obstaculo("imgs/game_3/obstaculo1.png", 150, 30, 500, 200, 0, 2);
+        var obstaculo1 = new Obstaculo("imgs/game_3/obstaculo1.png", 150, 30, 50, 100, 0, 2.5);
+        var obstaculo2 = new Obstaculo("imgs/game_3/obstaculo1.png", 150, 30, 300, 400, 0, 2.5);
+        var obstaculo3 = new Obstaculo("imgs/game_3/obstaculo1.png", 150, 30, 150, 200, 0, 2.5);
+		var obstaculo4 = new Obstaculo("imgs/game_3/obstaculo1.png", 150, 30, 200, 300, 0, 2.5);
+		var obstaculo5 = new Obstaculo("imgs/game_3/obstaculo1.png", 150, 30, 500, 0, 0, 2.5);
 		
 		this.obstaculos_list.push(obstaculo1);
 		this.obstaculos_list.push(obstaculo2);	
@@ -50,10 +57,15 @@ function Game3SceneLevel1()
 		}
 		
 		this.Obstaculos_variados();
-		
+
+	}//fim do reset
+	
+	this.reset();
 		
     this.update=function()
     {
+	
+	
 		
         this.player.update();
 		this.fundo.update();
@@ -82,9 +94,7 @@ function Game3SceneLevel1()
 			}		
 
 		}
-		
 
-		
 		//faz as plataformas cairem e o player colidir
 		for(var i = 0; i < this.obstaculos_list.length ; i++)
 		{
@@ -107,13 +117,47 @@ function Game3SceneLevel1()
                 this.player.velocity_y = this.obstaculos_list[i].velocity_y;
         	}
         	
+        	
         	//quando a plataforma sair completamente por baixo
         	//fazemos ela voltar para logo acima da tela
-        	if(this.obstaculos_list[i].position_y > SCREENHEIGHT)
+        	if(this.obstaculos_list[1].position_y > SCREENHEIGHT)
 			{
-				this.obstaculos_list[i].position_y = -this.obstaculos_list[i].size_y;
+				this.obstaculos_list[1].position_y = -this.obstaculos_list[1].size_y;
 				
-				this.obstaculos_list[i].position_x = Math.floor((Math.random()*(SCREENWIDTH-this.obstaculos_list[i].size_x)));
+				this.obstaculos_list[1].position_x = Math.floor((Math.random()*(SCREENWIDTH-this.obstaculos_list[1].size_x)));
+				
+				this.gato_list[1].visible = true;
+				
+			}	
+				
+        	if(this.obstaculos_list[2].position_y > SCREENHEIGHT)
+			{
+				this.obstaculos_list[2].position_y = -this.obstaculos_list[2].size_y;
+				
+				this.obstaculos_list[2].position_x = Math.floor((Math.random()*(SCREENWIDTH-this.obstaculos_list[2].size_x)));
+				
+				this.gato_list[2].visible = true;				
+				
+			}
+			
+			if(this.obstaculos_list[3].position_y > SCREENHEIGHT)
+			{
+				this.obstaculos_list[3].position_y = -this.obstaculos_list[3].size_y;
+				
+				this.obstaculos_list[3].position_x = Math.floor((Math.random()*(SCREENWIDTH-this.obstaculos_list[3].size_x)));
+				
+				this.gato_list[3].visible = true;				
+				
+			}
+			
+			if(this.obstaculos_list[4].position_y > SCREENHEIGHT)
+			{
+				this.obstaculos_list[4].position_y = -this.obstaculos_list[4].size_y;
+				
+				this.obstaculos_list[4].position_x = Math.floor((Math.random()*(SCREENWIDTH-this.obstaculos_list[4].size_x)));
+				
+				this.gato_list[4].visible = true;				
+				
 			}
 
 		}
@@ -121,7 +165,29 @@ function Game3SceneLevel1()
 		for(var i = 0; i < this.gato_list.length ; i++)
 		{	
 			//console.log("gato update");
-			this.gato_list[i].update();		
+			
+			//obstaculo1
+			this.gato_list[1].position_x = this.obstaculos_list[1].position_x+60;
+				
+			this.gato_list[1].position_y = this.obstaculos_list[1].position_y-50;
+			
+			//obstaculo2
+			this.gato_list[2].position_x = this.obstaculos_list[2].position_x+60;
+				
+			this.gato_list[2].position_y = this.obstaculos_list[2].position_y-50;	
+			
+			//obstaculo3
+			this.gato_list[3].position_x = this.obstaculos_list[3].position_x+60;
+				
+			this.gato_list[3].position_y = this.obstaculos_list[3].position_y-50;
+			
+			//obstaculo4
+			this.gato_list[4].position_x = this.obstaculos_list[4].position_x+60;
+				
+			this.gato_list[4].position_y = this.obstaculos_list[4].position_y-50;
+
+			
+			this.gato_list[i].update();
 			
 			if(Collide(
                 this.player.position_x_dst,
@@ -134,11 +200,12 @@ function Game3SceneLevel1()
                 this.gato_list[i].size_y
        		))
        		
-       		if(this.gato_list[i].position_y > SCREENHEIGHT)
+       		
 			{
-				this.gato_list[i].position_y = -this.gato_list[i].size_y;
-				
-				this.gato_list[i].position_x = Math.floor((Math.random()*(SCREENWIDTH-this.gato_list[i].size_x)));
+			//	this.gato_list[0].position_y = this.obstaculos_list[0].position_y-5;
+			//	
+			//	this.gato_list[0].position_x =this.obstaculos_list[0].position_y+20;
+
 			}
        		
 		}
@@ -149,7 +216,9 @@ function Game3SceneLevel1()
     {
 		this.fundo.draw();
 		this.fundo_front.draw();
+		
 		this.button_back.draw();
+		
 		this.player.draw();
 					
 		
@@ -162,22 +231,32 @@ function Game3SceneLevel1()
 		{
 			if(this.gato_list[i].visible)
 			screen.drawImage(this.gato_list[i].img, this.gato_list[i].position_x, this.gato_list[i].position_y);		
+			
+			console.log("raqyeeel" + this.gato_list[0])
+			console.log(" gd" + this.gato_list[1])
+			console.log("sehl" + this.gato_list[2])
+			console.log("684" + this.gato_list[3])
+			console.log("serg" + this.gato_list[4])
 		}
 		
 		
         screen.font = "20px Comic Sans MS";
         screen.fillStyle="#000000";
-		screen.fillText("Pontos:" + this.player.points, 20, 20);
-                
-				
-				          
+		screen.fillText("" + this.player.points, 20, 20);
+		          
     }
     
     this.mouse_down=function(mouse)
     {        		
 		if(this.button_back.clicked(mouse)) //botão para voltar o menu
         {
-        	currentScene = SCENE.MENU  
+        	currentScene = SCENE.MENU;
+        	
+        	game3.currentGameScene = game3.GAMESCENE.INTRO;
+        	 
+        	//this.player.points = 0;
+        
+        	this.reset();
         }
     }
     
