@@ -1,4 +1,0 @@
-function Game5SceneTheEnd()
-{
-	    
-}
