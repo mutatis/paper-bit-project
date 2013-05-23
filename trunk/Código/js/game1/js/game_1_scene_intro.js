@@ -6,6 +6,11 @@ function Game1SceneIntro ()
 		this.button_start = new MyButton("imgs/play1.png", 166, 72, 575, 350);
 		//this.button_instru = new Button("imgs/instrucao.png",500, 90, 575, 450);
 		this.button = new MyButton("imgs/play2.png",166, 72, 575, 450);
+		
+		//som do botão ao ser clicado
+		this.music = new Audio();
+		this.music.src = "sounds/Mouse.mp3"
+		this.music.volume = 1.0
        	
        	
        	this.update=function()
@@ -29,11 +34,13 @@ function Game1SceneIntro ()
         if(this.button_start.clicked(mouse))
         {
         	game1.currentGameScene = game1.GAMESCENE.LEVEL1;  
+			this.music.play();//som ao ser clicado pelo botão
         }
         
         if(this.button.clicked(mouse))
     	{
     		currentScene = SCENE.MENU;
+			this.music.play();//som ao ser clicado pelo botão
     	}
       
 

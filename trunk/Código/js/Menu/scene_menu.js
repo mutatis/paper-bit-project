@@ -1,5 +1,17 @@
 function SceneMenu()
 {
+	
+	//som do botão ao ser clicado
+	this.music = new Audio();
+	this.music.src = "sounds/Mouse.mp3"
+	this.music.volume = 1.0
+	
+	//som do menu
+	this.music_fundo = new Audio();
+	this.music_fundo.src ="sounds/fundo_menu.mp3"
+	this.music_fundo.volume = 1.0
+	
+	
 	this.background = new Fundo_move_menu("imgs/fundo.png");		
     
     this.button_credit = new MyButton("imgs/cre.png", 196, 51);
@@ -30,7 +42,10 @@ function SceneMenu()
     
 	this.update=function()
    	{
+   	
+   	this.music_fundo.play();	
    	this.background.update();
+   	
    	};
    
    	this.draw=function()
@@ -65,32 +80,45 @@ function SceneMenu()
     	
     	if(this.button_credit.clicked(mouse))
     	{
-    		currentScene = SCENE.CREDIT;		
+    		currentScene = SCENE.CREDIT;	
+    		this.music.play();//som ao ser clicado pelo botão
+			this.music_fundo.pause();//som pausado ao trocar de cena
     	}
     	
     	if(this.button_game_1.clicked(mouse))
     	{
-    		currentScene = SCENE.GAME1;		
+    		
+    		currentScene = SCENE.GAME1;
+       		this.music.play();//som ao ser clicado pelo botão
+			this.music_fundo.pause();
     	}
 
 		if(this.button_game_2.clicked(mouse))
     	{
     		currentScene = SCENE.GAME2;		
+     		this.music.play();//som ao ser clicado pelo botão
+			this.music_fundo.pause();
     	}
     	
     	if(this.button_game_3.clicked(mouse))
     	{
     		currentScene = SCENE.GAME3;		
+     		this.music.play();//som ao ser clicado pelo botão
+			this.music_fundo.pause();
     	}
     	
     	if(this.button_game_4.clicked(mouse))
     	{
     		currentScene = SCENE.GAME4;		
+    		this.music.play();//som ao ser clicado pelo botão
+			this.music_fundo.pause();    	
     	}
     	
     	if(this.button_game_5.clicked(mouse))
     	{
     		currentScene = SCENE.GAME5;		
+    		this.music.play();//som ao ser clicado pelo botão
+    		this.music_fundo.pause();
     	}
     	
     };
