@@ -1,9 +1,20 @@
-function SceneIntroGame2()
-{//abre SCENEIntro
-	
-	this.menu = new FundoGame2("imgs/game_2/menu.png", 0, 0)
+function SceneGameWinGame2()
+{
+
+	this.Win = new FundoGame2("imgs/game_2/win.png", 0, 0)
 	this.button_start = new MyButton("imgs/play1.png", 166, 72, 575, 350);
 	this.button_back = new MyButton("imgs/play2.png",166, 72, 575, 450);
+	
+	//função Reset, faz o jogo começar do 0.
+	this.resetGame2=function()
+	{		
+		game2.level01.heroi.vida = 3;
+		game2.level01.heroi.pontos = 0;
+ 		game2.level01.obstaculo = [];
+		game2.level01.criarObstaculos();
+		game2.level01.heroi = [];
+		game2.level01.criarHeroi();		
+	}	
 		
 	this.update = function()
 	{//abre update
@@ -13,11 +24,14 @@ function SceneIntroGame2()
 
 	this.draw = function()
 	{//abre draw
-		
-		this.menu.draw();
+
+		//desenha o fundo Game Over		
+		this.Win.draw();
 			
+		//desenha botão INTRO/CATCH.	
 		this.button_start.draw();
 		
+		//desenha botão MENU/ESQUELETO.
 		this.button_back.draw();
 		
 	}//fecha draw
@@ -25,19 +39,26 @@ function SceneIntroGame2()
 	this.mouse_down = function(mouse)
 	{//abre mouse down
 	
-			
+		//se este botão clicked, vai direto para INTRO/CATCH.				
 		if(this.button_start.clicked(mouse))
 		{//abre if
 			
-			game2.currentScene = game2.SCENE.LEVEL01;
-					
+			game2.currentScene = game2.SCENE.INTRO;
+			
+			this.resetGame2();
+			
 		}//fecha if
 		
+		//se este botão clicked, vai direto para o MENU/ESQUELETO	
 		if(this.button_back.clicked(mouse))
 		{//abre if
 			
+			game2.currentScene = game2.SCENE.INTRO;
+			
 			currentScene = SCENE.MENU; 
-		
+			
+			this.resetGame2();
+						
 		}//fecha if
 		
 			
@@ -59,7 +80,7 @@ function SceneIntroGame2()
    };
    
    this.mouse_move=function(mouse)
-  	{
+   {
   		console.log("Game3 mouse X " + mouse.x + " mouse Y " + mouse.y );
   		
   		if(this.button_start.mouse_over(mouse))
@@ -81,5 +102,7 @@ function SceneIntroGame2()
   		}
 		
   	};
-
-}//fecha SCENEIntro
+   
+   
+    
+}

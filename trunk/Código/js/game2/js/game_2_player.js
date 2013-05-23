@@ -23,7 +23,7 @@ function PlayerGame2(arquivo, tamanho_w, tamanho_h)
     
     this.esquerda = false;
 
-    this.vida = 3;
+    this.vida = 5;
     
     this.pontos = 0;
     
