@@ -158,7 +158,7 @@ this.update=function()
 	
 			this.fundo_move.update();
 			
-			if(game_over == true)
+			if(game_over == true)//tela de perdeu
 			{
 			currentGameScene = SCENE.THEEND;
 			game1.currentGameScene = game1.GAMESCENE.THEEND;

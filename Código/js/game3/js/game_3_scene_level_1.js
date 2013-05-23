@@ -10,6 +10,12 @@ function Game3SceneLevel1()
 		this.button_back = new MyButton("imgs/close.png", 50, 50, 700, 50);
 		this.gato = new Gato ("imgs/game_3/gato.png",42,53,10)
 		this.gato_placa = new Gato_pontos ("imgs/game_3/placa_gato.png",180,80,0,0);
+		
+		//som do gato 
+		this.music = new Audio();
+		this.music.src = "sounds/game_3/gatinho.mp3"
+		this.music.volume = 1.0
+	
 		this.player.points = -20;
 		
 		this.gato_list = new Array();
@@ -85,6 +91,7 @@ function Game3SceneLevel1()
 			{
 				if(this.gato_list[i].visible)
 				{
+				this.music.play();
 				this.player.points +=10; //Pontos para gato
 				this.gato_list[i].visible = false; //Quando colidir o gato some
 				}

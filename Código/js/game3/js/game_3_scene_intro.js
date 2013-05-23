@@ -5,10 +5,21 @@ function Game3SceneIntro ()
 		this.fundo = new Fundo("imgs/game_3/intro_fundo.png", 600, 800, 0, 0);
 		this.button_start = new MyButton("imgs/play1.png", 166, 72, 575, 350);
 		this.button_back = new MyButton("imgs/play2.png",166, 72, 575, 450);
-
+		
+		//som do botão ao ser clicado
+		this.music = new Audio();
+		this.music.src = "sounds/Mouse.mp3"
+		this.music.volume = 1.0
+		
+		//som do fundo da intro
+		/*this.music = new Audio();
+		this.music.src = "sounds/game_1/som_acertar.mp3"
+		this.music.volume = 1.0
+		*/
        	this.update=function()
 	{			
-
+	//som tocando na intro
+	//this.music.play();
     };
     
     this.draw=function()
@@ -24,11 +35,15 @@ function Game3SceneIntro ()
         if(this.button_start.clicked(mouse))
         {
         	game3.currentGameScene = game3.GAMESCENE.LEVEL1;  //botão para o game
+        	this.music.pause();
+			this.music.play();//som ao ser clicado pelo botão
         }
 		
 		if(this.button_back.clicked(mouse)) //botão para voltar o menu
         {
         	currentScene = SCENE.MENU  
+        	this.music.pause();
+			this.music.play();//som ao ser clicado pelo botão
         }
         
     }

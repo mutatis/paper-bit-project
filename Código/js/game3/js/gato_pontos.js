@@ -1,4 +1,3 @@
-
 function Gato_pontos(file, tamanho_w, tamanho_h, posicao_x, posicao_y)
 {//abre 
 

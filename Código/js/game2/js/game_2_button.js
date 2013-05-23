@@ -1,7 +1,5 @@
 function BotaoGame2(arquivo, tamanho_w, tamanho_h, posicao_x, posicao_y)
 {//abre botao
-
-					//62, 62, 10, 520
 	
 	this.imagem = new Image();
 	this.imagem.src = arquivo;
@@ -64,18 +62,14 @@ function BotaoGame2(arquivo, tamanho_w, tamanho_h, posicao_x, posicao_y)
 	this.clicado = function(mouse)
 	{//abre botao clicado
 		
-		if(Collide(
-		mouse.x,
-		mouse.y,
-		1,
-		1,
-		this.posicao_x,
-		this.posicao_y,
-		this.tamanho_w, 
-		this.tamanho_h))
-		{		
+		if(Collide(mouse.x-10, mouse.y-30, 1, 1,
+					this.posicao_x, this.posicao_y, this.tamanho_w, this.tamanho_h))
+		{
+		
 			return true;
-		}		
+			
+		}
+		
 		return false;
 		
 	}//fecha botao clicado

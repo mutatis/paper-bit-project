@@ -1,5 +1,16 @@
 function SceneCredit()
 {
+
+	//som do botão ao ser clicado
+	this.music = new Audio();
+	this.music.src = "sounds/Mouse.mp3"
+	this.music.volume = 1.0
+	
+	//som o fundo Créditos
+	this.music_fundo = new Audio();
+	this.music_fundo.src ="sounds/Queen.mp3"
+	this.music_fundo.volume = 1.0
+	
 	this.fundo_move = new Fundo_creditos("imgs/credits.png");
 
 	this.background = new Image();
@@ -11,6 +22,7 @@ function SceneCredit()
 	this.update=function()
    	{
    	 this.fundo_move.update();
+	 this.music_fundo.play();
    	};
    
    	this.draw=function()
@@ -33,6 +45,8 @@ function SceneCredit()
    		if(this.button_back.clicked(mouse))
     	{
     		currentScene = SCENE.MENU;
+			this.music.play();//som ao ser clicado pelo botão
+			this.music_fundo.pause();//som pausado ao trocar de cena
     	}
    	};
    

@@ -2,8 +2,8 @@ function SceneGame4()
 {		
 	this.intro = new Game4SceneIntro();
 	this.level4 = new Game4SceneLevel4();
-	//this.theEnd = new Game4SceneTheEnd();
-	//this.gameOver = new Game4SceneGameOver();
+	this.theEnd = new Game4SceneTheEnd();
+	this.gameOver = new Game4SceneGameOver();
 
 
 	
@@ -21,12 +21,12 @@ function SceneGame4()
 			case this.GAMESCENE.LEVEL4:
 					this.level4.update();
 			break;
-			//case this.GAMESCENE.THEEND:
-				//theEnd.update();
-			//break;
-			//case this.GAMESCENE.GAMEOVER:
-				//gameOver.update();
-			//break;
+			case this.GAMESCENE.THEEND:
+				this.theEnd.update();
+			break;
+			case this.GAMESCENE.GAMEOVER:
+				this.gameOver.update();
+			break;
 		}
 	}
 
@@ -47,18 +47,18 @@ function SceneGame4()
 				this.level4.draw();
 
 			break;
-			//case this.GAMESCENE.THEEND:
-				//theEnd.draw();
-				//screen.font = "20px Comic Sans MS";
-				//screen.fillStyle="#000000";
-				//screen.fillText("GAME1 THEEND", 20, 20);
-			//break;
-			//case this.GAMESCENE.GAMEOVER:
-				//gameOver.draw();
-				//screen.font = "20px Comic Sans MS";
-				//screen.fillStyle="#000000";
-				//screen.fillText("GAME1 GAMEOVER", 20, 20);
-			//break;
+			case this.GAMESCENE.THEEND:
+				this.theEnd.draw();
+				screen.font = "20px Comic Sans MS";
+				screen.fillStyle="#000000";
+				screen.fillText("GAME1 THEEND", 20, 20);
+			break;
+			case this.GAMESCENE.GAMEOVER:
+				this.gameOver.draw();
+				screen.font = "20px Comic Sans MS";
+				screen.fillStyle="#000000";
+				screen.fillText("GAME1 GAMEOVER", 20, 20);
+			break;
 		}
 	}
 	
@@ -75,13 +75,13 @@ function SceneGame4()
 				this.level4.mouse_down(mouse);
 
 			break;
-			//case this.GAMESCENE.THEEND:
-			//	this.currentGameScene = this.GAMESCENE.GAMEOVER;
-			//break;
-			//case this.GAMESCENE.GAMEOVER:
-				//this.currentGameScene = this.GAMESCENE.INTRO;
-				//currentScene = SCENE.MENU;
-			//break;
+			case this.GAMESCENE.THEEND:
+				this.currentGameScene = this.GAMESCENE.GAMEOVER;
+			break;
+			case this.GAMESCENE.GAMEOVER:
+				this.currentGameScene = this.GAMESCENE.INTRO;
+				currentScene = SCENE.MENU;
+			break;
 		}	
 	}
 	
@@ -98,13 +98,13 @@ function SceneGame4()
 				this.level4.mouse_up(mouse);
 
 			break;
-			//case this.GAMESCENE.THEEND:
-			//	this.currentGameScene = this.GAMESCENE.GAMEOVER;
-			//break;
-			//case this.GAMESCENE.GAMEOVER:
-				//this.currentGameScene = this.GAMESCENE.INTRO;
-				//currentScene = SCENE.MENU;
-			//break;
+			case this.GAMESCENE.THEEND:
+				this.currentGameScene = this.GAMESCENE.GAMEOVER;
+			break;
+			case this.GAMESCENE.GAMEOVER:
+				this.currentGameScene = this.GAMESCENE.INTRO;
+				currentScene = SCENE.MENU;
+			break;
 		}	
 	}
 	
@@ -143,10 +143,26 @@ function SceneGame4()
 		}	
 	}
 	
-		  	this.mouse_move=function(mouse)
+	this.mouse_move=function(mouse)
   	{
   		console.log("Game4 mouse X " + mouse.x + " mouse Y " + mouse.y );
   		
+		  		switch(this.currentGameScene)
+		{		
+			
+			case this.GAMESCENE.INTRO:
+			
+				this.intro.mouse_move(mouse);
+
+			break;
+			
+			case this.GAMESCENE.LEVEL4:
+			
+				this.level4.mouse_move(mouse);
+
+			break;
+						
+		}	
   	};
 
 }
