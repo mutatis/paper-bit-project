@@ -89,6 +89,11 @@ function Player4(file, size_x, size_y, position_x, position_y)
     	for(var i = 0; i < this.shoots.length; i++)
     	{
     		this.shoots[i].update();
+    		
+    		if(this.shoots[i].visible==false)
+    		{
+    			this.shoots.splice(i, 1);
+    		}
     	}
 				
     	this.space_pressed = false;

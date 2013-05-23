@@ -143,26 +143,10 @@ function SceneGame4()
 		}	
 	}
 	
-	this.mouse_move=function(mouse)
+		  	this.mouse_move=function(mouse)
   	{
   		console.log("Game4 mouse X " + mouse.x + " mouse Y " + mouse.y );
   		
-		  		switch(this.currentGameScene)
-		{		
-			
-			case this.GAMESCENE.INTRO:
-			
-				this.intro.mouse_move(mouse);
-
-			break;
-			
-			case this.GAMESCENE.LEVEL4:
-			
-				this.level4.mouse_move(mouse);
-
-			break;
-						
-		}	
   	};
 
 }

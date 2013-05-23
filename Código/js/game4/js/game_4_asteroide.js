@@ -12,6 +12,12 @@ function Asteroide(file, size_x, size_y, pos_x, pos_y, vel_x, vel_y)
     this.velocity_x =  vel_x;
     this.velocity_y =  vel_y;
     this.velocity_MAX = 15;
+    this.scale_x = 1;
+    this.scale_y = 1;
+    
+    
+ SCREEN_WIDTH = 800;
+ SCREEN_HEIGHT = 600;
     
     this.update=function()
     { //abre update    
@@ -53,28 +59,25 @@ function Asteroide(file, size_x, size_y, pos_x, pos_y, vel_x, vel_y)
 		 
     }*/
     
-    this.Boundaries=function()
+    
+    		this.Boundaries=function()
     {
-    	//saida pela direita volta pra esquerda
     	if(this.position_x + this.size_x*this.scale_x < 0)
     	{
-    		this.position_x = SCREENWIDTH;
+    		this.position_x = SCREEN_WIDTH;
     	}
     	
-    	//saida por cima volta por baixo
     	if(this.position_y + this.size_y*this.scale_y < 0)
     	{
-    		this.position_y = SCREENHEIGHT;
+    		this.position_y = SCREEN_HEIGHT;
     	}
     	
-    	//saida pela esquerda volta pela direita
-    	if(this.position_x > SCREENWIDTH)
+    	if(this.position_x > SCREEN_WIDTH)
     	{
     		this.position_x = - this.size_x*this.scale_x;
     	}
     	
-    	//saida por baixo volta por cima
-    	if(this.position_y > SCREENHEIGHT)
+    	if(this.position_y > SCREEN_HEIGHT)
     	{
     		this.position_y = - this.size_y*this.scale_y;
     	}

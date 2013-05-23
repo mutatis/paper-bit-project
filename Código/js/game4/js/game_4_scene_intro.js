@@ -56,25 +56,6 @@ function Game4SceneIntro ()
   	{
   		console.log("Game4 mouse X " + mouse.x + " mouse Y " + mouse.y );
 		
-		 if(this.button_start.mouse_over(mouse))
-  		{
-  			
-  			this.button_start.current_frame = 0;
-  		}
-  		else
-  		{
-  			this.button_start.current_frame = 1;
-  		}
-		
-		if(this.button_back.mouse_over(mouse))
-  		{
-  			this.button_back.current_frame = 0;
-  		}
-  		else
-  		{
-  			this.button_back.current_frame = 1;
-  		}
-		
   	};
     
 }//fecha Intro
