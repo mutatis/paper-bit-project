@@ -1,7 +1,7 @@
-function FundoGame2(source, posicao_x, posicao_y)
+ function FundoGame2(arquivo, posicao_x, posicao_y)
 {
 	this.img = new Image();
-	this.img.src = source;
+	this.img.src = arquivo;
 	this.loaded = false;
 	this.visible = true;
 		

@@ -1,9 +1,10 @@
-function SceneIntroGame2()
+function SceneIntro()
 {//abre SCENEIntro
 	
 	this.menu = new FundoGame2("imgs/game_2/menu.png", 0, 0)
 	this.button_start = new MyButton("imgs/play1.png", 166, 72, 575, 350);
 	this.button_back = new MyButton("imgs/play2.png",166, 72, 575, 450);
+	
 		
 	this.update = function()
 	{//abre update
@@ -30,14 +31,14 @@ function SceneIntroGame2()
 		{//abre if
 			
 			game2.currentScene = game2.SCENE.LEVEL01;
-					
+			
 		}//fecha if
 		
 		if(this.button_back.clicked(mouse))
 		{//abre if
 			
-			currentScene = SCENE.MENU; 
-		
+			currentScene = SCENE.MENU;  
+			
 		}//fecha if
 		
 			
