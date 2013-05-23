@@ -2,6 +2,8 @@ function Game1SceneLevel1()
 {
 	   
 		this.button = new MyButton("imgs/close.png", 50, 50, 720, 10);
+		//source
+		this.fundo_move = new Game_1_fundo_move("imgs/game_1/fundo_move.png")
 
 	   
 	    var tela_tamanho_w = 800;
@@ -154,7 +156,8 @@ function Load()
 this.update=function()
 {
 	
-					
+			this.fundo_move.update();
+			
 			if(game_over == true)
 			{
 			currentGameScene = SCENE.THEEND;
@@ -255,7 +258,7 @@ this.update=function()
 this.draw=function()
 {
 
-	
+		this.fundo_move.draw();
 			
 			//screen.fillStyle = "FFFFFF";
 			//screen.font = "20px Arial";

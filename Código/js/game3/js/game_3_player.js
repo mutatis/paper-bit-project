@@ -36,7 +36,7 @@ function Player(file, size_x, size_y, position_x, position_y, velocity_y)
 	
 	this.can_jump = false;
 	
-	this.jumping_velocity_y = -50;    
+	this.jumping_velocity_y = -70;    
     
     this.current_frame = 0;
         
@@ -74,31 +74,6 @@ function Player(file, size_x, size_y, position_x, position_y, velocity_y)
         
         this.move();
       
-	
-	/*
-	this.jump=function()
-    {//abre jump
-    
-		if(this.jump_move)
-		{
-		this.jumping = true;
-		
-		this.jumping_velocity_y;
-		}
-		
-    }//fecha jump
-                   
-    if(this.up == true)
-     {
-        
-     this.jump();
-                
-     this.move();
-        
-    //this.fall();
-        
-     }
-     */
      
      this.keepInScreen();
         
@@ -138,7 +113,7 @@ function Player(file, size_x, size_y, position_x, position_y, velocity_y)
         }
         
        //saida por baixo
-       if(this.position_y_dst > SCREENHEIGHT - this.size_y_dst*this.scale_y)
+       if(this.position_y_dst > SCREENHEIGHT - this.size_y_dst*this.scale_y)//o player passar do canvas e sumir
        {
              this.position_y_dst = SCREENHEIGHT - this.size_y_dst*this.scale_y;
        }
@@ -198,8 +173,8 @@ function Player(file, size_x, size_y, position_x, position_y, velocity_y)
                         this.up = true;
                         if(this.can_jump)
                         {
-                        	this.can_jump = false;
-                        	this.velocity_y = -10;
+                        	this.can_jump = false; //Quando o player collide com obstaculo pode apetar o can_jump novamente
+                        	this.velocity_y = -100;
                         }
                 }
                 else if(key.keyCode == 40)

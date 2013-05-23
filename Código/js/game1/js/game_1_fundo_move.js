@@ -1,4 +1,4 @@
-function Fundo_move_menu(source)
+function Game_1_fundo_move(source)
 {
 	this.img = new Image();
 	this.img.src = source;
@@ -15,7 +15,7 @@ function Fundo_move_menu(source)
     this.size_y = 600;
     this.position_x = 0;
     this.position_y = 0;
-    this.velocity_x = 1;
+    this.velocity_x = 0.5;
     this.velocity_y = 0;
     this.velocity_MAX = 15;
     
