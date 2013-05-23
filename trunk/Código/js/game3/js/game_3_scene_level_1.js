@@ -11,15 +11,13 @@ function Game3SceneLevel1()
 		this.gato = new Gato ("imgs/game_3/gato.png",42,53,10)
 		this.gato_placa = new Gato_pontos ("imgs/game_3/placa_gato.png",180,80,0,0);
 		this.player.points = -20;
-		//this.win;
-		//this.loser;
 		
 		this.gato_list = new Array();
 		
 		this.Gato_variados = function()
 		{
 		
-		var gato1 = new Gato("imgs/game_3/gato.png", 42,53,10);
+		var gato1 = new Gato("", 42,53,10);
         var gato2 = new Gato("imgs/game_3/gato.png", 42,53,10);
         var gato3 = new Gato("imgs/game_3/gato.png", 42,53,10);
 		var gato4 = new Gato("imgs/game_3/gato.png", 42,53,10);
@@ -41,11 +39,11 @@ function Game3SceneLevel1()
 		{
 		 
         							//(file, size_x, size_y, pos_x, pos_y, vel_x, vel_y)
-        var obstaculo1 = new Obstaculo("imgs/game_3/obstaculo1.png", 150, 30, 50, 100, 0, 2.5);
-        var obstaculo2 = new Obstaculo("imgs/game_3/obstaculo1.png", 150, 30, 300, 400, 0, 2.5);
-        var obstaculo3 = new Obstaculo("imgs/game_3/obstaculo1.png", 150, 30, 150, 200, 0, 2.5);
-		var obstaculo4 = new Obstaculo("imgs/game_3/obstaculo1.png", 150, 30, 200, 300, 0, 2.5);
-		var obstaculo5 = new Obstaculo("imgs/game_3/obstaculo1.png", 150, 30, 500, 0, 0, 2.5);
+        var obstaculo1 = new Obstaculo("imgs/game_3/obstaculo1.png", 150, 30, 50, 120, 0, 3);
+        var obstaculo2 = new Obstaculo("imgs/game_3/obstaculo1.png", 150, 30, 300, 240, 0, 3);
+        var obstaculo3 = new Obstaculo("imgs/game_3/obstaculo1.png", 150, 30, 150, 360, 0, 3);
+		var obstaculo4 = new Obstaculo("imgs/game_3/obstaculo1.png", 150, 30, 200, 480, 0, 3);
+		var obstaculo5 = new Obstaculo("imgs/game_3/obstaculo1.png", 150, 30, 500, 600, 0, 3);
 		
 		this.obstaculos_list.push(obstaculo1);
 		this.obstaculos_list.push(obstaculo2);	
@@ -69,7 +67,7 @@ function Game3SceneLevel1()
         this.player.update();
 		this.fundo.update();
 		
-			//pegar o gato com o player
+			//Collide do gato com o player
 		for(var i = 0; i < this.gato_list.length ; i++)
 		{
 			
@@ -87,8 +85,8 @@ function Game3SceneLevel1()
 			{
 				if(this.gato_list[i].visible)
 				{
-				this.player.points +=10;
-				this.gato_list[i].visible = false;
+				this.player.points +=10; //Pontos para gato
+				this.gato_list[i].visible = false; //Quando colidir o gato some
 				}
 			}
 			
@@ -111,12 +109,12 @@ function Game3SceneLevel1()
                 this.obstaculos_list[i].position_x,
                 this.obstaculos_list[i].position_y,
                 this.obstaculos_list[i].size_x,
-                this.obstaculos_list[i].size_y
+                this.obstaculos_list[i].size_y-90 //collide só nos pés do player
        		))
        		{
         		//alert("oioi");
-        		this.player.can_jump = true;
-                this.player.velocity_y = this.obstaculos_list[i].velocity_y;
+        		this.player.can_jump = true; //Quando colidir no obstaculo, ele pode pular novamente
+                this.player.velocity_y = this.obstaculos_list[i].velocity_y; //Player ficar na mesma velocidade do obstaculo (parado)
         	}
         	
         	
@@ -165,9 +163,7 @@ function Game3SceneLevel1()
 		}
 		
 		for(var i = 0; i < this.gato_list.length ; i++)
-		{	
-			//console.log("gato update");
-			
+		{
 			//obstaculo1
 			this.gato_list[1].position_x = this.obstaculos_list[1].position_x+60;
 				
@@ -214,15 +210,17 @@ function Game3SceneLevel1()
 		
 		
 		//perdeu no Fall
-		if(this.player.position_y_dst > 600)
+		if(this.player.position_y_dst > 600) //Quando o player caire passar de 600_y = Game over
 		{
 			game3.currentGameScene = game3.GAMESCENE.GAMEOVER;
+			this.reset();
 		}		
 		
 		//venceu no fall
-	   	if(this.player.points >= 50)
+	   	if(this.player.points >= 200) //Pontuação para vencer 200 pontos
 		{
-			game3.currentGameScene = game3.GAMESCENE.THEEND;		
+			game3.currentGameScene = game3.GAMESCENE.THEEND;
+			this.reset();
 		}
 	
 		
@@ -232,9 +230,7 @@ function Game3SceneLevel1()
     {
 		this.fundo.draw();
 		this.fundo_front.draw();
-		
 		this.button_back.draw();
-		
 		this.player.draw();
 		this.gato_placa.draw();
 					
@@ -260,13 +256,11 @@ function Game3SceneLevel1()
     
     this.mouse_down=function(mouse)
     {        		
-		if(this.button_back.clicked(mouse)) //botão para voltar o menu
+		if(this.button_back.clicked(mouse)) //botão para voltar o menu, dentro do level1
         {
         	currentScene = SCENE.MENU;
         	
         	game3.currentGameScene = game3.GAMESCENE.INTRO;
-        	 
-        	//this.player.points = 0;
         
         	this.reset();
         }
@@ -279,7 +273,6 @@ function Game3SceneLevel1()
 	
 	this.mouse_move=function(mouse)
   	{
-  		//console.log("Game3 mouse X " + mouse.x + " mouse Y " + mouse.y );
   		
   		if(this.button_back.mouse_over(mouse))
   		{
