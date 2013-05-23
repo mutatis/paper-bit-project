@@ -2,7 +2,9 @@ function Game3SceneLevel1()
 {
 	this.reset=function()
 	{
+		//file, size_x, size_y, position_x, position_y, velocity_y
 		this.player = new Player ("imgs/game_3/spencer_boy.png", 60, 70, ((SCREENWIDTH-74)/2)-40, 0);
+		
 		this.fundo = new Fundo_move ("imgs/game_3/fundo_move.png",1200, 800, 0, 0);
 		this.fundo_front = new Fundo3 ("imgs/game_3/fundo_front.png",600,800);
 		this.button_back = new MyButton("imgs/close.png", 50, 50, 700, 50);
@@ -210,14 +212,14 @@ function Game3SceneLevel1()
        		
 		}
 		
-		if(this.player.position_y < SCREENHEIGHT)
-		{
-			
-			game3.currentGameScene = game3.GAMESCENE.GAMEOVER;
-			
-		}	
 		
-			
+		//perdeu no Fall
+		if(this.player.position_y_dst > 600)
+		{
+			game3.currentGameScene = game3.GAMESCENE.GAMEOVER;
+		}		
+		
+		//venceu no fall
 	   	if(this.player.points >= 50)
 		{
 			game3.currentGameScene = game3.GAMESCENE.THEEND;		
@@ -246,12 +248,7 @@ function Game3SceneLevel1()
 		{
 			if(this.gato_list[i].visible)
 			screen.drawImage(this.gato_list[i].img, this.gato_list[i].position_x, this.gato_list[i].position_y);		
-			
-			console.log("raqyeeel" + this.gato_list[0])
-			console.log(" gd" + this.gato_list[1])
-			console.log("sehl" + this.gato_list[2])
-			console.log("684" + this.gato_list[3])
-			console.log("serg" + this.gato_list[4])
+
 		}
 		
 		
