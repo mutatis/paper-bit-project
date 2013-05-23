@@ -3,7 +3,7 @@ function SceneGame3()
 	this.intro = new Game3SceneIntro();
 	this.level1 = new Game3SceneLevel1();
 	this.theEnd = new Game3SceneTheEnd();
-	//this.gameOver = new Game3SceneGameOver();
+	this.gameOver = new Game3SceneGameOver();
 
 
 	
@@ -26,7 +26,7 @@ function SceneGame3()
 				this.theEnd.update();
 			break;
 			case this.GAMESCENE.GAMEOVER:
-				gameOver.update();
+				this.gameOver.update();
 			break;
 		}
 	}
@@ -53,10 +53,8 @@ function SceneGame3()
 
 			break;
 			case this.GAMESCENE.GAMEOVER:
-				gameOver.draw();
-				screen.font = "20px Comic Sans MS";
-				screen.fillStyle="#000000";
-				screen.fillText("GAME1 GAMEOVER", 20, 20);
+				this.gameOver.draw();
+
 			break;
 		}
 	}

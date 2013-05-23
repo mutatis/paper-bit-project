@@ -1,5 +1,7 @@
 function Game3SceneTheEnd()
 {
+    this.reset=function()
+	{
 	//abre Intro
         //file, size_x, size_y, pos_x, pos_y
 		this.fundo = new Fundo("imgs/game_3/venceu.png", 600, 800, 0, 0);
@@ -11,6 +13,10 @@ function Game3SceneTheEnd()
 
     };
     
+	}//fecha reset
+	
+	this.reset(); 
+	
     this.draw=function()
     {                        
 		this.fundo.draw();				
@@ -28,7 +34,13 @@ function Game3SceneTheEnd()
 		
 		if(this.button_back.clicked(mouse)) //botão para voltar o menu
         {
-        	currentScene = SCENE.MENU  
+        	currentScene = SCENE.MENU;
+        	
+        	game3.currentGameScene = game3.GAMESCENE.INTRO;
+        	 
+        	//this.player.points = 0;
+        
+        	this.reset();
         }
         
     }
