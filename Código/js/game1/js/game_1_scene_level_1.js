@@ -4,6 +4,7 @@ function Game1SceneLevel1()
 		this.button = new MyButton("imgs/close.png", 50, 50, 720, 10);
 		//source
 		this.fundo_move = new Game_1_fundo_move("imgs/game_1/fundo_move.png")
+		this.fundo_janela = new Background ("imgs/game_1/janela_fundo.png")
 
 	   
 	    var tela_tamanho_w = 800;
@@ -259,6 +260,7 @@ this.draw=function()
 {
 
 		this.fundo_move.draw();
+		this.fundo_janela.draw();
 			
 			//screen.fillStyle = "FFFFFF";
 			//screen.font = "20px Arial";
