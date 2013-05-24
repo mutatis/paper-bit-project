@@ -52,8 +52,6 @@ function SceneGame2()
 	
 	this.mouse_down=function(mouse)
 	{
-		
-		console.log("mous x " + mouse.x, "mouse y " + mouse.y)	
 	
 		switch(this.currentScene)
 		{
@@ -119,7 +117,6 @@ function SceneGame2()
 
 	this.mouse_move=function(mouse)
   	{
-  		console.log("Game2 mouse X " + mouse.x + " mouse Y " + mouse.y );
 		
 		switch(this.currentScene)
 		{		

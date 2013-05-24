@@ -7,8 +7,7 @@ function Fundo_move_menu(source)
 		
 	this.img.onload = function()
 	{
-		loaded = true; 
-		console.log("carregamento pela classe BACKGROUND" + loaded);
+		loaded = true; ;
 	};
 	
 	this.size_x = 2382;

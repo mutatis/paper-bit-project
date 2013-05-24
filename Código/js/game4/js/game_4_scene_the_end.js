@@ -61,7 +61,7 @@ function Game4SceneTheEnd()
 
   	this.mouse_move=function(mouse)
   	{
-  		console.log("Game4 mouse X " + mouse.x + " mouse Y " + mouse.y );
+  		//console.log("Game4 mouse X " + mouse.x + " mouse Y " + mouse.y );
   		
   		if(this.button_start.mouse_over(mouse))
   		{

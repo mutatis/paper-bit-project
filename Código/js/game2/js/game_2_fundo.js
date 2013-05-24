@@ -8,7 +8,6 @@ function FundoGame2(source, posicao_x, posicao_y)
 	this.img.onload = function()
 	{
 		loaded = true; 
-		console.log("carregamento pela classe BACKGROUND" + loaded);
 	};
 	
 	this.size_x = 800;

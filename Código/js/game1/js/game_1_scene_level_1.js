@@ -354,10 +354,6 @@ window.addEventListener('mousedown', mouse_down, true);
 this.mouse_down=function(mouse)
 {
 	
-		  		  
-
-		console.log("down X " + mouse.x + " down Y " + mouse.y);
-	
 		if(this.button.clicked(mouse))
     	{
     		currentScene = SCENE.MENU;
@@ -418,7 +414,6 @@ this.mouse_down=function(mouse)
 	
 		this.mouse_move=function(mouse)
   	{
-  		//console.log("Game3 mouse X " + mouse.x + " mouse Y " + mouse.y );
   		
   		if(this.button.mouse_over(mouse))
   		{

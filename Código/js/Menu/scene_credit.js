@@ -63,7 +63,6 @@ function SceneCredit()
 	
 	  	this.mouse_move=function(mouse)
   	{
-  		console.log("Creditos mouse X " + mouse.x + " mouse Y " + mouse.y );
   		
   		if(this.button_back.mouse_over(mouse))
   		{

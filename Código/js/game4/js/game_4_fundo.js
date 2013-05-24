@@ -9,7 +9,7 @@ function Fundo(file, size_x, size_y, posicao_x, posicao_y, velocity_y)
 	this.img.onload = function()
 	{
 	loaded = true;
-	console.log("carregou fundo" + loaded);
+	//console.log("carregou fundo" + loaded);
 	}
 	
 	this.size_w;

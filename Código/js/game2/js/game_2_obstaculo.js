@@ -8,7 +8,6 @@ function ObstaculoGame2(arquivo, tamanho_w, tamanho_h, pontos, vida)
 	this.imagem.onload = function()
 	{
 		carregar = true; 
-		console.log("Uhuul Pessoas u.u" + carregar);
 	};
 	
 	this.tamanho_w = tamanho_w;
@@ -26,7 +25,6 @@ function ObstaculoGame2(arquivo, tamanho_w, tamanho_h, pontos, vida)
     
     this.update=function()
     {
-    	console.log("update pessoas");
     	
     	this.posicao_x += this.velocidade_x;	
 
@@ -36,7 +34,7 @@ function ObstaculoGame2(arquivo, tamanho_w, tamanho_h, pontos, vida)
     
     this.reset=function()
     {   
-    	console.log("reset pessoas");
+    	//console.log("reset pessoas");
 
 		this.posicao_y = -this.tamanho_h;
 		this.posicao_x = Math.floor((Math.random()*(SCREENWIDTH-this.tamanho_w))); 
