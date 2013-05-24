@@ -35,12 +35,14 @@ function Game1SceneIntro ()
         {
         	game1.currentGameScene = game1.GAMESCENE.LEVEL1;  
 			this.music.play();//som ao ser clicado pelo botão
+			this.button_start.current_frame = 1;
         }
         
         if(this.button.clicked(mouse))
     	{
     		currentScene = SCENE.MENU;
 			this.music.play();//som ao ser clicado pelo botão
+			this.button.current_frame = 1;
     	}
       
 

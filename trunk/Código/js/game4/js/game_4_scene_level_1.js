@@ -12,13 +12,17 @@ function Game4SceneLevel4()
 		this.ast = new Array();
 
 		//file, size_x, size_y, pos_x, pos_y, vel_x, vel_y
-		this.ast.push(new Asteroide("imgs/game_4/asteroid.png", 40, 32, 400, 300, -2,2));
-		this.ast.push(new Asteroide("imgs/game_4/asteroid.png", 40, 32, 500, 300, -2,2));
-		this.ast.push(new Asteroide("imgs/game_4/asteroid.png", 40, 32, 40, 300, -2,2));
-		this.ast.push(new Asteroide("imgs/game_4/asteroid.png", 40, 32, 100, 300, -2,2));
-		this.ast.push(new Asteroide("imgs/game_4/asteroid.png", 40, 32, 200, 300, -2,2));
+		this.ast.push(new Asteroide("imgs/game_4/asteroid.png", 40, 32, -2,2));
+		this.ast.push(new Asteroide("imgs/game_4/asteroid.png", 40, 32, -2,2));
+		this.ast.push(new Asteroide("imgs/game_4/asteroid.png", 40, 32, -2,2));
+		this.ast.push(new Asteroide("imgs/game_4/asteroid.png", 40, 32, -2,2));
+		this.ast.push(new Asteroide("imgs/game_4/asteroid.png", 40, 32, -2,2));
 		
 		this.button_back = new MyButton("imgs/close.png", 50, 50, 700, 50);
+		//som do botão ao ser clicado
+		this.music = new Audio();
+		this.music.src = "sounds/Mouse.mp3"
+		this.music.volume = 1.0
 		
 		}//fim reset
 		
@@ -111,6 +115,7 @@ function Game4SceneLevel4()
         	currentScene = SCENE.MENU;
         	
         	game4.currentGameScene = game4.GAMESCENE.INTRO;
+			this.music.play();//som ao ser clicado pelo botão
         	 
         	//this.player.points = 0;
         

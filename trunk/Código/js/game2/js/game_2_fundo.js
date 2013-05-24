@@ -1,13 +1,14 @@
-function FundoGame2(source, posicao_x, posicao_y)
+ function FundoGame2(arquivo, posicao_x, posicao_y)
 {
 	this.img = new Image();
-	this.img.src = source;
+	this.img.src = arquivo;
 	this.loaded = false;
 	this.visible = true;
 		
 	this.img.onload = function()
 	{
 		loaded = true; 
+		console.log("carregamento pela classe BACKGROUND" + loaded);
 	};
 	
 	this.size_x = 800;

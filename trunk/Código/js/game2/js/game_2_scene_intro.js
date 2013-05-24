@@ -1,4 +1,4 @@
-function SceneIntro()
+function SceneIntroGame2()
 {//abre SCENEIntro
 	
 	this.menu = new FundoGame2("imgs/game_2/menu.png", 0, 0)
@@ -10,6 +10,18 @@ function SceneIntro()
 	this.music.src = "sounds/Mouse.mp3"
 	this.music.volume = 1.0
 	
+	/*this.som_intro = new Audio();
+	this.som_intro.src = "sounds/game_2/som_intro.mp3";
+	this.som_intro.load();
+	this.som_intro.loop = true; 
+	this.som_intro.volume = 1.0;
+	this.som_intro.play();*/	
+	
+	this.som_fundo = new Audio();
+	this.som_fundo.src = "sounds/game_2/som_fundo.mp3";
+	this.som_fundo.load();
+	this.som_fundo.loop = true; 
+	this.som_fundo.volume = 1.0;
 		
 	this.update = function()
 	{//abre update
@@ -36,16 +48,19 @@ function SceneIntro()
 		{//abre if
 			
 			game2.currentScene = game2.SCENE.LEVEL01;
+			this.som_fundo.play();	
+			//this.som_intro.pause();
 			this.music.play();//som ao ser clicado pelo botão
-			
+					
 		}//fecha if
 		
 		if(this.button_back.clicked(mouse))
 		{//abre if
 			
-			currentScene = SCENE.MENU;
+			currentScene = SCENE.MENU; 
+			//this.som_intro.pause();
 			this.music.play();//som ao ser clicado pelo botão
-			
+		
 		}//fecha if
 		
 			
@@ -68,6 +83,7 @@ function SceneIntro()
    
    this.mouse_move=function(mouse)
   	{
+  		console.log("Game3 mouse X " + mouse.x + " mouse Y " + mouse.y );
   		
   		if(this.button_start.mouse_over(mouse))
   		{

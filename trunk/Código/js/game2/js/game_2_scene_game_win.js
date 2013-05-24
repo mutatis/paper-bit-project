@@ -44,9 +44,10 @@ function SceneGameWinGame2()
 		{//abre if
 			
 			game2.currentScene = game2.SCENE.INTRO;
-			
+			game2.level01.som_win.pause();
 			this.resetGame2();
-			
+			//game2.Intro.som_intro.play();
+		
 		}//fecha if
 		
 		//se este botão clicked, vai direto para o MENU/ESQUELETO	
@@ -54,11 +55,10 @@ function SceneGameWinGame2()
 		{//abre if
 			
 			game2.currentScene = game2.SCENE.INTRO;
-			
+			game2.level01.som_win.pause();
 			currentScene = SCENE.MENU; 
-			
 			this.resetGame2();
-						
+			
 		}//fecha if
 		
 			
@@ -81,6 +81,8 @@ function SceneGameWinGame2()
    
    this.mouse_move=function(mouse)
    {
+  		console.log("Game3 mouse X " + mouse.x + " mouse Y " + mouse.y );
+  		
   		if(this.button_start.mouse_over(mouse))
   		{
   			this.button_start.current_frame = 0;
