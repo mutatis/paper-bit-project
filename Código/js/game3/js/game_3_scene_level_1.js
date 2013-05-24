@@ -7,7 +7,13 @@ function Game3SceneLevel1()
 		
 		this.fundo = new Fundo_move ("imgs/game_3/fundo_move.png",1200, 800, 0, 0);
 		this.fundo_front = new Fundo3 ("imgs/game_3/fundo_front.png",600,800);
+		
 		this.button_back = new MyButton("imgs/close.png", 50, 50, 700, 50);
+		//som do botão ao ser clicado
+		this.music_botao = new Audio();
+		this.music_botao.src = "sounds/Mouse.mp3"
+		this.music_botao.volume = 1.0
+		
 		this.gato = new Gato ("imgs/game_3/gato.png",42,53,10)
 		this.gato_placa = new Gato_pontos ("imgs/game_3/placa_gato.png",180,80,0,0);
 		
@@ -270,6 +276,7 @@ function Game3SceneLevel1()
         	game3.currentGameScene = game3.GAMESCENE.INTRO;
         
         	this.reset();
+			this.music_botao.play();//som ao ser clicado pelo botão
         }
     }
     

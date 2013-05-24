@@ -83,6 +83,7 @@ function SceneMenu()
     		currentScene = SCENE.CREDIT;	
     		this.music.play();//som ao ser clicado pelo botão
 			this.music_fundo.pause();//som pausado ao trocar de cena
+			this.button_credit.current_frame = 1;
     	}
     	
     	if(this.button_game_1.clicked(mouse))
@@ -91,6 +92,7 @@ function SceneMenu()
     		currentScene = SCENE.GAME1;
        		this.music.play();//som ao ser clicado pelo botão
 			this.music_fundo.pause();
+			this.button_game_1.current_frame = 1;
     	}
 
 		if(this.button_game_2.clicked(mouse))
@@ -98,6 +100,7 @@ function SceneMenu()
     		currentScene = SCENE.GAME2;		
      		this.music.play();//som ao ser clicado pelo botão
 			this.music_fundo.pause();
+			this.button_game_2.current_frame = 1;
     	}
     	
     	if(this.button_game_3.clicked(mouse))
@@ -105,13 +108,15 @@ function SceneMenu()
     		currentScene = SCENE.GAME3;		
      		this.music.play();//som ao ser clicado pelo botão
 			this.music_fundo.pause();
+			this.button_game_3.current_frame = 1;
     	}
     	
     	if(this.button_game_4.clicked(mouse))
     	{
     		currentScene = SCENE.GAME4;		
     		this.music.play();//som ao ser clicado pelo botão
-			this.music_fundo.pause();    	
+			this.music_fundo.pause(); 
+			this.button_game_4.current_frame = 1;
     	}
     	
     	if(this.button_game_5.clicked(mouse))
@@ -119,6 +124,7 @@ function SceneMenu()
     		currentScene = SCENE.GAME5;		
     		this.music.play();//som ao ser clicado pelo botão
     		this.music_fundo.pause();
+			this.button_game_5.current_frame = 1;
     	}
     	
     };

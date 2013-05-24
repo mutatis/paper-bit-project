@@ -1,4 +1,4 @@
-function Asteroide(file, size_x, size_y, pos_x, pos_y, vel_x, vel_y)
+function Asteroide(file, size_x, size_y, vel_x, vel_y)
 {
 	this.img = new Image();
     this.img.src = file;
@@ -7,8 +7,8 @@ function Asteroide(file, size_x, size_y, pos_x, pos_y, vel_x, vel_y)
         
     this.size_x = size_x;
     this.size_y = size_y;
-    this.position_x = pos_x;
-    this.position_y = pos_y;
+    this.position_x = Math.floor((Math.random()*(SCREEN_WIDTH - this.size_x))+1);
+    this.position_y = Math.floor((Math.random()*(SCREEN_HEIGHT - this.size_y))+1);
     this.velocity_x =  vel_x;
     this.velocity_y =  vel_y;
     this.velocity_MAX = 15;

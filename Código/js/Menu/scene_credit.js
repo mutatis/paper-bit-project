@@ -47,6 +47,7 @@ function SceneCredit()
     		currentScene = SCENE.MENU;
 			this.music.play();//som ao ser clicado pelo botão
 			this.music_fundo.pause();//som pausado ao trocar de cena
+			this.button_back.current_frame = 1;
     	}
    	};
    
