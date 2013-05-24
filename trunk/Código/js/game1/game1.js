@@ -142,7 +142,7 @@ function SceneGame1()
 	
 		  	this.mouse_move=function(mouse)
   	{
-  		console.log("Game1 mouse X " + mouse.x + " mouse Y " + mouse.y );
+  		//console.log("Game1 mouse X " + mouse.x + " mouse Y " + mouse.y );
   		
 		  		switch(this.currentGameScene)
 		{		

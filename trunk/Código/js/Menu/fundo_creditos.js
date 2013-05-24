@@ -8,7 +8,6 @@ function Fundo_creditos(source)
 	this.img.onload = function()
 	{
 		loaded = true; 
-		console.log("carregamento pela classe BACKGROUND" + loaded);
 	};
 	
 	this.size_x = 600;

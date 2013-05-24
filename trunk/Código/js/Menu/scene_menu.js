@@ -130,7 +130,6 @@ function SceneMenu()
     	
   	this.mouse_move=function(mouse)
   	{
-  		console.log("MENU mouse X " + mouse.x + " mouse Y " + mouse.y );
   		
   		if(this.button_credit.mouse_over(mouse))
   		{

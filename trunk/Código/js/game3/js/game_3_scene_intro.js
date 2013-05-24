@@ -67,7 +67,6 @@ function Game3SceneIntro ()
 	//
   	this.mouse_move=function(mouse)
   	{
-  		//console.log("Game3 mouse X " + mouse.x + " mouse Y " + mouse.y );
   		
   		if(this.button_start.mouse_over(mouse))
   		{

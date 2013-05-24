@@ -29,7 +29,6 @@ function MyButton(file, frame_x, frame_y, pos_x, pos_y)
     
     this.draw=function()
     {  	
-    	//screen.drawImage(this.image, this.position_x, this.position_y);
     	
     	if(this.visible)
         screen.drawImage(this.image,
@@ -64,7 +63,6 @@ function MyButton(file, frame_x, frame_y, pos_x, pos_y)
     
     this.mouse_over = function(mouse)
     {
-    	console.log("MyButton");
     	if(Collide(
     		mouse.x,
     		mouse.y,
