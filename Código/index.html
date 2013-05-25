@@ -64,14 +64,14 @@
 		<script src="js/game4/js/game_4_shoot.js"></script>
 		<script src="js/game4/js/game_4_asteroide.js"></script>
 		
-		<!--Game 5
+		<!--Game 5-->
 		<script src="js/game5/game5.js"></script>
 		<script src="js/game5/js/game_5_scene_intro.js"></script>
 		<script src="js/game5/js/game_5_fundo.js"></script>
 		<script src="js/game5/js/game_5_scene_level_1.js"></script>
 		<script src="js/game5/js/game_5_player.js"></script>
 		<script src="js/game5/js/game_5_scene_game_over.js"></script>
-		<script src="js/game5/js/game_5_scene_the_end.js"></script>-->
+		<script src="js/game5/js/game_5_scene_the_end.js"></script>
 		
 		
    </head>
@@ -102,10 +102,10 @@
 	
 	var game4 = new SceneGame4(); //Variavel utilizar o do quarto jogo.
 	
-	//var game5 = new SceneGame5(); //Variavel utilizar o do quinto jogo.
+	var game5 = new SceneGame5(); //Variavel utilizar o do quinto jogo.
 	
 		
-	var SCENE = { MENU: 0, GAME1: 1, GAME2: 2, GAME3: 3, GAME4: 4, CREDIT: 6}
+	var SCENE = { MENU: 0, GAME1: 1, GAME2: 2, GAME3: 3, GAME4: 4, GAME5: 5, CREDIT: 6}
 	
 	var currentScene = SCENE.MENU;
 	
@@ -181,11 +181,11 @@
 				game4.update(); //chamando update do quarto jogo.
 			}
 			break;
-			//case SCENE.GAME5:
-			//{
-				//game5.update(); //chamando update do quinto jogo.
-			//}
-			//break;
+			case SCENE.GAME5:
+			{
+				game5.update(); //chamando update do quinto jogo.
+			}
+			break;
 						
 		}
 		
@@ -235,11 +235,11 @@
 				game4.draw(); //chamando desenho do quarto jogo.
 			}
 			break;
-			//case SCENE.GAME5:
-			//{
-				//game5.draw(); //chamando desenho do quinto jogo.
-			//}
-			//break;
+			case SCENE.GAME5:
+			{
+				game5.draw(); //chamando desenho do quinto jogo.
+			}
+			break;
 
 		}
 
@@ -290,11 +290,11 @@
 				game4.key_down(key);
 			}
 			break;
-			//case SCENE.GAME5:
-			//{
-				//game5.key_down(key);
-			//}
-			//break;
+			case SCENE.GAME5:
+			{
+				game5.key_down(key);
+			}
+			break;
 
 		}
 	}
@@ -333,11 +333,11 @@
 				game4.key_up(key);
 			}
 			break;
-			//case SCENE.GAME5:
-			//{
-				//game5.key_up(key);
-			//}
-			//break;
+			case SCENE.GAME5:
+			{
+				game5.key_up(key);
+			}
+			break;
 	
 		}
 	}
@@ -375,11 +375,11 @@
 				game4.mouse_move(mouse);
 			}
 			break;
-			//case SCENE.GAME5:
-			//{
-				//game5.mouse_move(mouse);
-			//}
-			//break;
+			case SCENE.GAME5:
+			{
+				game5.mouse_move(mouse);
+			}
+			break;
 
 		}
 	}
@@ -418,11 +418,11 @@
 				game4.mouse_up(mouse);
 			}
 			break;
-			//case SCENE.GAME5:
-			//{
-				//game5.mouse_up(mouse);
-			//}
-			//break;
+			case SCENE.GAME5:
+			{
+				game5.mouse_up(mouse);
+			}
+			break;
 
 		}
 	}
@@ -462,11 +462,11 @@
 				game4.mouse_down(mouse);
 			}
 			break;
-			//case SCENE.GAME5:
-			//{
-				//game5.mouse_down(mouse);
-			//}
-			//break;
+			case SCENE.GAME5:
+			{
+				game5.mouse_down(mouse);
+			}
+			break;
 
 		}
 	}
