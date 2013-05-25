@@ -14,16 +14,16 @@ function SceneGame1()
 		switch(this.currentGameScene)
 		{
 			case this.GAMESCENE.INTRO:
-				//intro.update();
+				this.intro.update();
 			break;
 			case this.GAMESCENE.LEVEL1:
-				//level1.update();
+				this.level1.update();
 			break;
 			case this.GAMESCENE.THEEND:
-				//theEnd.update();
+				this.theEnd.update();
 			break;
 			case this.GAMESCENE.GAMEOVER:
-				//gameOver.update();
+				this.gameOver.update();
 			break;
 		}
 	}
@@ -72,10 +72,10 @@ function SceneGame1()
 			case this.GAMESCENE.THEEND:
 				this.currentGameScene = this.GAMESCENE.GAMEOVER;
 			break;
-			//case this.GAMESCENE.GAMEOVER:
-			//	this.currentGameScene = this.GAMESCENE.INTRO;
-			//	currentScene = SCENE.MENU;
-			//break;
+			case this.GAMESCENE.GAMEOVER:
+				this.currentGameScene = this.GAMESCENE.INTRO;
+				currentScene = SCENE.MENU;
+			break;
 		}	
 	}
 

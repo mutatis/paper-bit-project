@@ -138,6 +138,7 @@ function SceneLevel01Game2()
 			this.resetGame2();
 			game2.Intro.som_fundo.pause();	
 			this.music.play();//som ao ser clicado pelo botão
+			this.button_back.current_frame = 1;
 		}//fecha if
     };
 
