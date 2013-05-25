@@ -3,7 +3,7 @@ function SceneGame4()
 	this.intro = new Game4SceneIntro();
 	this.level4 = new Game4SceneLevel4();
 	this.theEnd = new Game4SceneTheEnd();
-	this.gameOver = new Game4SceneGameOver();
+	//this.gameOver = new Game4SceneGameOver();
 
 
 	
@@ -24,9 +24,9 @@ function SceneGame4()
 			case this.GAMESCENE.THEEND:
 				this.theEnd.update();
 			break;
-			case this.GAMESCENE.GAMEOVER:
-				this.gameOver.update();
-			break;
+			//case this.GAMESCENE.GAMEOVER:
+			//	this.gameOver.update();
+			//break;
 		}
 	}
 
@@ -51,14 +51,14 @@ function SceneGame4()
 				this.theEnd.draw();
 				screen.font = "20px Comic Sans MS";
 				screen.fillStyle="#000000";
-				screen.fillText("GAME1 THEEND", 20, 20);
+				screen.fillText("", 20, 20);
 			break;
-			case this.GAMESCENE.GAMEOVER:
-				this.gameOver.draw();
-				screen.font = "20px Comic Sans MS";
-				screen.fillStyle="#000000";
-				screen.fillText("GAME1 GAMEOVER", 20, 20);
-			break;
+			//case this.GAMESCENE.GAMEOVER:
+			//	this.gameOver.draw();
+			//	screen.font = "20px Comic Sans MS";
+			//	screen.fillStyle="#000000";
+			//	screen.fillText("GAME1 GAMEOVER", 20, 20);
+			//break;
 		}
 	}
 	
@@ -76,12 +76,14 @@ function SceneGame4()
 
 			break;
 			case this.GAMESCENE.THEEND:
-				this.currentGameScene = this.GAMESCENE.GAMEOVER;
+				this.theEnd.mouse_down(mouse);
+
+				
 			break;
-			case this.GAMESCENE.GAMEOVER:
-				this.currentGameScene = this.GAMESCENE.INTRO;
-				currentScene = SCENE.MENU;
-			break;
+			//case this.GAMESCENE.GAMEOVER:
+			//	this.gameOver.mouse_down(mouse);
+				
+			//break;
 		}	
 	}
 	
@@ -101,10 +103,10 @@ function SceneGame4()
 			case this.GAMESCENE.THEEND:
 				this.currentGameScene = this.GAMESCENE.GAMEOVER;
 			break;
-			case this.GAMESCENE.GAMEOVER:
-				this.currentGameScene = this.GAMESCENE.INTRO;
-				currentScene = SCENE.MENU;
-			break;
+			//case this.GAMESCENE.GAMEOVER:
+				//this.currentGameScene = this.GAMESCENE.INTRO;
+				//currentScene = SCENE.MENU;
+			//break;
 		}	
 	}
 	
@@ -161,6 +163,13 @@ function SceneGame4()
 				this.level4.mouse_move(mouse);
 
 			break;
+			
+			case this.GAMESCENE.THEEND:
+			
+				this.theEnd.mouse_move(mouse);
+
+			break;
+			
 						
 		}	
   	};

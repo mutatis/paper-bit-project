@@ -7,6 +7,11 @@ function Game4SceneTheEnd()
 		this.fundo = new Fundo("imgs/game_4/tela-ganhou.png", 600, 800, 0, 0);
 		this.button_start = new MyButton("imgs/play1.png", 166, 72, 575, 350);
 		this.button_back = new MyButton("imgs/play2.png",166, 72, 575, 450);
+		
+		//som do botão ao ser clicado
+		this.music = new Audio();
+		this.music.src = "sounds/Mouse.mp3"
+		this.music.volume = 1.0
 
        	this.update=function()
 	{			
@@ -26,22 +31,31 @@ function Game4SceneTheEnd()
     }
     
 	this.mouse_down=function(mouse)
+
    	{   		
         if(this.button_start.clicked(mouse))
         {
-        	//game3.currentGameScene = game3.GAMESCENE.LEVEL1;  //bot�o para o game
+
+        	game4.currentGameScene = game4.GAMESCENE.LEVEL4;  //botão para o game
+			this.music.play();//som ao ser clicado pelo botão
+			this.music_fundo.pause();
+
         }
 		
-		if(this.button_back.clicked(mouse)) //bot�o para voltar o menu
+		if(this.button_back.clicked(mouse)) //botão para voltar o menu
         {
-        	currentScene = SCENE.MENU;
         	
-        	//game3.currentGameScene = game3.GAMESCENE.INTRO;
-        
-        	this.reset();
+        	currentScene = SCENE.MENU;
+			game4.currentGameScene = game4.GAMESCENE.INTRO;
+			this.music.play();//som ao ser clicado pelo botão
+			this.music_fundo.pause();
+
         }
         
+        
     }
+        
+    
     
     this.key_down=function(key)
     {

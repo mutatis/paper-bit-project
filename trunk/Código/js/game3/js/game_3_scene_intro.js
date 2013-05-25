@@ -12,14 +12,14 @@ function Game3SceneIntro ()
 		this.music.volume = 1.0
 		
 		//som do fundo da intro
-		/*this.music = new Audio();
-		this.music.src = "sounds/game_1/som_acertar.mp3"
-		this.music.volume = 1.0
-		*/
+		this.music_fundo = new Audio();
+		this.music_fundo.src = "sounds/game_3/Dunderpatrullen.mp3"
+		this.music_fundo.volume = 1.0
+		
        	this.update=function()
 	{			
 	//som tocando na intro
-	//this.music.play();
+	this.music_fundo.play();
     };
     
     this.draw=function()
@@ -37,6 +37,7 @@ function Game3SceneIntro ()
         	game3.currentGameScene = game3.GAMESCENE.LEVEL1;  //botão para o game
         	this.music.pause();
 			this.music.play();//som ao ser clicado pelo botão
+			this.music_fundo.pause();
         }
 		
 		if(this.button_back.clicked(mouse)) //botão para voltar o menu
@@ -44,6 +45,7 @@ function Game3SceneIntro ()
         	currentScene = SCENE.MENU  
         	this.music.pause();
 			this.music.play();//som ao ser clicado pelo botão
+			this.music_fundo.pause();
         }
         
     }
