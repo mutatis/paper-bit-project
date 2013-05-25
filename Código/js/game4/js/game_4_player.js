@@ -28,7 +28,12 @@ function Player4(file, size_x, size_y, position_x, position_y)
 	this.friction = 0.99;//desacceleration... TO DO cannot put vel less than zero
 	
 	this.rotation = 0;	
-	this.rotateSpeed = 1;    
+	this.rotateSpeed = 1; 
+
+	//som do tiro
+	this.music = new Audio();
+	this.music.src = "sounds/game_4/tiro.mp3"
+	this.music.volume = 1.0
     	
     this.shoots = new Array();
     
@@ -291,6 +296,7 @@ function Player4(file, size_x, size_y, position_x, position_y)
     			{
     				this.space_released = false;
     				this.space_pressed = true;
+					this.music.play();
     			}
     		}
     	

@@ -6,6 +6,7 @@ function SceneGame3()
 	this.gameOver = new Game3SceneGameOver();
 
 
+
 	
 	this.GAMESCENE = { INTRO: 0, LEVEL1: 1, THEEND: 2, GAMEOVER: 3, INSTRU:4};
 	
@@ -78,8 +79,9 @@ function SceneGame3()
 				
 			break;
 			case this.GAMESCENE.GAMEOVER:
-				this.currentGameScene = this.GAMESCENE.INTRO;
-				currentScene = SCENE.MENU;
+				//this.currentGameScene = this.GAMESCENE.INTRO;
+				//currentScene = SCENE.MENU;
+				this.gameOver.mouse_down(mouse);
 				
 			break;
 		}	
@@ -103,8 +105,7 @@ function SceneGame3()
 				 
 			break;
 			case this.GAMESCENE.GAMEOVER:
-				this.currentGameScene = this.GAMESCENE.INTRO;
-				currentScene = SCENE.MENU;
+				this.gameover.mouse_up(mouse);
 			break;
 		}	
 	}
@@ -140,7 +141,7 @@ function SceneGame3()
 
 			break;
 			
-			case this.GAMESCENE.GAMETHEEND:
+			case this.GAMESCENE.THEEND:
 				this.theEnd.key_up(key);
 				
 			break;
@@ -175,6 +176,16 @@ function SceneGame3()
 			
 				this.level1.mouse_move(mouse);
 
+			break;
+			
+			case this.GAMESCENE.THEEND:
+			
+				this.theEnd.mouse_move(mouse);
+
+			break;
+			
+			case this.GAMESCENE.GAMEOVER:
+				this.gameOver.mouse_move(mouse);
 			break;
 						
 		}	

@@ -24,6 +24,11 @@ function Game4SceneLevel4()
 		this.music.src = "sounds/Mouse.mp3"
 		this.music.volume = 1.0
 		
+		//som do fundo da intro
+		this.music_fundo = new Audio();
+		this.music_fundo.src = "sounds/game_4/trains.mp3"
+		this.music_fundo.volume = 1.0
+		
 		}//fim reset
 		
 		this.reset();
@@ -33,6 +38,8 @@ function Game4SceneLevel4()
 		
         this.nave1.update();
 		//this.ast.update();
+		//som tocando na intro
+	    this.music_fundo.play()
 		
 		for(var i = 0; i < this.ast.length; i++)
 		{
@@ -116,6 +123,7 @@ function Game4SceneLevel4()
         	
         	game4.currentGameScene = game4.GAMESCENE.INTRO;
 			this.music.play();//som ao ser clicado pelo botão
+			this.music_fundo.pause();
         	 
         	//this.player.points = 0;
         

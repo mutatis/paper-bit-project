@@ -14,6 +14,11 @@ function Game1SceneLevel1()
 	   
 	    this.tela_tamanho_w = 800;
 	    this.tela_tamanho_h = 600;
+		
+		//som do saco
+		this.music_soco = new Audio();
+		this.music_soco.src = "sounds/game_1/socos.mp3"
+		this.music_soco.volume = 1.0
 	    	    
 		this.tempoSeg1 = 0
 		this.tempoSeg2 = 0
@@ -414,18 +419,21 @@ this.mouse_down=function(mouse)
 			this.pontos+= 15;
 			this.alvo1_visivel = false;
 			//som_acertar.play();
+			this.music_soco.play();//som ao ser clicado pelo botão
 		}
 		else if(Collide(mouse.x-10, mouse.y-30, 1, 1, this.alvo2_posicao_x, this.alvo2_posicao_y, this.alvo2_tamanho_w, this.alvo2_tamanho_h))
 		{
 			this.pontos+= 25;
 			this.alvo2_visivel = false;
 			//som_acertar.play();
+			this.music_soco.play();//som ao ser clicado pelo botão
 		}
 		else if(Collide(mouse.x-10, mouse.y-30, 1, 1, this.alvo3_posicao_x, this.alvo3_posicao_y, this.alvo3_tamanho_w, this.alvo3_tamanho_h))
 		{
 			this.pontos+= 35;
 			this.alvo3_visivel = false;
 			//som_acertar.play();
+			this.music_soco.play();//som ao ser clicado pelo botão
 		}
 		//Pontos bandido
 		else if(Collide(mouse.x-10, mouse.y-30, 1, 1, this.alvo4_posicao_x, this.alvo4_posicao_y, this.alvo4_tamanho_w, this.alvo4_tamanho_h))
@@ -433,18 +441,21 @@ this.mouse_down=function(mouse)
 			this.pontos-= 20;
 			this.alvo4_visivel = false;
 			//som_errar.play();
+			this.music_soco.play();//som ao ser clicado pelo botão
 		}
 		else if(Collide(mouse.x-10, mouse.y-30, 1, 1, this.alvo5_posicao_x, this.alvo5_posicao_y, this.alvo5_tamanho_w, this.alvo5_tamanho_h))
 		{
 			this.pontos+= 20;
 			this.alvo5_visivel = false;
 			//som_errar.play();
+			this.music_soco.play();//som ao ser clicado pelo botão
 		}
 		else if(Collide(mouse.x-10, mouse.y-30, 1, 1, this.alvo6_posicao_x, this.alvo6_posicao_y, this.alvo6_tamanho_w, this.alvo6_tamanho_h))
 		{
 			this.pontos-= 20;
 			this.alvo5_visivel = false;
 			//som_errar.play();
+			this.music_soco.play();//som ao ser clicado pelo botão
 		}
 		else
 		{
