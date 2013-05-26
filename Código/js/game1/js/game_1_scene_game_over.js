@@ -9,7 +9,9 @@ function Game1SceneGameOver()
 
        	this.update=function()
 	{			
-
+		this.button_start.update
+		this.button_back.update
+	
     };
     
     this.draw=function()
@@ -24,7 +26,20 @@ function Game1SceneGameOver()
     
 	this.mouse_down=function(mouse)
    	{   		
-
+	if(this.button_start.clicked(mouse))
+        {
+        	game1.currentGameScene = game1.GAMESCENE.INTRO;  //botão para o game
+        }
+		
+		if(this.button_back.clicked(mouse)) //botão para voltar o menu
+        {
+        	currentScene = SCENE.MENU;
+        	
+        	 
+        	this.player.points = 0;
+        
+        	this.reset();
+        }
         
     }
     
@@ -43,6 +58,11 @@ function Game1SceneGameOver()
     {
                 //
     }
+	
+	this.mouse_move=function(mouse)
+   	{   		
 
+        
+    }
     
 }//fecha Intro

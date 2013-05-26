@@ -4,13 +4,14 @@ function Game1SceneTheEnd()
 	{
 	//abre Intro
         //file, size_x, size_y, pos_x, pos_y
-		//this.fundo = new Fundo("imgs/game_3/venceu.png", 600, 800, 0, 0);
+		this.fundo = new Fundo("imgs/game_1/Play.jpg", 600, 800, 0, 0);
 		this.button_start = new MyButton("imgs/play1.png", 166, 72, 575, 350);
 		this.button_back = new MyButton("imgs/play2.png",166, 72, 575, 450);
 
        	this.update=function()
 	{			
-
+	this.button_start
+	this.button_back
     };
     
 	}//fecha reset
@@ -19,7 +20,7 @@ function Game1SceneTheEnd()
 	
     this.draw=function()
     {                        
-		//this.fundo.draw();				
+		this.fundo.draw();				
         this.button_start.draw();
 		this.button_back.draw();
   		          
@@ -29,16 +30,15 @@ function Game1SceneTheEnd()
    	{   		
         if(this.button_start.clicked(mouse))
         {
-        	//game3.currentGameScene = game3.GAMESCENE.LEVEL1;  //botão para o game
+        	game1.currentGameScene = game1.GAMESCENE.INTRO;  //botão para o game
         }
 		
 		if(this.button_back.clicked(mouse)) //botão para voltar o menu
         {
         	currentScene = SCENE.MENU;
         	
-        	//game3.currentGameScene = game3.GAMESCENE.INTRO;
         	 
-        	//this.player.points = 0;
+        	this.player.points = 0;
         
         	this.reset();
         }

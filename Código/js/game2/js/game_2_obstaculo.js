@@ -16,7 +16,7 @@ function ObstaculoGame2(arquivo, tamanho_w, tamanho_h, pontos, vida)
     this.posicao_x = Math.floor((Math.random()*(SCREENWIDTH-this.tamanho_w))); 
     this.posicao_y = 0;
     this.velocidade_x = 0;
-    this.velocidade_y = Math.floor((Math.random()*10)+5);
+    this.velocidade_y = Math.floor((Math.random()*1)+5);
     
     this.velocidade_MAX = 15;
     
@@ -40,7 +40,7 @@ function ObstaculoGame2(arquivo, tamanho_w, tamanho_h, pontos, vida)
 
 		this.posicao_y = -this.tamanho_h;
 		this.posicao_x = Math.floor((Math.random()*(SCREENWIDTH-this.tamanho_w))); 
-		this.velocidade_y = Math.floor((Math.random()*10)+5);
+		this.velocidade_y = Math.floor((Math.random()*1)+5);
     	
     };
  
