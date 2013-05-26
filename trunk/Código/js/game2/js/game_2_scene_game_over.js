@@ -1,7 +1,7 @@
 function SceneGameOverGame2()
 {
 	
-	this.over = new FundoGame2("imgs/game_2/over.png", 0, 0)
+	this.over = new FundoGame2("imgs/game_2/over.png", 800, 600)
 	this.button_start = new MyButton("imgs/play1.png", 166, 72, 575, 350);
 	this.button_back = new MyButton("imgs/play2.png",166, 72, 575, 450);
 

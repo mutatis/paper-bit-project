@@ -208,10 +208,7 @@ this.update=function()
 {
 	this.fundo_move.update();
 					
-			if(this.game_over == true)
-			{
 			
-			}
 			
 			
 			this.tempoSeg1++;
@@ -273,7 +270,7 @@ this.update=function()
 			
 			if(this.cronometro > 1000)
 			{	
-				if(this.pontos >= 1000)
+				if(this.pontos >= 100)
 				{
 					this.alvo1_visivel = false
 					this.alvo2_visivel = false
@@ -287,6 +284,15 @@ this.update=function()
 					//som_fundo.pause();
 					//som_vencer.play();
 					this.game_win = true
+					if(this.game_win == true)
+					{
+					game1.currentGameScene = game1.GAMESCENE.THEEND;  
+					this.pontos = 5;
+					this.cronometro = 0;
+					this.music.play();//som ao ser clicado pelo botão
+					this.button.current_frame = 1;
+					}
+
 				}
 				else
 				{
@@ -302,6 +308,15 @@ this.update=function()
 					//som_fundo.pause();
 					//som_perder.play();
 					this.game_over = true
+					
+					if(this.game_over == true)
+					{
+					game1.currentGameScene = game1.GAMESCENE.GAMEOVER;  
+					this.pontos = 5;
+					this.cronometro = 0;
+					this.music.play();//som ao ser clicado pelo botão
+					this.button.current_frame = 1;
+					}
 				}
 			}
 			
@@ -351,20 +366,7 @@ this.draw=function()
 		//screen.fillText("Tempo: "+this.cronometro,  20, 40);
 		screen.fillText("Pontos: "+this.pontos, 20, 40);
 		
-		if(this.game_win == true)
-		{
-			screen.font = "30px Arial";
-			screen.fillStyle="FFFFFF";
-			screen.fillText("Boa pontuação", 280, 200)
-			screen.fillText("Salvou seu planeta. Qual a sensação de ser um heroi?", 30, 300)
-		}
-		else if(this.game_over == true)
-		{
-			screen.font = "30px Arial";
-			screen.fillStyle="FFFFFF";
-			screen.fillText("Pontuação a desejar", 250, 200)
-			screen.fillText("Seria uma pena, seu planeta como uma colônia Alienígena!", 5, 300)
-		}
+		
 			
 	}
 
@@ -492,6 +494,6 @@ this.mouse_down=function(mouse)
 		
 	}
 	
-
+  
 
 }

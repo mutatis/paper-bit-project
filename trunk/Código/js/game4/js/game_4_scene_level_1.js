@@ -28,6 +28,7 @@ function Game4SceneLevel4()
 		this.music_fundo = new Audio();
 		this.music_fundo.src = "sounds/game_4/trains.mp3"
 		this.music_fundo.volume = 1.0
+		this.draw_ast = false;
 		
 		}//fim reset
 		
@@ -68,16 +69,22 @@ function Game4SceneLevel4()
 							this.pontos+=10;
 							
 						}
+						
+						
+						
+						
 					}
 			}//fecha for inimigos
 		}//fecha for tiros
 		
 				
 		//venceu no Aster�ide
-	   	if(this.pontos >= 10) //Pontuação para vencer 200 pontos
+	   	if(this.pontos >= 200) //Pontuação para vencer 200 pontos
 		{
 			game4.currentGameScene = game4.GAMESCENE.THEEND;
 			this.reset();
+			this.music_fundo.pause();
+			this.music_fundo.pause();
 		}
 		
 		//perdeu no Fall
@@ -96,6 +103,9 @@ function Game4SceneLevel4()
 		//this.ast.draw();
 		this.button_back.draw();
 		
+		for(var j = 0; j < this.ast.length; j++)
+
+		
 		for(var i = 0; i < this.ast.length; i++)
 		{
 			this.ast[i].draw();//img, this.ast[i].position_x, this.ast[i].position_y);	
@@ -112,8 +122,16 @@ function Game4SceneLevel4()
         //this.button_start.draw();
 		
 		//this.button_instru.draw();
-				          
-    }
+		
+
+		if(this.draw_ast == true)
+			{
+				this.ast[j].draw();
+			}
+		
+				
+		
+	}
     
     this.mouse_down=function(mouse)
     {//abre down
@@ -123,6 +141,7 @@ function Game4SceneLevel4()
         	
         	game4.currentGameScene = game4.GAMESCENE.INTRO;
 			this.music.play();//som ao ser clicado pelo bot�o
+			this.music_fundo.pause();
 			this.music_fundo.pause();
         	 
         	//this.player.points = 0;
