@@ -10,6 +10,10 @@ function SceneLevel01Game2()
 	
 	this.aviao = new Fundo_paisagem("imgs/game_2/aviao.png",600,800);
 	
+	//file, tamanho_w, tamanho_h, posicao_x, posicao_y
+	this.barra_vida = new Catch_pontos("imgs/game_2/barra_vida.png",180,80,5,100);
+	this.barra_pontos = new Catch_pontos("imgs/game_2/barra_pontos.png",180,80,5,20);
+	
 	this.fundo = new FundoGame2("imgs/game_2/fundo_catch.png", 0, 0)
 		
 	this.obstaculo = new Array();
@@ -122,17 +126,20 @@ function SceneLevel01Game2()
 	{
 		screen.drawImage(this.obstaculo[i].imagem, this.obstaculo[i].posicao_x, this.obstaculo[i].posicao_y);	
 	}
+		this.barra_pontos.draw();
+		this.barra_vida.draw();
 		
 		//escreve da tela e conta, vidas e pontos.
 		screen.font = "40px Arial";
-		screen.fillStyle = "ED1C24";
-		screen.fillText("Vidas: " + this.heroi.vida, 20, 40);
-		screen.fillText("Pontos: " + this.heroi.pontos, 550, 40);
+		screen.fillStyle = "ffffff";
+		screen.fillText(" " + this.heroi.vida, 65, 170);
+		screen.fillText(" " + this.heroi.pontos, 65, 90);
 		
 		//desenha o botão pra voltar ao MENU/ESQUELETO.
 		this.button_back.draw();
 		
 		this.aviao.draw();
+
 	
 	}
 	
