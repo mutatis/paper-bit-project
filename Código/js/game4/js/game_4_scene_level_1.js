@@ -9,6 +9,9 @@ function Game4SceneLevel4()
 		this.nave1 = new Player4("imgs/game_4/nave.png", 124, 106, 10, 200);
 		this.pontos = 0;
 
+		//file, size_x, size_y, posicao_x, posicao_y, velocity_y
+		this.barra = new Fundo ("imgs/game_4/barra.png",180,80,20,20)
+		
 		this.ast = new Array();
 
 		//file, size_x, size_y, pos_x, pos_y, vel_x, vel_y
@@ -102,6 +105,7 @@ function Game4SceneLevel4()
 		this.nave1.draw();
 		//this.ast.draw();
 		this.button_back.draw();
+		this.barra.draw();
 		
 		for(var j = 0; j < this.ast.length; j++)
 
@@ -113,8 +117,8 @@ function Game4SceneLevel4()
 
 		
         screen.font = "20px Comic Sans MS";
-        screen.fillStyle="#000000";
-		screen.fillText("Pontos:"+this.pontos, 20, 20);
+        screen.fillStyle="#FFFFFF";
+		screen.fillText(""+this.pontos, 90, 60);
                 
 				
         //this.button_credits.draw();
