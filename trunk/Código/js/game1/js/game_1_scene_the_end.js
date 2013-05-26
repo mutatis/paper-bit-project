@@ -30,12 +30,13 @@ function Game1SceneTheEnd()
    	{   		
         if(this.button_start.clicked(mouse))
         {
-        	game1.currentGameScene = game1.GAMESCENE.INTRO;  //botão para o game
+        	game1.currentGameScene = game1.GAMESCENE.LEVEL1;  //botão para o game
         }
 		
 		if(this.button_back.clicked(mouse)) //botão para voltar o menu
         {
         	currentScene = SCENE.MENU;
+			game1.currentGameScene = game1.GAMESCENE.INTRO;
         	
         	 
         	this.player.points = 0;

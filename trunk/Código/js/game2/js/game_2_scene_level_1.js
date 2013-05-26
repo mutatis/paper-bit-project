@@ -6,6 +6,8 @@ function SceneLevel01Game2()
 		this.music.src = "sounds/Mouse.mp3"
 		this.music.volume = 1.0
 	
+	this.fundo1 = new Fundo_paisagem("imgs/game_2/fundo2.png",800,600);
+	
 	this.fundo = new FundoGame2("imgs/game_2/fundo_catch.png", 0, 0)
 		
 	this.obstaculo = new Array();
@@ -103,12 +105,16 @@ function SceneLevel01Game2()
 	
 	this.draw = function()
 	{	
+				
 		//desenha o fundo.
 		this.fundo.draw();
+
 		
 		//desenha o heroi em uma posição.
 		screen.drawImage(this.heroi.imagem, this.heroi.posicao_x, this.heroi.posicao_y);
 	
+	    this.fundo1.draw();
+		
 	//desenha todos os "obstaculos" em posições diferentes.
 	for(var i = 0; i < this.obstaculo.length; i++)
 	{

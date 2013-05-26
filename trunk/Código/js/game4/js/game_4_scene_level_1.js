@@ -79,7 +79,7 @@ function Game4SceneLevel4()
 		
 				
 		//venceu no Aster�ide
-	   	if(this.pontos >= 200) //Pontuação para vencer 200 pontos
+	   	if(this.pontos >= 10) //Pontuação para vencer 200 pontos
 		{
 			game4.currentGameScene = game4.GAMESCENE.THEEND;
 			this.reset();
