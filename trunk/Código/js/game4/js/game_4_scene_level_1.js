@@ -6,7 +6,7 @@ function Game4SceneLevel4()
 		this.fundo = new Fundo("imgs/game_4/fundo1.png", 600, 800, 0, 0);
 		//this.toy = new Player ("imgs/game_3/spencer_boy.png", 60, 70, ((SCREENWIDTH-94)/2)-40, 0);
 		//this.fundo = new Fundo_move ("imgs/game_3/fundo_move.png",1200, 800, 0, 0);
-		this.nave1 = new Player4("imgs/game_4/nave.png", 60, 40, 10, 200);
+		this.nave1 = new Player4("imgs/game_4/nave.png", 124, 106, 10, 200);
 		this.pontos = 0;
 
 		this.ast = new Array();

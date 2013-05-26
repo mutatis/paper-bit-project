@@ -6,7 +6,9 @@ function SceneLevel01Game2()
 		this.music.src = "sounds/Mouse.mp3"
 		this.music.volume = 1.0
 	
-	this.fundo1 = new Fundo_paisagem("imgs/game_2/fundo2.png",800,600);
+	this.fundo_front = new Fundo_paisagem("imgs/game_2/fundo2.png",600,800);
+	
+	this.aviao = new Fundo_paisagem("imgs/game_2/aviao.png",600,800);
 	
 	this.fundo = new FundoGame2("imgs/game_2/fundo_catch.png", 0, 0)
 		
@@ -109,12 +111,12 @@ function SceneLevel01Game2()
 		//desenha o fundo.
 		this.fundo.draw();
 
+		this.fundo_front.draw();
 		
 		//desenha o heroi em uma posição.
 		screen.drawImage(this.heroi.imagem, this.heroi.posicao_x, this.heroi.posicao_y);
-	
-	    this.fundo1.draw();
-		
+
+
 	//desenha todos os "obstaculos" em posições diferentes.
 	for(var i = 0; i < this.obstaculo.length; i++)
 	{
@@ -129,6 +131,8 @@ function SceneLevel01Game2()
 		
 		//desenha o botão pra voltar ao MENU/ESQUELETO.
 		this.button_back.draw();
+		
+		this.aviao.draw();
 	
 	}
 	
