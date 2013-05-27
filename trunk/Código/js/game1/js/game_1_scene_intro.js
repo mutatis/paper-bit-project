@@ -8,6 +8,7 @@ function Game1SceneIntro ()
 		this.button_start = new MyButton("imgs/play1.png", 166, 72, 575, 350);
 		//this.button_instru = new Button("imgs/instrucao.png",500, 90, 575, 450);
 		this.button = new MyButton("imgs/play2.png",166, 72, 575, 450);
+		this.balao1 = new balao ("imgs/1.png", 204, 215,250,30);
 	
 		
 		//som do botão ao ser clicado
@@ -30,6 +31,7 @@ function Game1SceneIntro ()
         this.button.draw();
 		this.Sara.draw();
 		this.boca_move1.draw();
+		this.balao1.draw();
         
 				          
     }
