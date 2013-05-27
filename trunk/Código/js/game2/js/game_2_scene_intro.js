@@ -2,6 +2,8 @@ function SceneIntroGame2()
 {//abre SCENEIntro
 	
 	this.menu = new FundoGame2("imgs/game_2/menu.png", 0, 0)
+	this.jacy = new FundoGame2("imgs/game_2/jacy.png", 0, 0)
+	this.boca_move1 = new boca_move ("imgs/boca.png",127 , 80, 130, 225);
 	this.button_start = new MyButton("imgs/play1.png", 166, 72, 575, 350);
 	this.button_back = new MyButton("imgs/play2.png",166, 72, 575, 450);
 	
@@ -37,6 +39,8 @@ function SceneIntroGame2()
 		this.button_start.draw();
 		
 		this.button_back.draw();
+		this.jacy.draw();
+		this.boca_move1.draw();
 		
 	}//fecha draw
 	

@@ -6,23 +6,17 @@ function Game4SceneIntro ()
 		this.fundo = new Fundo("imgs/game_4/menu.png", 600, 800, 0, 0);
 		this.button_start = new MyButton("imgs/play1.png", 166, 72, 575, 350);
 		this.button_back = new MyButton("imgs/play2.png",166, 72, 575, 450);
+		this.Léo = new Fundo("imgs/game_4/léo.png", 600, 800, 0, 0);
+		this.boca_move1 = new boca_move ("imgs/boca.png",127 , 80, 130, 200);
 		
 		//som do botão ao ser clicado
 		this.music = new Audio();
 		this.music.src = "sounds/Mouse.mp3"
 		this.music.volume = 1.0
 		
-		//som do fundo da intro
-		this.music_fundo = new Audio();
-		this.music_fundo.src = "sounds/game_4/trains.mp3"
-		this.music_fundo.volume = 1.0
-
        	this.update=function()
 	{			
 
-			//som tocando na intro
-	this.music_fundo.play();
-	
     };
     
     this.draw=function()
@@ -31,6 +25,8 @@ function Game4SceneIntro ()
 
         this.button_start.draw();
 		this.button_back.draw();
+		this.Léo.draw();
+		this.boca_move1.draw();
         
 				          
     }
@@ -39,16 +35,14 @@ function Game4SceneIntro ()
    	{   		
         if(this.button_start.clicked(mouse))
         {
-        	game4.currentGameScene = game4.GAMESCENE.LEVEL4; 
+        	game4.currentGameScene = game4.GAMESCENE.LEVEL4;
 			this.music.play();//som ao ser clicado pelo botão
-			this.music.pause();
         }
 		
 		if(this.button_back.clicked(mouse)) //botão para voltar o menu
         {
-        	currentScene = SCENE.MENU  
+        	currentScene = SCENE.MENU 
 			this.music.play();//som ao ser clicado pelo botão
-			this.music.pause();
         }
         
     }
@@ -69,11 +63,10 @@ function Game4SceneIntro ()
         
     }
 
-	  this.mouse_move=function(mouse)
+  	this.mouse_move=function(mouse)
   	{
-  		//console.log("Game4 mouse X " + mouse.x + " mouse Y " + mouse.y );
-		
-		 if(this.button_start.mouse_over(mouse))
+  		
+  		if(this.button_start.mouse_over(mouse))
   		{
   			
   			this.button_start.current_frame = 0;

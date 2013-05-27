@@ -121,10 +121,10 @@ function SceneMenu()
     	
     	if(this.button_game_5.clicked(mouse))
     	{
-    		currentScene = SCENE.GAME5;		
-    		this.music.play();//som ao ser clicado pelo botão
-    		this.music_fundo.pause();
-			this.button_game_5.current_frame = 1;
+    		//currentScene = SCENE.GAME5;		
+    		//this.music.play();//som ao ser clicado pelo botão
+    		//this.music_fundo.pause();
+			//this.button_game_5.current_frame = 1;
     	}
     	
     };
