@@ -8,10 +8,15 @@ function Game3SceneGameOver()
 		this.fundo = new Fundo("imgs/game_3/game_over.png", 600, 800, 0, 0);
 		this.button_start = new MyButton("imgs/play1.png", 166, 72, 575, 350);
 		this.button_back = new MyButton("imgs/play2.png",166, 72, 575, 450);
+		
+		//som do fundo da intro
+		this.music_fundo = new Audio();
+		this.music_fundo.src = "sounds/perdeu.mp3"
+		this.music_fundo.volume = 1.0
 
        	this.update=function()
 	{			
-
+		this.music_fundo.play();
     };
     
     this.draw=function()
@@ -36,6 +41,7 @@ function Game3SceneGameOver()
 
         	game3.currentGameScene = game3.GAMESCENE.LEVEL1;  //botão para o game
 			this.music.play();//som ao ser clicado pelo botão
+			this.music_fundo.pause();
 
         }
 		
@@ -45,6 +51,7 @@ function Game3SceneGameOver()
         	currentScene = SCENE.MENU;
 			game3.currentGameScene = game3.GAMESCENE.INTRO;
 			this.music.play();//som ao ser clicado pelo botão
+			this.music_fundo.pause();
 
         }
         

@@ -7,10 +7,17 @@ function Game1SceneGameOver()
 		this.button_start = new MyButton("imgs/play1.png", 166, 72, 575, 350);
 		this.button_back = new MyButton("imgs/play2.png",166, 72, 575, 450);
 
+		//som do fundo da intro
+		this.music_fundo = new Audio();
+		this.music_fundo.src = "sounds/perdeu.mp3"
+		this.music_fundo.volume = 1.0
+		
        	this.update=function()
 	{			
 		this.button_start.update
 		this.button_back.update
+		
+		this.music_fundo.play();
 	
     };
     
@@ -29,13 +36,15 @@ function Game1SceneGameOver()
 	if(this.button_start.clicked(mouse))
         {
         	game1.currentGameScene = game1.GAMESCENE.INTRO;  //botão para o game
+			this.music_fundo.pause();
         }
 		
 		if(this.button_back.clicked(mouse)) //botão para voltar o menu
         {
         	currentScene = SCENE.MENU;
-        	
-        	 
+			game1.currentGameScene = game1.GAMESCENE.INTRO;
+			this.music_fundo.pause();
+			
         	this.player.points = 0;
         
         	this.reset();

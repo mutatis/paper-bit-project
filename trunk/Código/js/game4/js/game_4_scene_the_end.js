@@ -12,10 +12,15 @@ function Game4SceneTheEnd()
 		this.music = new Audio();
 		this.music.src = "sounds/Mouse.mp3"
 		this.music.volume = 1.0
+		
+		//som do fundo da intro
+		this.music_fundo = new Audio();
+		this.music_fundo.src = "sounds/venceu.mp3"
+		this.music_fundo.volume = 1.0
 
        	this.update=function()
 	{			
-
+		this.music_fundo.play();
     };
     
 	}//fecha reset
@@ -49,6 +54,7 @@ function Game4SceneTheEnd()
 			game4.currentGameScene = game4.GAMESCENE.INTRO;
 			this.music.play();//som ao ser clicado pelo botão
 			this.music_fundo.pause();
+			
 
         }
         

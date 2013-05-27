@@ -12,10 +12,15 @@ function Game3SceneTheEnd()
 		this.music = new Audio();
 		this.music.src = "sounds/Mouse.mp3"
 		this.music.volume = 1.0
+		
+		//som do fundo da intro
+		this.music_fundo = new Audio();
+		this.music_fundo.src = "sounds/venceu.mp3"
+		this.music_fundo.volume = 1.0
 
        	this.update=function()
 	{			
-
+         this.music_fundo.play();
     };
     
 	}//fecha reset
@@ -37,7 +42,7 @@ function Game3SceneTheEnd()
 
         	game3.currentGameScene = game3.GAMESCENE.LEVEL1;  //botão para o game
 			this.music.play();//som ao ser clicado pelo botão
-			//this.music_fundo.pause();
+			this.music_fundo.pause();
 
         }
 		
@@ -47,7 +52,7 @@ function Game3SceneTheEnd()
         	currentScene = SCENE.MENU;
 			game3.currentGameScene = game3.GAMESCENE.INTRO;
 			this.music.play();//som ao ser clicado pelo botão
-			//this.music_fundo.pause();
+			this.music_fundo.pause();
 
         }
         
