@@ -85,9 +85,9 @@ function Game4SceneLevel4()
 	   	if(this.pontos >= 10) //Pontuação para vencer 200 pontos
 		{
 			game4.currentGameScene = game4.GAMESCENE.THEEND;
+			this.music_fundo.pause()
 			this.reset();
-			this.music_fundo.pause();
-			this.music_fundo.pause();
+			
 		}
 		
 		//perdeu no Fall
@@ -145,7 +145,6 @@ function Game4SceneLevel4()
         	
         	game4.currentGameScene = game4.GAMESCENE.INTRO;
 			this.music.play();//som ao ser clicado pelo bot�o
-			this.music_fundo.pause();
 			this.music_fundo.pause();
         	 
         	//this.player.points = 0;

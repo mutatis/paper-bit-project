@@ -37,13 +37,13 @@ function SceneLevel01Game2()
 	}
 	
 	this.som_win = new Audio();
-	this.som_win.src = "sounds/game_2/som_vencer.mp3";
+	this.som_win.src = "sounds/venceu.mp3";
 	this.som_win.load();
 	this.som_win.loop = true; 
 	this.som_win.volume = 1.0;
 	
 	this.som_over = new Audio();
-	this.som_over.src = "sounds/game_2/som_vencer.mp3";
+	this.som_over.src = "sounds/perdeu.mp3";
 	this.som_over.load();
 	this.som_over.loop = true; 
 	this.som_over.volume = 1.0;
@@ -98,7 +98,7 @@ function SceneLevel01Game2()
 		}
 		
 		// se a pontos do heroi chegar a 1000, vence, logo vai para a cena Game Win.
-		if(this.heroi.pontos >= 1000)
+		if(this.heroi.pontos >= 300)
 		{
 			game2.currentScene = game2.SCENE.WIN;
 			this.som_win.play();
