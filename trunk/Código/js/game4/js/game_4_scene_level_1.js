@@ -6,7 +6,7 @@ function Game4SceneLevel4()
 		this.fundo = new Fundo("imgs/game_4/fundo1.png", 600, 800, 0, 0);
 		//this.toy = new Player ("imgs/game_3/spencer_boy.png", 60, 70, ((SCREENWIDTH-94)/2)-40, 0);
 		//this.fundo = new Fundo_move ("imgs/game_3/fundo_move.png",1200, 800, 0, 0);
-		this.nave1 = new Player4("imgs/game_4/nave.png", 60, 40, 10, 200);
+		this.nave1 = new Player4("imgs/game_4/nave.png", 60, 40, 40, 500);
 		this.pontos = 0;
 
 		//file, size_x, size_y, posicao_x, posicao_y, velocity_y
@@ -15,11 +15,11 @@ function Game4SceneLevel4()
 		this.ast = new Array();
 
 		//file, size_x, size_y, pos_x, pos_y, vel_x, vel_y
-		this.ast.push(new Asteroide("imgs/game_4/asteroid.png", 40, 32, -2,2));
-		this.ast.push(new Asteroide("imgs/game_4/asteroid.png", 40, 32, -2,2));
-		this.ast.push(new Asteroide("imgs/game_4/asteroid.png", 40, 32, -2,2));
-		this.ast.push(new Asteroide("imgs/game_4/asteroid.png", 40, 32, -2,2));
-		this.ast.push(new Asteroide("imgs/game_4/asteroid.png", 40, 32, -2,2));
+		this.ast.push(new Asteroide("imgs/game_4/asteroid.png", 40, 32, -5,5));
+		this.ast.push(new Asteroide("imgs/game_4/asteroid.png", 40, 32, -5,5));
+		this.ast.push(new Asteroide("imgs/game_4/asteroid.png", 40, 32, -5,5));
+		this.ast.push(new Asteroide("imgs/game_4/asteroid.png", 40, 32, -5,5));
+		this.ast.push(new Asteroide("imgs/game_4/asteroid.png", 40, 32, -5,5));
 		
 		this.button_back = new MyButton("imgs/close.png", 50, 50, 700, 50);
 		//som do botão ao ser clicado
@@ -30,7 +30,7 @@ function Game4SceneLevel4()
 		//som do fundo da intro
 		this.music_fundo = new Audio();
 		this.music_fundo.src = "sounds/game_4/trains.mp3"
-		this.music_fundo.volume = 1.0
+		this.music_fundo.volume = 1.0;
 		this.draw_ast = false;
 		
 		}//fim reset
@@ -48,6 +48,28 @@ function Game4SceneLevel4()
 		for(var i = 0; i < this.ast.length; i++)
 		{
 			this.ast[i].update();
+			
+			if(Collide
+					(this.nave1.position_x_dst,
+			 		 this.nave1.position_y_dst,
+			 		 this.nave1.size_x_dst,
+			 		 this.nave1.size_y_dst,
+			 		 this.ast[i].position_x,
+			 		 this.ast[i].position_y,
+			 		 this.ast[i].size_x,
+			 		 this.ast[i].size_y
+			 		))
+					{	
+						if(this.ast[i].visible&&this.nave1.visible)
+						{
+							this.ast[i].visible = false;
+							this.nave1.visible = false;	
+							game4.currentGameScene = game4.GAMESCENE.GAMEOVER;
+							this.music_fundo.pause()
+							this.reset();						
+						}
+						
+					}
 		}
 	
 		for(var i = 0; i < this.nave1.shoots.length; i++)
@@ -69,16 +91,14 @@ function Game4SceneLevel4()
 						{
 							this.ast[j].visible = false;
 							this.nave1.shoots[i].visible = false;
-							this.pontos+=10;
+							this.pontos+=1;
 							
 						}
-						
-						
-						
 						
 					}
 			}//fecha for inimigos
 		}//fecha for tiros
+		
 		
 				
 		//venceu no Asteróide
