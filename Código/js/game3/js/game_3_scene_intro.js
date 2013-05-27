@@ -3,6 +3,8 @@ function Game3SceneIntro ()
 	//abre Intro
         //file, size_x, size_y, pos_x, pos_y
 		this.fundo = new Fundo("imgs/game_3/intro_fundo.png", 600, 800, 0, 0);
+		this.Raquel = new Fundo("imgs/game_3/raquel.png", 600, 800, 0, 0);
+		this.boca_move1 = new boca_move ("imgs/boca.png",127 , 80, 130, 220);
 		this.button_start = new MyButton("imgs/play1.png", 166, 72, 575, 350);
 		this.button_back = new MyButton("imgs/play2.png",166, 72, 575, 450);
 		
@@ -12,14 +14,14 @@ function Game3SceneIntro ()
 		this.music.volume = 1.0
 		
 		//som do fundo da intro
-		this.music_fundo = new Audio();
-		this.music_fundo.src = "sounds/game_3/Dunderpatrullen.mp3"
-		this.music_fundo.volume = 1.0
+		//this.music_fundo = new Audio();
+		//this.music_fundo.src = "sounds/game_3/Dunderpatrullen.mp3"
+		//this.music_fundo.volume = 1.0
 		
        	this.update=function()
 	{			
 	//som tocando na intro
-	this.music_fundo.play();
+	//this.music_fundo.play();
     };
     
     this.draw=function()
@@ -27,6 +29,8 @@ function Game3SceneIntro ()
 		this.fundo.draw();				
         this.button_start.draw();
 		this.button_back.draw();
+		this.Raquel.draw();
+		this.boca_move1.draw();
   		          
     }
     
@@ -37,7 +41,7 @@ function Game3SceneIntro ()
         	game3.currentGameScene = game3.GAMESCENE.LEVEL1;  //botão para o game
         	this.music.pause();
 			this.music.play();//som ao ser clicado pelo botão
-			this.music_fundo.pause();
+			//this.music_fundo.pause();
         }
 		
 		if(this.button_back.clicked(mouse)) //botão para voltar o menu
@@ -45,7 +49,7 @@ function Game3SceneIntro ()
         	currentScene = SCENE.MENU  
         	this.music.pause();
 			this.music.play();//som ao ser clicado pelo botão
-			this.music_fundo.pause();
+			//this.music_fundo.pause();
         }
         
     }

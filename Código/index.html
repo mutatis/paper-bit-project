@@ -15,6 +15,7 @@
 		<script src="js/menu/name.js"></script>
 		<script src="js/menu/fundo_move_menu.js"></script>
 		<script src="js/menu/fundo_creditos.js"></script>
+		<script src="js/menu/boca_move.js"></script>
 
 		
 		<!--Game 1-->
@@ -103,7 +104,7 @@
 	
 	var game4 = new SceneGame4(); //Variavel utilizar o do quarto jogo.
 	
-	var game5 = new SceneGame5(); //Variavel utilizar o do quinto jogo.
+	//var game5 = new SceneGame5(); //Variavel utilizar o do quinto jogo.
 	
 		
 	var SCENE = { MENU: 0, GAME1: 1, GAME2: 2, GAME3: 3, GAME4: 4, GAME5: 5, CREDIT: 6}
@@ -182,11 +183,11 @@
 				game4.update(); //chamando update do quarto jogo.
 			}
 			break;
-			case SCENE.GAME5:
-			{
-				game5.update(); //chamando update do quinto jogo.
-			}
-			break;
+			//case SCENE.GAME5:
+			//{
+			//	game5.update(); //chamando update do quinto jogo.
+			//}
+			//break;
 						
 		}
 		
@@ -236,11 +237,11 @@
 				game4.draw(); //chamando desenho do quarto jogo.
 			}
 			break;
-			case SCENE.GAME5:
-			{
-				game5.draw(); //chamando desenho do quinto jogo.
-			}
-			break;
+			//case SCENE.GAME5:
+			//{
+			//	game5.draw(); //chamando desenho do quinto jogo.
+			//}
+			//break;
 
 		}
 
@@ -292,10 +293,10 @@
 			}
 			break;
 			case SCENE.GAME5:
-			{
-				game5.key_down(key);
-			}
-			break;
+			//{
+			//	game5.key_down(key);
+			//}
+			//break;
 
 		}
 	}
@@ -335,10 +336,10 @@
 			}
 			break;
 			case SCENE.GAME5:
-			{
-				game5.key_up(key);
-			}
-			break;
+			//{
+			//	game5.key_up(key);
+			//}
+			//break;
 	
 		}
 	}
@@ -377,10 +378,10 @@
 			}
 			break;
 			case SCENE.GAME5:
-			{
-				game5.mouse_move(mouse);
-			}
-			break;
+			//{
+			//	game5.mouse_move(mouse);
+			//}
+			//break;
 
 		}
 	}
@@ -420,10 +421,10 @@
 			}
 			break;
 			case SCENE.GAME5:
-			{
-				game5.mouse_up(mouse);
-			}
-			break;
+			//{
+			//	game5.mouse_up(mouse);
+			//}
+			//break;
 
 		}
 	}
@@ -464,10 +465,10 @@
 			}
 			break;
 			case SCENE.GAME5:
-			{
-				game5.mouse_down(mouse);
-			}
-			break;
+			//{
+			//	game5.mouse_down(mouse);
+			//}
+			//break;
 
 		}
 	}
