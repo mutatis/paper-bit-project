@@ -116,9 +116,9 @@ function Game4SceneLevel4()
 		}
 
 		
-        screen.font = "20px Comic Sans MS";
+        screen.font = "40px Arial";
         screen.fillStyle="#FFFFFF";
-		screen.fillText(""+this.pontos, 90, 60);
+		screen.fillText(""+this.pontos, 100, 70);
                 
 				
         //this.button_credits.draw();

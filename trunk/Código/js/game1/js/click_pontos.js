@@ -1,4 +1,4 @@
-function Gato_pontos(file, tamanho_w, tamanho_h, posicao_x, posicao_y)
+function Click_pontos(file, tamanho_w, tamanho_h, posicao_x, posicao_y)
 {//abre 
 
         this.img = new Image();
@@ -17,7 +17,7 @@ function Gato_pontos(file, tamanho_w, tamanho_h, posicao_x, posicao_y)
         this.tamanho_w_src = tamanho_w;
         this.tamanho_h_src = tamanho_h;
         
-        this.tamanho_w_dst = 260;//180,80
+        this.tamanho_w_dst = 260;
         this.tamanho_h_dst = 160;
         
         this.posicao_x_src = 0;
