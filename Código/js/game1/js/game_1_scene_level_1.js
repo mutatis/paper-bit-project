@@ -6,6 +6,7 @@ function Game1SceneLevel1()
 		this.music.src = "sounds/Mouse.mp3"
 		this.music.volume = 1.0
 		
+		this.barra_pontos = new Click_pontos("imgs/game_1/barra_pontos.png",180,80,5,20);
 		
 		this.button = new MyButton("imgs/close.png", 50, 50, 720, 10);
 		//source
@@ -332,6 +333,8 @@ this.draw=function()
 		
 		this.button.draw();
 		
+		this.barra_pontos.draw();
+		
 		if(this.fundo_visivel == true)
 		{
 			screen.drawImage(this.fundo_imagem, this.fundo_posicao_x, this.fundo_posicao_y);
@@ -362,9 +365,9 @@ this.draw=function()
 		}
 			
 		screen.font = "40px Arial";
-		screen.fillStyle="ED1C24";
+		screen.fillStyle="ffffff";
 		//screen.fillText("Tempo: "+this.cronometro,  20, 40);
-		screen.fillText("Pontos: "+this.pontos, 20, 40);
+		screen.fillText(" "+this.pontos, 60, 80);
 		
 		
 			

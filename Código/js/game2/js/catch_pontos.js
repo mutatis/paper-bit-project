@@ -18,7 +18,7 @@ function Catch_pontos(file, tamanho_w, tamanho_h, posicao_x, posicao_y)
         this.tamanho_h_src = tamanho_h;
         
         this.tamanho_w_dst = 250;
-        this.tamanho_h_dst = 160;
+        this.tamanho_h_dst = 150;
         
         this.posicao_x_src = 0;
         this.posicao_y_src = 0;
