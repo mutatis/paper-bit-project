@@ -7,8 +7,8 @@ function Asteroide(file, size_x, size_y, vel_x, vel_y)
         
     this.size_x = size_x;
     this.size_y = size_y;
-    this.position_x = Math.floor((Math.random()*(SCREEN_WIDTH - this.size_x))+1);
-    this.position_y = Math.floor((Math.random()*(SCREEN_HEIGHT - this.size_y))+1);
+    this.position_x = Math.floor((Math.random()*(SCREEN_WIDTH - this.size_x))+1)+200;
+    this.position_y = Math.floor((Math.random()*(SCREEN_HEIGHT - this.size_y))+1)+300;
     this.velocity_x =  vel_x;
     this.velocity_y =  vel_y;
     this.velocity_MAX = 15;
@@ -60,26 +60,30 @@ function Asteroide(file, size_x, size_y, vel_x, vel_y)
     }*/
     
     
-    		this.Boundaries=function()
+    this.Boundaries=function()
     {
     	if(this.position_x + this.size_x*this.scale_x < 0)
     	{
     		this.position_x = SCREEN_WIDTH;
+    		this.visible = true;
     	}
     	
     	if(this.position_y + this.size_y*this.scale_y < 0)
     	{
     		this.position_y = SCREEN_HEIGHT;
+    		this.visible = true;
     	}
     	
     	if(this.position_x > SCREEN_WIDTH)
     	{
     		this.position_x = - this.size_x*this.scale_x;
+    		this.visible = true;
     	}
     	
     	if(this.position_y > SCREEN_HEIGHT)
     	{
     		this.position_y = - this.size_y*this.scale_y;
+    		this.visible = true;
     	}
 		 
     }

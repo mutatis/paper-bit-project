@@ -23,12 +23,12 @@ function Player4(file, size_x, size_y, position_x, position_y)
     this.velocity_x = 0;
     this.velocity_y = 0;
     
-    this.speed = 0.09;//velocity, acceleration... TO DO cannot put vel higher then a certain maximum value
+    this.speed = 0.50;//velocity, acceleration... TO DO cannot put vel higher then a certain maximum value
 	
 	this.friction = 0.99;//desacceleration... TO DO cannot put vel less than zero
 	
 	this.rotation = 0;	
-	this.rotateSpeed = 1; 
+	this.rotateSpeed = 10; 
 
 	//som do tiro
 	this.music = new Audio();
@@ -85,7 +85,7 @@ function Player4(file, size_x, size_y, position_x, position_y)
     	this.Boundaries();
     	
     	//atirar
-    	if(this.space_pressed)
+    	if(this.space_pressed&&this.visible)
     	{    		
     		//player_position_x, player_position_y, player_velocity_x, player_velocity_y)
     		this.shoots.push(new Shoot(this.position_x_dst, this.position_y_dst+10, this.rotation));
