@@ -270,7 +270,7 @@ function Game3SceneLevel1()
 		
         screen.font = "40px Arial";
         screen.fillStyle="#ffffff";
-		screen.fillText("" + this.player.points, 65, 65);
+		screen.fillText("" + this.player.points, 50, 65);
 		          
     }
     

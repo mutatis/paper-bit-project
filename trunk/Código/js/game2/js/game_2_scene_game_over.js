@@ -1,8 +1,7 @@
 function SceneGameOverGame2()
 {
 	
-	this.over = new FundoGame2("imgs/game_2/over.png", 800, 600); // Imagem de Fundo
-	//Botões para o jogo e MENU/ESQUELETO.
+	this.over = new FundoGame2("imgs/game_2/over.png", 800, 600)
 	this.button_start = new MyButton("imgs/play1.png", 166, 72, 575, 350);
 	this.button_back = new MyButton("imgs/play2.png",166, 72, 575, 450);
 
@@ -48,7 +47,6 @@ function SceneGameOverGame2()
 			game2.level01.som_over.pause();
 			this.resetGame2()
 			//game2.Intro.som_intro.play();	
-			this.button_start.current_frame = 1;
 			
 		}//fecha if
 		
@@ -60,7 +58,6 @@ function SceneGameOverGame2()
 			game2.currentScene = game2.SCENE.INTRO;
 			game2.level01.som_over.pause();
 			this.resetGame2();
-			this.button_back.current_frame = 1;
 			
 		}//fecha if
 		

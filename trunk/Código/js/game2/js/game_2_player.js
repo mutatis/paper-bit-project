@@ -8,7 +8,7 @@ function PlayerGame2(arquivo, tamanho_w, tamanho_h)
 	this.imagem.onload = function()
 	{
 		carregar = true; 
-		//console.log("Uhuul Heroi u.u" + carregar);
+		console.log("Uhuul Heroi u.u" + carregar);
 	};
 	
 	this.tamanho_w = tamanho_w;
@@ -53,7 +53,7 @@ function PlayerGame2(arquivo, tamanho_w, tamanho_h)
     {
     	if(key.keyCode == 39 )
 		{
-			this.direita = true;
+			this.direita = true
 		}
 		else if(key.keyCode == 37 )
 		{
@@ -65,7 +65,7 @@ function PlayerGame2(arquivo, tamanho_w, tamanho_h)
     {
     	if(key.keyCode == 39 )
 		{
-			this.direita = false;
+			this.direita = false
 		}
 		else if(key.keyCode == 37 )
 		{

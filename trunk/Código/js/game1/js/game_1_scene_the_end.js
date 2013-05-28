@@ -13,10 +13,16 @@ function Game1SceneTheEnd()
 		this.music.src = "sounds/Mouse.mp3"
 		this.music.volume = 1.0
 		
+		//som do fundo da intro
+		this.music_fundo = new Audio();
+		this.music_fundo.src = "sounds/venceu.mp3"
+		this.music_fundo.volume = 1.0
+		
        	this.update=function()
 	{			
 	this.button_start
 	this.button_back
+	this.music_fundo.play();
     };
     
 	}//fecha reset
@@ -43,6 +49,7 @@ function Game1SceneTheEnd()
         	game1.currentGameScene = game1.GAMESCENE.LEVEL1;  //botão para o game
 			this.button_start.current_frame = 1;
 			this.music.play();//som ao ser clicado pelo botão
+			this.music_fundo.pause();
         }
 		//se o botao voltar for clicado, ele vai pro menu e sai um efeito sonoro
 		if(this.button_back.clicked(mouse)) //botão para voltar o menu
@@ -51,6 +58,7 @@ function Game1SceneTheEnd()
 			game1.currentGameScene = game1.GAMESCENE.INTRO;
 			this.button_back.current_frame = 1;
 			this.music.play();//som ao ser clicado pelo botão
+			this.music_fundo.pause();
         	
         	 
         	

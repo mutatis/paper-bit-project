@@ -25,7 +25,7 @@ function BotaoGame2(arquivo, tamanho_w, tamanho_h, posicao_x, posicao_y)
 	{//abre draw
 		
 		if(this.visivel)
-		screen.drawImage(this.imagem, this.posicao_x, this.posicao_y, this.tamanho_w, this.tamanho_h);
+		screen.drawImage(this.imagem, this.posicao_x, this.posicao_y, this.tamanho_w, this.tamanho_h)
 		
 	}//fecha draw
 	

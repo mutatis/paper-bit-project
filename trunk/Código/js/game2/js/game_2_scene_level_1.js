@@ -3,66 +3,61 @@ function SceneLevel01Game2()
 	this.button_back = new MyButton("imgs/close.png", 50, 50, 700, 50);
 		//som do botão ao ser clicado
 		this.music = new Audio();
-		this.music.src = "sounds/Mouse.mp3";
-		this.music.volume = 1.0;
+		this.music.src = "sounds/Mouse.mp3"
+		this.music.volume = 1.0
 	
 	this.fundo_front = new Fundo_paisagem("imgs/game_2/fundo2.png",600,800);
 	
-	this.aviao = new Fundo_paisagem("imgs/game_2/aviao.png",0,0);
+	this.aviao = new Fundo_paisagem("imgs/game_2/aviao.png",600,800);
 	
 	//file, tamanho_w, tamanho_h, posicao_x, posicao_y
-	this.barra_vida = new Catch_pontos("imgs/game_2/barra_vida.png",180,80,5,100);
-	this.barra_pontos = new Catch_pontos("imgs/game_2/barra_pontos.png",180,80,5,20);
+	//this.barra_vida = new Catch_pontos("imgs/game_2/barra_vida.png",180,80,5,100);
+	this.barra_pontos = new Catch_pontos("imgs/game_2/barra_pontos.png",250,150,5,20);
 	
-	this.fundo = new FundoGame2("imgs/game_2/fundo_catch.png", 0, 0);
+	this.fundo = new FundoGame2("imgs/game_2/fundo_catch.png", 0, 0)
 		
 	this.obstaculo = new Array();
 	
-	//criando o heroi, assim fica mais fácil usar o reset.
 	this.criarHeroi=function()
 	{
-		this.heroi = new PlayerGame2("imgs/game_2/bambu.png", 122, 175);
+		this.heroi = new PlayerGame2("imgs/game_2/bambu.png", 122, 175)
 	}
 	
-	//criando obstaculos, assim fica mais fácil usar o reset.
 	this.criarObstaculos=function()
 	{
-		this.obstaculo.push(new ObstaculoGame2("imgs/game_2/panda1.png", 100, 100,Math.floor((Math.random()*(this.aviao-this.tamanho_w))), 20, 0));
+		this.obstaculo.push(new ObstaculoGame2("imgs/game_2/panda1.png", 100, 100, 20, 0));
 
-		this.obstaculo.push(new ObstaculoGame2("imgs/game_2/panda2.png", 100, 100,Math.floor((Math.random()*(this.aviao-this.tamanho_w))), 30, 0));
+		this.obstaculo.push(new ObstaculoGame2("imgs/game_2/panda2.png", 100, 100, 30, 0));
 
-		this.obstaculo.push(new ObstaculoGame2("imgs/game_2/panda3.png", 70, 70,Math.floor((Math.random()*(this.aviao-this.tamanho_w))), 5, 0));	
+		this.obstaculo.push(new ObstaculoGame2("imgs/game_2/panda3.png", 70, 70, 5, 0));	
 
-		this.obstaculo.push(new ObstaculoGame2("imgs/game_2/panda4.png", 70, 70,Math.floor((Math.random()*(this.aviao-this.tamanho_w))), 10, 0));
+		this.obstaculo.push(new ObstaculoGame2("imgs/game_2/panda4.png", 70, 70, 10, 0));
 	
-		this.obstaculo.push(new ObstaculoGame2("imgs/game_2/vida.png", 200, 50,Math.floor((Math.random()*(this.aviao-this.tamanho_w))), 0, 1));
+		this.obstaculo.push(new ObstaculoGame2("imgs/game_2/vida.png", 200, 50, 0, 1));
 	}
 	
-	//som da tela de venceu do jogo.
 	this.som_win = new Audio();
 	this.som_win.src = "sounds/venceu.mp3";
 	this.som_win.load();
 	this.som_win.loop = true; 
 	this.som_win.volume = 1.0;
 	
-	//som da tela de perdeu do jogo.
 	this.som_over = new Audio();
 	this.som_over.src = "sounds/perdeu.mp3";
 	this.som_over.load();
 	this.som_over.loop = true; 
 	this.som_over.volume = 1.0;
 	
-	//chamando as funções que eu crio.
 	this.criarObstaculos();
+	
 	this.criarHeroi();
 	
 	//função Reset, faz o jogo começar do 0.
 	this.resetGame2=function()
-	{	
-		// [] deixa que criar uma função.
+	{		
 		this.heroi.vida = 3;
 		this.heroi.pontos = 0;
- 		this.obstaculo = []; 
+ 		this.obstaculo = [];
 		this.criarObstaculos();
 		this.heroi = [];
 		this.criarHeroi();		
@@ -70,8 +65,8 @@ function SceneLevel01Game2()
 	
 	this.update = function()
 	{
-		
 		this.fundo.update();
+		
 		this.heroi.update();
 	
 		for(var i = 0; i < this.obstaculo.length; i++)
@@ -119,7 +114,10 @@ function SceneLevel01Game2()
 				
 		//desenha o fundo.
 		this.fundo.draw();
+
 		this.fundo_front.draw();
+		
+		this.aviao.draw();
 		
 		//desenha o heroi em uma posição.
 		screen.drawImage(this.heroi.imagem, this.heroi.posicao_x, this.heroi.posicao_y);
@@ -129,21 +127,15 @@ function SceneLevel01Game2()
 	for(var i = 0; i < this.obstaculo.length; i++)
 	{
 		screen.drawImage(this.obstaculo[i].imagem, this.obstaculo[i].posicao_x, this.obstaculo[i].posicao_y);	
-	}	
-		//desenha o avião por cima de tudo.
-		this.aviao.draw();
-		
-		//desenhar barra de pontos.
+	}
 		this.barra_pontos.draw();
-		
-		//desenhar barra de vidas.
-		this.barra_vida.draw();
+		//this.barra_vida.draw();
 		
 		//escreve da tela e conta, vidas e pontos.
 		screen.font = "40px Arial";
 		screen.fillStyle = "ffffff";
-		screen.fillText(" " + this.heroi.vida, 60, 170);
-		screen.fillText(" " + this.heroi.pontos, 50, 90);
+		screen.fillText(" " + this.heroi.vida, 90, 130);
+		screen.fillText(" " + this.heroi.pontos, 90, 90);
 		
 		//desenha o botão pra voltar ao MENU/ESQUELETO.
 		this.button_back.draw();
@@ -162,8 +154,6 @@ function SceneLevel01Game2()
 			this.resetGame2();
 			game2.Intro.som_fundo.pause();	
 			this.music.play();//som ao ser clicado pelo botão
-			this.button_back.current_frame = 1;
-			
 		}//fecha if
     };
 
