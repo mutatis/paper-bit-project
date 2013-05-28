@@ -1,17 +1,18 @@
 function SceneIntroGame2()
 {//abre SCENEIntro
 	
-	this.menu = new FundoGame2("imgs/game_2/menu.png", 0, 0)
-	this.jacy = new FundoGame2("imgs/game_2/jacy.png", 0, 0)
-	this.boca_move1 = new boca_move ("imgs/boca.png",127 , 80, 130, 225);
+	this.menu = new FundoGame2("imgs/game_2/menu.png", 0, 0);
+	this.jacy = new FundoGame2("imgs/game_2/jacy.png", 0, 0); //Personagem do Jacy.
+	this.boca_move1 = new boca_move ("imgs/boca.png",127 , 80, 130, 225); //Boca do personagem.
+	//Botões para o jogo e MENU/ESQUELETO.
 	this.button_start = new MyButton("imgs/play1.png", 166, 72, 575, 350);
 	this.button_back = new MyButton("imgs/play2.png",166, 72, 575, 450);
-	this.balao1 = new balao ("imgs/2.png", 204, 215,250,30);
+	this.balao1 = new balao ("imgs/2.png", 204, 215,250,30); //Falas do personagem.
 	
 	//som do botão ao ser clicado
 	this.music = new Audio();
-	this.music.src = "sounds/Mouse.mp3"
-	this.music.volume = 1.0
+	this.music.src = "sounds/Mouse.mp3";
+	this.music.volume = 1.0;
 	
 	/*this.som_intro = new Audio();
 	this.som_intro.src = "sounds/game_2/som_intro.mp3";
@@ -20,6 +21,7 @@ function SceneIntroGame2()
 	this.som_intro.volume = 1.0;
 	this.som_intro.play();*/	
 	
+	//som de fundo do jogo.
 	this.som_fundo = new Audio();
 	this.som_fundo.src = "sounds/game_2/som_fundo.mp3";
 	this.som_fundo.load();
@@ -36,9 +38,7 @@ function SceneIntroGame2()
 	{//abre draw
 		
 		this.menu.draw();
-			
 		this.button_start.draw();
-		
 		this.button_back.draw();
 		this.jacy.draw();
 		this.boca_move1.draw();
