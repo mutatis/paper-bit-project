@@ -24,27 +24,33 @@ function Game1SceneIntro ()
     
     this.draw=function()
     {                        
+		//mandando o fundo desenhar
 		this.fundo.draw();				
-
+		//mandando o botao start desenhar
         this.button_start.draw();
-        
+        //mandando o botao voltar desenhar
         this.button.draw();
+		//mandando a Sara ser desenhada(menina que esta na intro)
 		this.Sara.draw();
+		//mandando a boca dela desenhar
 		this.boca_move1.draw();
+		//mandando desenhar o balao de fala que sai da boca dela
 		this.balao1.draw();
         
 				          
     }
     
+    //vendo se o botao do mouse foi pressionado	
 	this.mouse_down=function(mouse)
-   	{   		
-        if(this.button_start.clicked(mouse))
+   	{
+		//se o botao start for clicado, ele vai pro jogo e sai um efeito sonoro 
+		if(this.button_start.clicked(mouse))
         {
         	game1.currentGameScene = game1.GAMESCENE.LEVEL1;  
 			this.music.play();//som ao ser clicado pelo botão
 			this.button_start.current_frame = 1;
         }
-        
+   		//se o botao voltar for clicado, ele vai pro menu e sai um efeito sonoro
         if(this.button.clicked(mouse))
     	{
     		currentScene = SCENE.MENU;
@@ -55,26 +61,32 @@ function Game1SceneIntro ()
 
     }
     
+    //vendo se alguma tecla foi pressionada
     this.key_down=function(key)
     {
                 //
     }
     
-    this.mouse_up=function(mouse)
+    
+    //vendo se o botao do mouse foi solto
+	this.mouse_up=function(mouse)
     {
                 //
         
     }
     
-    this.key_up=function(key)
+ 
+    //vendo se alguma tecla foi solta    
+	this.key_up=function(key)
     {
                 //
     }
 	
-	  	this.mouse_move=function(mouse)
+  	//vendo onde o mouse ta na tela
+	this.mouse_move=function(mouse)
   	{
-  		//console.log("Game3 mouse X " + mouse.x + " mouse Y " + mouse.y );
   		
+		//vendo se o mouse passou em cima do botao, se passou desenha a outra parte da imagem, fazendo o botao"acender"
   		if(this.button_start.mouse_over(mouse))
   		{
   			

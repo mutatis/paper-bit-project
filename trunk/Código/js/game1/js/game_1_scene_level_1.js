@@ -25,7 +25,8 @@ function Game1SceneLevel1()
 		this.music_soco = new Audio();
 		this.music_soco.src = "sounds/game_1/socos.mp3"
 		this.music_soco.volume = 1.0
-	    	    
+	    
+			//tempo de cada alvo, pontos,cronometro, game_over e game_win	
 		this.tempoSeg1 = 0
 		this.tempoSeg2 = 0
 		this.tempoSeg3 = 0
@@ -35,32 +36,13 @@ function Game1SceneLevel1()
 		this.game_over = false;
 		this.game_win = false;
 		
-		/*this.som_fundo = new Audio();
-		this.som_acertar = new Audio();
-		this.som_errar = new Audio();
-		this.som_perder = new Audio();
-		this.som_vencer = new Audio();*/
 		
-		this.fundo_imagem = new Image();
-		this.fundo_carregada = false;
-		this.fundo_tamanho_w = 800;
-		this.fundo_tamanho_h = 600;
-		this.fundo_posicao_x = 0;
-		this.fundo_posicao_y = 0;
-		this.fundo_visivel = true;
 		
-		this.play_imagem = new Image();
-		this.play_carregada = false;
-		this.play_tamanho_w = 800;
-		this.play_tamanho_h = 600;
-		this.play_posicao_x = 0;
-		this.play_posicao_y = 0;
-		this.play_visivel = true;
+		
 		
 		//Vítima
 	    this.alvo1_imagem = new Image();
 	    this.alvo1_carregada = false;
-        this.alvo1_HP = 25;
         this.alvo1_tamanho_w = 100;
         this.alvo1_tamanho_h = 100;
         this.alvo1_posicao_x = Math.floor((Math.random()*(this.tela_tamanho_w - this.alvo1_tamanho_w))+1);
@@ -74,8 +56,7 @@ function Game1SceneLevel1()
 		//Vítima
         this.alvo2_imagem = new Image();
         this.alvo2_carregada = false;
-	    this.alvo2_HP = 50;
-		this.alvo2_tamanho_w = 100;
+	    this.alvo2_tamanho_w = 100;
 		this.alvo2_tamanho_h = 100;
 		this.alvo2_posicao_x = Math.floor((Math.random()*(this.tela_tamanho_w - this.alvo2_tamanho_w))+1);
 		this.alvo2_posicao_y = Math.floor((Math.random()*(this.tela_tamanho_h - this.alvo2_tamanho_h))+1);
@@ -88,7 +69,6 @@ function Game1SceneLevel1()
 		//Vítima
 		this.alvo3_imagem = new Image();
 		this.alvo3_carregada = false;
-		this.alvo3_HP = 75;
 		this.alvo3_tamanho_w = 100;
 		this.alvo3_tamanho_h = 100;
 		this.alvo3_posicao_x = Math.floor((Math.random()*(this.tela_tamanho_w - this.alvo3_tamanho_w))+1);
@@ -102,7 +82,6 @@ function Game1SceneLevel1()
 		//Bandido
 		this.alvo4_imagem = new Image();
 		this.alvo4_carregada = false;
-		this.alvo4_HP;
 		this.alvo4_tamanho_w = 100;
 		this.alvo4_tamanho_h = 100;
 		this.alvo4_posicao_x = Math.floor((Math.random()*(this.tela_tamanho_w - this.alvo4_tamanho_w))+1);
@@ -116,7 +95,6 @@ function Game1SceneLevel1()
 		//Vítima
 		this.alvo5_imagem = new Image();
 		this.alvo5_carregada = false;
-		this.alvo5_HP;
 		this.alvo5_tamanho_w = 100;
 		this.alvo5_tamanho_h = 100;
 		this.alvo5_posicao_x = Math.floor((Math.random()*(this.tela_tamanho_w - this.alvo4_tamanho_w))+1);
@@ -130,7 +108,6 @@ function Game1SceneLevel1()
 		//Bandido
 		this.alvo6_imagem = new Image();
 		this.alvo6_carregada = false;
-		this.alvo6_HP;
 		this.alvo6_tamanho_w = 100;
 		this.alvo6_tamanho_h = 100;
 		this.alvo6_posicao_x = Math.floor((Math.random()*(this.tela_tamanho_w - this.alvo6_tamanho_w))+1);
@@ -141,88 +118,53 @@ function Game1SceneLevel1()
 		this.alvo6_reaparecer = 20;
 		this.alvo6_visivel = true;
 
-		//var SCENEGAME1 = {INTRO: 0, GAME: 1};
-		//var currentSceneGame1 = SCENEGAME1.GAME;
 		
-////Load();
-	  	
-//this.function.Load()
-//{
 	
-	
+	//carregando as imagens dos alvos
 	this.alvo1_imagem.src="imgs/game_1/alvo1_imagem.png"
 	this.alvo1_imagem.onload = function() { this.alvo1_carregada = true; 
-	console.log("alvo1_imagem")}
+	}
 	
 	this.alvo2_imagem.src="imgs/game_1/alvo2_imagem.png"
 	this.alvo2_imagem.onload = function() { this.alvo2_carregada = true; 
-	console.log("alvo2_imagem")}
+	}
 	
 	this.alvo3_imagem.src="imgs/game_1/alvo3_imagem.png"
 	this.alvo3_imagem.onload = function() { this.alvo3_carregada = true; 
-	console.log("alvo3_imagem")}
+	}
 	
 	this.alvo4_imagem.src="imgs/game_1/bandido.png"
 	this.alvo4_imagem.onload = function() { this.alvo4_carregada = true; 
-	console.log("alvo4_imagem")}
+	}
 	
 	this.alvo5_imagem.src="imgs/game_1/alvo_7.png"
 	this.alvo5_imagem.onload = function() { this.alvo5_carregada = true; 
-	console.log("alvo4_imagem")}
+	}
 	
-	//this.alvo6_imagem.src="imgs/game_1/bandido.png"
-	//this.alvo6_imagem.onload = function() { this.alvo6_carregada = true; 
-	//console.log("alvo4_imagem")}
-		
-	console.log("Load");
 	
-	//som_fundo.src = "sounds/game_1/som_fundo.mp3";
-	//som_fundo.load();
-	//som_fundo.loop = true; 
-	//som_fundo.volume = 0.25;
-	//som_fundo.play();
-	
-	/*som_perder.src= "sounds/game_1/som_perder.mp3"
-	som_perder.load();
-	som_perder.loop = true;
-	som_perder.volume = 1.0
-	
-	som_vencer.src= "sounds/game_1/som_vencer.mp3"
-	som_vencer.load();
-	som_vencer.loop = true;
-	som_vencer.volume = 1.0
-	
-	som_acertar.src = "sounds/game_1/som_acertar.mp3";
-	som_acertar.load();
-	som_acertar.volume = 1.0
-		
-	som_errar.src= "sounds/game_1/som_errar.mp3"
-	som_errar.load();
-	som_errar.volume = 1.0*/
 	
 	if((this.alvo1_carregada)&&(this.alvo2_carregada)&&(this.alvo3_carregada)&&(this.alvo4_carregada))
 	{
 		this.Loop();		
 	}
 	else
-	/*{
-		setTimeout(Load, 30 ) ;
-	}*/
-//}
+	
 
 this.update=function()
 {
+	//update da imagem de fundo que se move por traz da janela
 	this.fundo_move.update();
-					
+	//musica de fundo sendo tocada				
 	this.music_fundo.play();
 			
-			
+			//tempo de cada alvo e o cronometro
 			this.tempoSeg1++;
 			this.tempoSeg2++;
 			this.tempoSeg3++;
 			this.tempoSeg4++;
 			this.cronometro++;
-					
+			
+			//se o tempo for maior que 20 o alvo vai ficar invisivel, e depois que ele desaparecer ele vai demorar 50 para ser desenhado de novo e um posiçao aleatoria	
 			if(this.tempoSeg1 > 20)
 			{
 				this.alvo1_visivel = false;
@@ -234,6 +176,7 @@ this.update=function()
 				this.alvo1_posicao_y = Math.floor((Math.random()*(this.tela_tamanho_h - this.alvo1_tamanho_h))+1);
 				this.tempoSeg1 = 0
 			}
+			//se o tempo for maior que 20 o alvo vai ficar invisivel, e depois que ele desaparecer ele vai demorar 50 para ser desenhado de novo e um posiçao aleatoria
 			if(this.tempoSeg2 > 40)
 			{
 				this.alvo2_visivel = false;
@@ -245,6 +188,7 @@ this.update=function()
 				this.alvo2_posicao_y = Math.floor((Math.random()*(this.tela_tamanho_h - this.alvo2_tamanho_h))+1);
 				this.tempoSeg2 = 0
 			}
+			//se o tempo for maior que 20 o alvo vai ficar invisivel, e depois que ele desaparecer ele vai demorar 50 para ser desenhado de novo e um posiçao aleatoria
 			if(this.tempoSeg3 > 90)
 			{
 				this.alvo3_visivel = true;
@@ -252,6 +196,7 @@ this.update=function()
 				this.alvo3_posicao_y = Math.floor((Math.random()*(this.tela_tamanho_h - this.alvo3_tamanho_h))+1);
 				this.tempoSeg3 = 0
 			}
+			//se o tempo for maior que 20 o alvo vai ficar invisivel, e depois que ele desaparecer ele vai demorar 50 para ser desenhado de novo e um posiçao aleatoria
 			if(this.tempoSeg4 > 20)
 			{
 				this.alvo4_visivel = true;
@@ -259,6 +204,7 @@ this.update=function()
 				this.alvo4_posicao_y = Math.floor((Math.random()*(this.tela_tamanho_h - this.alvo4_tamanho_h))+1);
 				this.tempoSeg4 = 0
 			}	
+			//se o tempo for maior que 20 o alvo vai ficar invisivel, e depois que ele desaparecer ele vai demorar 50 para ser desenhado de novo e um posiçao aleatoria
 			if(this.tempoSeg5 > 80)
 			{
 				this.alvo5_visivel = true;
@@ -266,6 +212,7 @@ this.update=function()
 				this.alvo5_posicao_y = Math.floor((Math.random()*(this.tela_tamanho_h - this.alvo5_tamanho_h))+1);
 				this.tempoSeg5 = 0
 			}
+			//se o tempo for maior que 20 o alvo vai ficar invisivel, e depois que ele desaparecer ele vai demorar 50 para ser desenhado de novo e um posiçao aleatoria
 			if(this.tempoSeg6 > 20)
 			{
 				this.alvo6_visivel = true;
@@ -273,10 +220,12 @@ this.update=function()
 				this.alvo6_posicao_y = Math.floor((Math.random()*(this.tela_tamanho_h - this.alvo6_tamanho_h))+1);
 				this.tempoSeg6 = 0
 			}
-			
+			//se o cronometro for maior que 1000 e os pontos >= a 700 as imagens serao tiradas da tela, os tempos irao zerar, game_win sera true e vai mudar de cena
+			//pausando a musica do jogo, zerando o cronometro e os pontos vao para 5, pois quando voce clica para começar o jogo ele reconhece, entao para resolver
+			//esse problema colocamos o valor de 5 quando mudar de cena
 			if(this.cronometro > 1000)
 			{	
-				if(this.pontos >= 100)
+				if(this.pontos >= 700)
 				{
 					this.alvo1_visivel = false
 					this.alvo2_visivel = false
@@ -287,8 +236,6 @@ this.update=function()
 					this.tempoSeg3 = 0
 					this.tempoSeg4 = 0
 					this.cronometro = 1000
-					//som_fundo.pause();
-					//som_vencer.play();
 					this.game_win = true
 					if(this.game_win == true)
 					{
@@ -302,6 +249,9 @@ this.update=function()
 
 				}
 				else
+				//se nao acontecerem os fatos acima, as imagens serao tiradas da tela, os tempos irao zerar, game_over sera true e vai mudar de cena
+				//pausando a musica do jogo, zerando o cronometro e os pontos vao para 5, pois quando voce clica para começar o jogo ele reconhece, entao para resolver
+				//esse problema colocamos o valor de 5 quando mudar de cena
 				{
 					this.alvo1_visivel = false
 					this.alvo2_visivel = false
@@ -312,8 +262,6 @@ this.update=function()
 					this.tempoSeg3 = 0
 					this.tempoSeg4 = 0
 					this.cronometro = 1000
-					//som_fundo.pause();
-					//som_perder.play();
 					this.game_over = true
 					
 					if(this.game_over == true)
@@ -333,15 +281,20 @@ this.update=function()
 
 
 this.draw=function()
-{			
+{		
+		//desenhando o fundo que se move
 		this.fundo_move.draw();
 		
+		//desenhando a janela que fica na frente do fundo que se move
 		this.fundo_janela.draw();
 		
+		//desenhando o botao
 		this.button.draw();
 		
+		//desenhando a barra de pontos
 		this.barra_pontos.draw();
 		
+		//se todas as imgens forem igual a verdadeiro, elas serao desenhadas em suas posiçoes
 		if(this.fundo_visivel == true)
 		{
 			screen.drawImage(this.fundo_imagem, this.fundo_posicao_x, this.fundo_posicao_y);
@@ -374,7 +327,7 @@ this.draw=function()
 		screen.font = "40px Arial";
 		screen.fillStyle="ffffff";
 		//screen.fillText("Tempo: "+this.cronometro,  20, 40);
-		screen.fillText(" "+this.pontos, 60, 80);
+		screen.fillText(this.pontos+"/700", 60, 80);//desenhando os pontos
 		
 		
 			
@@ -382,10 +335,10 @@ this.draw=function()
 
 this.Loop=function()
 {
-	//console.log("Loop");
-
+	
+	//chamando o update dentro do loop
 	this.update();
-		
+	//chamando o draw dentro do loop
 	this.draw();
 	
 	setTimeout(Loop, 30 );
@@ -402,13 +355,13 @@ function Collide(x1, y1, w1, h1, x2, y2, w2, h2)
 		return true;
 	}
 }
-
+//vendo se o evendo "mouse_down"(clicar) acontece
 window.addEventListener('mousedown', mouse_down, true);
 
 this.mouse_down=function(mouse)
 {
-		console.log("down X " + mouse.x + " down Y " + mouse.y);
-	
+		
+		//se clicar no botao, ele volta pra cena do menu, zerando o cronometro, pausando a musica
 		if(this.button.clicked(mouse))
     	{
     		currentScene = SCENE.MENU;
@@ -419,13 +372,10 @@ this.mouse_down=function(mouse)
 			this.music.play();//som ao ser clicado pelo botão
 			this.button.current_frame = 1;
     		this.music_fundo.pause();
-    	 //som_fundo.pause(); 
-		 //som_acertar.pause();
-		 //som_errar.pause();
-		 //som_perder.pause();
-		 //som_vencer.pause(); 
+    	
     	}
-
+		
+		//se o alvo for clicado ele ganhara ou perdera pontos de acordo com cada um, o alvo ficara invisivel, e tocara um efeito sonoro
 		if(Collide(mouse.x-10, mouse.y-30, 1, 1, this.alvo1_posicao_x, this.alvo1_posicao_y, this.alvo1_tamanho_w, this.alvo1_tamanho_h))
 		{
 			this.pontos+= 15;
@@ -469,29 +419,31 @@ this.mouse_down=function(mouse)
 			//som_errar.play();
 			this.music_soco.play();//som ao ser clicado pelo botão
 		}
+		//se ele clicar errado, ele perder 5 pontos
 		else
 		{
 			this.pontos-= 5;
-			//som_errar.play();
+			
 		}
 	
-			//break;
+			
 	}
 
 
 
 	   	
 	   
-	
+		//vendo se o botao do mouse foi solto	
 	    this.mouse_up=function(mouse)
     {
                 //
         
     }
-	
+
+		//vendo onde o mouse ta na tela	
 		this.mouse_move=function(mouse)
   	{
-  		
+  		//vendo se o mouse passou em cima do botao, se passou desenha a outra parte da imagem, fazendo o botao"acender"
   		if(this.button.mouse_over(mouse))
   		{
   			

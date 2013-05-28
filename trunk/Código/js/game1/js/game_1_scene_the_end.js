@@ -24,22 +24,27 @@ function Game1SceneTheEnd()
 	this.reset(); 
 	
     this.draw=function()
-    {                        
+    {    
+		//mandando fundo ser desenhado
 		this.fundo.draw();				
-        this.button_start.draw();
+        //mandando botao de start ser desenhado
+		this.button_start.draw();
+		//mandando botao de voltar ser desenhado
 		this.button_back.draw();
   		          
     }
     
+    //vendo se o botao do mouse foi pressionado
 	this.mouse_down=function(mouse)
    	{   		
-        if(this.button_start.clicked(mouse))
+        //se o botao start for clicado, ele vai pro jogo e sai um efeito sonoro 
+		if(this.button_start.clicked(mouse))
         {
         	game1.currentGameScene = game1.GAMESCENE.LEVEL1;  //botão para o game
 			this.button_start.current_frame = 1;
 			this.music.play();//som ao ser clicado pelo botão
         }
-		
+		//se o botao voltar for clicado, ele vai pro menu e sai um efeito sonoro
 		if(this.button_back.clicked(mouse)) //botão para voltar o menu
         {
         	currentScene = SCENE.MENU;
@@ -48,33 +53,40 @@ function Game1SceneTheEnd()
 			this.music.play();//som ao ser clicado pelo botão
         	
         	 
-        	this.player.points = 0;
+        	
         
         	this.reset();
         }
         
     }
     
-    this.key_down=function(key)
+    //vendo se alguma tecla foi pressionada    
+	this.key_down=function(key)
     {
                 //
     }
-	
-	    this.key_up=function(key)
+
+
+	//vendo se alguma tecla foi solta    
+	this.key_up=function(key)
     {
                 //
     }
     
-    this.mouse_up=function(mouse)
+    
+    //vendo se o botao do mouse foi solto
+	this.mouse_up=function(mouse)
     {
                 //
         
     }
 
+	
+  	//vendo onde o mouse ta na tela
   	this.mouse_move=function(mouse)
   	{
-  		//console.log("Game3 mouse X " + mouse.x + " mouse Y " + mouse.y );
   		
+ 		//vendo se o mouse passou em cima do botao, se passou desenha a outra parte da imagem, fazendo o botao"acender"
   		if(this.button_start.mouse_over(mouse))
   		{
   			this.button_start.current_frame = 0;
