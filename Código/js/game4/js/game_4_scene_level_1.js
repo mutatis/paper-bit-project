@@ -166,6 +166,7 @@ function Game4SceneLevel4()
         	game4.currentGameScene = game4.GAMESCENE.INTRO;
 			this.music.play();//som ao ser clicado pelo botão
 			this.music_fundo.pause();
+			this.button_back.current_frame = 1;
         	 
         	//this.player.points = 0;
         

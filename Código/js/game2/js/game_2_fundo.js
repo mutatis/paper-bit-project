@@ -1,4 +1,4 @@
- function FundoGame2(arquivo, posicao_x, posicao_y)
+ function FundoGame2(arquivo, position_x, position_y)
 {
 	this.img = new Image();
 	this.img.src = arquivo;
@@ -7,30 +7,27 @@
 		
 	this.img.onload = function()
 	{
-		loaded = true; 
-		console.log("carregamento pela classe BACKGROUND" + loaded);
+		loaded = true; ;
 	};
 	
-	this.size_x = 800;
-    this.size_y = 1200;
+	this.size_x = 2382;
+    this.size_y = 600;
     this.position_x = 0;
     this.position_y = 0;
-    this.velocity_x = 0;
-    this.velocity_y = 2;
+    this.velocity_x = 1;
+    this.velocity_y = 0;
     this.velocity_MAX = 15;
     
     this.update=function()
     {
-    
-    	this.position_x += this.velocity_x;
+        this.position_x += this.velocity_x;
     	
     	this.position_y += this.velocity_y;
-    	
-    	if(this.position_y >= 0)
+
+    	if(this.position_x >= 0)
     	{
-    		this.position_y = SCREENHEIGHT - this.size_y;
+    		this.position_x = SCREENWIDTH - this.size_x;
     	}
-    	
     };
     
     this.draw=function()

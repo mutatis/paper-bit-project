@@ -39,12 +39,14 @@ function Game4SceneIntro ()
         {
         	game4.currentGameScene = game4.GAMESCENE.LEVEL4;
 			this.music.play();//som ao ser clicado pelo botão
+			this.button_start.current_frame = 1;
         }
 		
 		if(this.button_back.clicked(mouse)) //botão para voltar o menu
         {
         	currentScene = SCENE.MENU 
 			this.music.play();//som ao ser clicado pelo botão
+			this.button_back.current_frame = 1;
         }
         
     }

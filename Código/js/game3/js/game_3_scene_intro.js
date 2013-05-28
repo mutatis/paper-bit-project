@@ -44,6 +44,7 @@ function Game3SceneIntro ()
         	this.music.pause();
 			this.music.play();//som ao ser clicado pelo botão
 			//this.music_fundo.pause();
+			this.button_start.current_frame = 1;
         }
 		
 		if(this.button_back.clicked(mouse)) //botão para voltar o menu
@@ -52,6 +53,7 @@ function Game3SceneIntro ()
         	this.music.pause();
 			this.music.play();//som ao ser clicado pelo botão
 			//this.music_fundo.pause();
+			this.button_back.current_frame = 1;
         }
         
     }

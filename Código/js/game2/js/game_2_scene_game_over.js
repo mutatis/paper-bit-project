@@ -47,6 +47,7 @@ function SceneGameOverGame2()
 			game2.level01.som_over.pause();
 			this.resetGame2()
 			//game2.Intro.som_intro.play();	
+			this.button_start.current_frame = 1;
 			
 		}//fecha if
 		
@@ -58,6 +59,7 @@ function SceneGameOverGame2()
 			game2.currentScene = game2.SCENE.INTRO;
 			game2.level01.som_over.pause();
 			this.resetGame2();
+			this.button_back.current_frame = 1;
 			
 		}//fecha if
 		

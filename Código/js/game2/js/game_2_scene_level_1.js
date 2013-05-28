@@ -20,7 +20,7 @@ function SceneLevel01Game2()
 	
 	this.criarHeroi=function()
 	{
-		this.heroi = new PlayerGame2("imgs/game_2/bambu.png", 200, 100)
+		this.heroi = new PlayerGame2("imgs/game_2/bambu.png", 122, 175)
 	}
 	
 	this.criarObstaculos=function()
@@ -132,8 +132,8 @@ function SceneLevel01Game2()
 		//escreve da tela e conta, vidas e pontos.
 		screen.font = "40px Arial";
 		screen.fillStyle = "ffffff";
-		screen.fillText(" " + this.heroi.vida, 65, 170);
-		screen.fillText(" " + this.heroi.pontos, 65, 90);
+		screen.fillText(" " + this.heroi.vida, 60, 170);
+		screen.fillText(" " + this.heroi.pontos, 50, 90);
 		
 		//desenha o botão pra voltar ao MENU/ESQUELETO.
 		this.button_back.draw();
@@ -155,6 +155,8 @@ function SceneLevel01Game2()
 			this.resetGame2();
 			game2.Intro.som_fundo.pause();	
 			this.music.play();//som ao ser clicado pelo botão
+			this.button_back.current_frame = 1;
+			
 		}//fecha if
     };
 

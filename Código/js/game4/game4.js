@@ -57,7 +57,7 @@ function SceneGame4()
 				this.gameOver.draw();
 				screen.font = "20px Comic Sans MS";
 				screen.fillStyle="#000000";
-				screen.fillText("GAME1 GAMEOVER", 20, 20);
+				screen.fillText("", 20, 20);
 			break;
 		}
 	}
