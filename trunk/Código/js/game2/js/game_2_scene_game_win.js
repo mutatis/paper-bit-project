@@ -1,7 +1,8 @@
 function SceneGameWinGame2()
 {
 
-	this.Win = new FundoGame2("imgs/game_2/win.png",800,600)
+	this.Win = new FundoGame2("imgs/game_2/win.png",800,600); // Imagem de fundo.
+	//Botões para o jogo e MENU/ESQUELETO.
 	this.button_start = new MyButton("imgs/play1.png", 166, 72, 575, 350);
 	this.button_back = new MyButton("imgs/play2.png",166, 72, 575, 450);
 	

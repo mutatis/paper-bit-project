@@ -7,7 +7,7 @@
 		
 	this.img.onload = function()
 	{
-		loaded = true; ;
+		loaded = true; 
 	};
 	
 	this.size_x = 2382;
