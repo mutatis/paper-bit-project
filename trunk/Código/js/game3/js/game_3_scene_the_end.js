@@ -43,6 +43,7 @@ function Game3SceneTheEnd()
         	game3.currentGameScene = game3.GAMESCENE.LEVEL1;  //botão para o game
 			this.music.play();//som ao ser clicado pelo botão
 			this.music_fundo.pause();
+			this.button_start.current_frame = 1;
 
         }
 		
@@ -53,6 +54,7 @@ function Game3SceneTheEnd()
 			game3.currentGameScene = game3.GAMESCENE.INTRO;
 			this.music.play();//som ao ser clicado pelo botão
 			this.music_fundo.pause();
+			this.button_back.current_frame = 1;
 
         }
         

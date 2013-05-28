@@ -16,6 +16,11 @@ function Game1SceneLevel1()
 	    this.tela_tamanho_w = 800;
 	    this.tela_tamanho_h = 600;
 		
+		//som de fundo
+		this.music_fundo = new Audio();
+		this.music_fundo.src = "sounds/game_1/Ripe Hope.mp3"
+		this.music_fundo.volume = 1.0
+		
 		//som do saco
 		this.music_soco = new Audio();
 		this.music_soco.src = "sounds/game_1/socos.mp3"
@@ -209,7 +214,7 @@ this.update=function()
 {
 	this.fundo_move.update();
 					
-			
+	this.music_fundo.play();
 			
 			
 			this.tempoSeg1++;
@@ -292,6 +297,7 @@ this.update=function()
 					this.cronometro = 0;
 					this.music.play();//som ao ser clicado pelo botão
 					this.button.current_frame = 1;
+					this.music_fundo.pause();
 					}
 
 				}
@@ -317,6 +323,7 @@ this.update=function()
 					this.cronometro = 0;
 					this.music.play();//som ao ser clicado pelo botão
 					this.button.current_frame = 1;
+					this.music_fundo.pause();
 					}
 				}
 			}
@@ -411,7 +418,7 @@ this.mouse_down=function(mouse)
     		this.cronometro = 0;
 			this.music.play();//som ao ser clicado pelo botão
 			this.button.current_frame = 1;
-    		
+    		this.music_fundo.pause();
     	 //som_fundo.pause(); 
 		 //som_acertar.pause();
 		 //som_errar.pause();

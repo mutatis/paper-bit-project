@@ -57,6 +57,7 @@ function SceneIntroGame2()
 			this.som_fundo.play();	
 			//this.som_intro.pause();
 			this.music.play();//som ao ser clicado pelo botão
+			this.button_start.current_frame = 1;
 					
 		}//fecha if
 		
@@ -66,6 +67,7 @@ function SceneIntroGame2()
 			currentScene = SCENE.MENU; 
 			//this.som_intro.pause();
 			this.music.play();//som ao ser clicado pelo botão
+			this.button_back.current_frame = 1;
 		
 		}//fecha if
 		

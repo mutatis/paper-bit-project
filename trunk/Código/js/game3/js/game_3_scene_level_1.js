@@ -3,7 +3,7 @@ function Game3SceneLevel1()
 	this.reset=function()
 	{
 		//file, size_x, size_y, position_x, position_y, velocity_y
-		this.player = new Player ("imgs/game_3/spencer_boy.png", 60, 70, ((SCREENWIDTH-74)/2)-40, 0);
+		this.player = new Player ("imgs/game_3/raq.png", 60, 118, ((SCREENWIDTH-74)/2)-40, 0);
 		
 		this.fundo = new Fundo_move ("imgs/game_3/fundo_move.png",1200, 800, 0, 0);
 		this.fundo_front = new Fundo3 ("imgs/game_3/fundo_front.png",600,800);
@@ -16,6 +16,11 @@ function Game3SceneLevel1()
 		
 		this.gato = new Gato ("imgs/game_3/gato.png",42,53,10)
 		this.gato_placa = new Gato_pontos ("imgs/game_3/placa_gato.png",180,80,0,0);
+		
+		//som do fundo da intro
+		this.music_fundo = new Audio();
+		this.music_fundo.src = "sounds/game_3/Dunderpatrullen.mp3"
+		this.music_fundo.volume = 1.0
 		
 		//som do gato 
 		this.music = new Audio();
@@ -75,7 +80,7 @@ function Game3SceneLevel1()
     this.update=function()
     {
 
-		
+		//this.music_fundo.play();
         this.player.update();
 		this.fundo.update();
 		
@@ -122,7 +127,7 @@ function Game3SceneLevel1()
                 this.obstaculos_list[i].position_x,
                 this.obstaculos_list[i].position_y,
                 this.obstaculos_list[i].size_x,
-                this.obstaculos_list[i].size_y-90 //collide só nos pés do player
+                this.obstaculos_list[i].size_y-130 //collide só nos pés do player
        		))
        		{
         		//alert("oioi");
@@ -226,6 +231,7 @@ function Game3SceneLevel1()
 		if(this.player.position_y_dst > 600) //Quando o player caire passar de 600_y = Game over
 		{
 			game3.currentGameScene = game3.GAMESCENE.GAMEOVER;
+			this.music_fundo.pause();
 			this.reset();
 		}		
 		
@@ -233,6 +239,7 @@ function Game3SceneLevel1()
 	   	if(this.player.points >= 200) //Pontuação para vencer 200 pontos
 		{
 			game3.currentGameScene = game3.GAMESCENE.THEEND;
+			this.music_fundo.pause();
 			this.reset();
 		}
 	
@@ -277,6 +284,8 @@ function Game3SceneLevel1()
         
         	this.reset();
 			this.music_botao.play();//som ao ser clicado pelo botão
+			this.button_back.current_frame = 1;
+			this.music_fundo.pause();
         }
     }
     
