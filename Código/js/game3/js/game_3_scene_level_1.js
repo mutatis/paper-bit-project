@@ -19,7 +19,7 @@ function Game3SceneLevel1()
 		
 		//som do fundo da intro
 		this.music_fundo = new Audio();
-		this.music_fundo.src = "sounds/game_3/Dunderpatrullen.mp3"
+		this.music_fundo.src = "sounds/game_3/fundo.mp3"
 		this.music_fundo.volume = 1.0
 		
 		//som do gato 
@@ -80,7 +80,7 @@ function Game3SceneLevel1()
     this.update=function()
     {
 
-		//this.music_fundo.play();
+		this.music_fundo.play();
         this.player.update();
 		this.fundo.update();
 		
