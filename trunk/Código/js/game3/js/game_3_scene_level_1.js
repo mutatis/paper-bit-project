@@ -281,11 +281,10 @@ function Game3SceneLevel1()
         	currentScene = SCENE.MENU;
         	
         	game3.currentGameScene = game3.GAMESCENE.INTRO;
-        
+			this.music_fundo.pause();
         	this.reset();
 			this.music_botao.play();//som ao ser clicado pelo botão
 			this.button_back.current_frame = 1;
-			this.music_fundo.pause();
         }
     }
     
