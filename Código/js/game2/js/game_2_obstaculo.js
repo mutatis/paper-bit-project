@@ -1,4 +1,4 @@
-function ObstaculoGame2(arquivo, tamanho_w, tamanho_h, pos_x, pontos, vida)
+function ObstaculoGame2(arquivo, tamanho_w, tamanho_h, pontos, vida)
 {
 	this.imagem = new Image();
 	this.imagem.src = arquivo;
@@ -13,8 +13,8 @@ function ObstaculoGame2(arquivo, tamanho_w, tamanho_h, pos_x, pontos, vida)
 	
 	this.tamanho_w = tamanho_w;
     this.tamanho_h = tamanho_h;
-    this.posicao_x = pos_x
-    this.posicao_y = 115;
+    this.posicao_x = Math.floor((Math.random()*(SCREENWIDTH-this.tamanho_w))); 
+    this.posicao_y = 0;
     this.velocidade_x = 0;
     this.velocidade_y = Math.floor((Math.random()*1)+5);
     
@@ -38,7 +38,7 @@ function ObstaculoGame2(arquivo, tamanho_w, tamanho_h, pos_x, pontos, vida)
     {   
     	//console.log("reset pessoas");
 
-		this.posicao_y = 115
+		this.posicao_y = -this.tamanho_h;
 		this.posicao_x = Math.floor((Math.random()*(SCREENWIDTH-this.tamanho_w))); 
 		this.velocidade_y = Math.floor((Math.random()*1)+5);
     	
