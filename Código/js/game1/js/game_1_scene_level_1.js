@@ -6,6 +6,8 @@ function Game1SceneLevel1()
 		this.music.src = "sounds/Mouse.mp3"
 		this.music.volume = 1.0
 		
+		this.pontos = 0;
+		
 		this.barra_pontos = new Click_pontos("imgs/game_1/barra_pontos.png",180,80,5,20);
 		
 		this.button = new MyButton("imgs/close.png", 50, 50, 720, 10);
@@ -225,7 +227,7 @@ this.update=function()
 			//esse problema colocamos o valor de 5 quando mudar de cena
 			if(this.cronometro > 1000)
 			{	
-				if(this.pontos >= 700)
+				if(this.pontos = 700)
 				{
 					this.alvo1_visivel = false
 					this.alvo2_visivel = false
@@ -327,7 +329,7 @@ this.draw=function()
 		screen.font = "40px Arial";
 		screen.fillStyle="ffffff";
 		//screen.fillText("Tempo: "+this.cronometro,  20, 40);
-		screen.fillText(this.pontos+"/700", 60, 80);//desenhando os pontos
+		screen.fillText(this.pontos+"", 60, 80);//desenhando os pontos
 		
 		
 			
@@ -424,15 +426,8 @@ this.mouse_down=function(mouse)
 		{
 			this.pontos-= 5;
 			
-		}
-	
-			
+		}		
 	}
-
-
-
-	   	
-	   
 		//vendo se o botao do mouse foi solto	
 	    this.mouse_up=function(mouse)
     {

@@ -41,9 +41,7 @@ function Game4SceneLevel4()
     {
 		
         this.nave1.update();
-		//this.ast.update();
-		//som tocando na intro
-	    this.music_fundo.play()
+		this.music_fundo.play()
 		
 		for(var i = 0; i < this.ast.length; i++)
 		{
@@ -110,12 +108,7 @@ function Game4SceneLevel4()
 			
 		}
 		
-		//perdeu no Fall
-		//if(this.player.position_y_dst > 600) //Quando o player caire passar de 600_y = Game over
-		//{
-		//	game3.currentGameScene = game3.GAMESCENE.GAMEOVER;
-		//	this.reset();
-		//}
+		
 		
     };
     
@@ -123,7 +116,6 @@ function Game4SceneLevel4()
     {
 		this.fundo.draw();
 		this.nave1.draw();
-		//this.ast.draw();
 		this.button_back.draw();
 		this.barra.draw();
 		
@@ -132,7 +124,7 @@ function Game4SceneLevel4()
 		
 		for(var i = 0; i < this.ast.length; i++)
 		{
-			this.ast[i].draw();//img, this.ast[i].position_x, this.ast[i].position_y);	
+			this.ast[i].draw();
 		}
 
 		
@@ -140,12 +132,7 @@ function Game4SceneLevel4()
         screen.fillStyle="#FFFFFF";
 		screen.fillText(""+this.pontos, 100, 70);
                 
-				
-        //this.button_credits.draw();
-
-        //this.button_start.draw();
 		
-		//this.button_instru.draw();
 		
 
 		if(this.draw_ast == true)

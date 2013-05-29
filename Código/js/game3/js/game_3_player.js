@@ -28,7 +28,7 @@ function Player(file, size_x, size_y, position_x, position_y, velocity_y)
     
     this.gravity_x = 0;
     
-    this.gravity_y = 0.25;
+    this.gravity_y = 2000; //velocidade ao cair 
         
     this.jump_move = false;
 	
@@ -36,7 +36,7 @@ function Player(file, size_x, size_y, position_x, position_y, velocity_y)
 	
 	this.can_jump = false;
 	
-	this.jumping_velocity_y = -70;    
+	this.jumping_velocity_y = -2000;  //velocidade do pulo   
     
     this.current_frame = 0;
         

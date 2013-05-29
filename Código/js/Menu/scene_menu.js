@@ -38,7 +38,7 @@ function SceneMenu()
     this.button_game_5.position_x = 627;
     this.button_game_5.position_y = 010;
 	
-	this.name_grupo = new Name ("imgs/nome.png",100, 50, 650, 500);
+	this.name_grupo = new Name ("imgs/nome.png",150, 150, 630, 450);
     
 	this.update=function()
    	{
