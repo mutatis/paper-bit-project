@@ -6,8 +6,8 @@ function Game3SceneGameOver()
 	//abre Intro
         //file, size_x, size_y, pos_x, pos_y
 		this.fundo = new Fundo("imgs/game_3/game_over.png", 600, 800, 0, 0);
-		this.button_start = new MyButton("imgs/play1.png", 166, 72, 575, 350);
-		this.button_back = new MyButton("imgs/play2.png",166, 72, 575, 450);
+		this.button_start = new MyButton("imgs/play1.png", 166, 72, 40, 50);
+		this.button_back = new MyButton("imgs/play2.png",166, 72, 590, 50);
 		
 		//som do fundo da intro
 		this.music_fundo = new Audio();

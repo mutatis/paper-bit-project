@@ -105,7 +105,7 @@ function SceneGame4()
 			break;
 			case this.GAMESCENE.GAMEOVER:
 				this.currentGameScene = this.GAMESCENE.INTRO;
-				currentScene = SCENE.MENU;
+				//currentScene = SCENE.MENU;
 			break;
 		}	
 	}
