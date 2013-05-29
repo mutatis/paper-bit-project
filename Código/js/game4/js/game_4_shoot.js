@@ -22,8 +22,8 @@ function Shoot(player4_position_x, player4_position_y, player4_rotation)
     this.size_y = 18;
     this.position_x = player4_position_x;
     this.position_y = player4_position_y;
-    this.velocity_x = Math.cos(this.degreesToRadians(player4_rotation)) * 5;
-    this.velocity_y = Math.sin(this.degreesToRadians(player4_rotation)) * 5;
+    this.velocity_x = Math.cos(this.degreesToRadians(player4_rotation)) * 10;
+    this.velocity_y = Math.sin(this.degreesToRadians(player4_rotation)) * 10;
     
     console.log(this.velocity_x);
     

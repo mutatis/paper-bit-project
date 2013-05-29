@@ -3,7 +3,7 @@ function Game3SceneLevel1()
 	this.reset=function()
 	{
 		//file, size_x, size_y, position_x, position_y, velocity_y
-		this.player = new Player ("imgs/game_3/raq.png", 60, 118, ((SCREENWIDTH-74)/2)-40, 0);
+		this.player = new Player3 ("imgs/game_3/raq.png", 60, 118, ((SCREENWIDTH-74)/2)-40, 0);
 		
 		this.fundo = new Fundo_move ("imgs/game_3/fundo_move.png",1200, 800, 0, 0);
 		this.fundo_front = new Fundo3 ("imgs/game_3/fundo_front.png",600,800);
@@ -56,11 +56,11 @@ function Game3SceneLevel1()
 		{
 		 
         							//(file, size_x, size_y, pos_x, pos_y, vel_x, vel_y)
-        var obstaculo1 = new Obstaculo("imgs/game_3/obstaculo1.png", 150, 30, 50, 120, 0, 3);
-        var obstaculo2 = new Obstaculo("imgs/game_3/obstaculo1.png", 150, 30, 300, 240, 0, 3);
-        var obstaculo3 = new Obstaculo("imgs/game_3/obstaculo1.png", 150, 30, 150, 360, 0, 3);
-		var obstaculo4 = new Obstaculo("imgs/game_3/obstaculo1.png", 150, 30, 200, 480, 0, 3);
-		var obstaculo5 = new Obstaculo("imgs/game_3/obstaculo1.png", 150, 30, 500, 600, 0, 3);
+        var obstaculo1 = new Obstaculo("imgs/game_3/obstaculo1.png", 150, 30, 50, 120, 0, 4);
+        var obstaculo2 = new Obstaculo("imgs/game_3/obstaculo1.png", 150, 30, 300, 240, 0, 4);
+        var obstaculo3 = new Obstaculo("imgs/game_3/obstaculo1.png", 150, 30, 150, 360, 0, 4);
+		var obstaculo4 = new Obstaculo("imgs/game_3/obstaculo1.png", 150, 30, 200, 480, 0, 4);
+		var obstaculo5 = new Obstaculo("imgs/game_3/obstaculo1.png", 150, 30, 500, 600, 0, 4);
 		
 		this.obstaculos_list.push(obstaculo1);
 		this.obstaculos_list.push(obstaculo2);	
@@ -127,7 +127,7 @@ function Game3SceneLevel1()
                 this.obstaculos_list[i].position_x,
                 this.obstaculos_list[i].position_y,
                 this.obstaculos_list[i].size_x,
-                this.obstaculos_list[i].size_y-130 //collide só nos pés do player
+                this.obstaculos_list[i].size_y-135 //collide só nos pés do player
        		))
        		{
         		//alert("oioi");
@@ -236,7 +236,7 @@ function Game3SceneLevel1()
 		}		
 		
 		//venceu no fall
-	   	if(this.player.points >= 200) //Pontuação para vencer 200 pontos
+	   	if(this.player.points >= 500) //Pontuação para vencer 200 pontos
 		{
 			game3.currentGameScene = game3.GAMESCENE.THEEND;
 			this.music_fundo.pause();
@@ -310,11 +310,13 @@ function Game3SceneLevel1()
     
     this.key_down=function(key)
     {
+	console.log("gsggggggggggggggggggggg")
         this.player.key_down(key);
     }
     
     this.key_up=function(key)
     {
+	console.log("gsggggggggggggggggggggg")
         this.player.key_up(key);
     }
 

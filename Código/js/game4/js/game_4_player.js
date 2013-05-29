@@ -290,7 +290,7 @@ function Player4(file, size_x, size_y, position_x, position_y)
     			this.down = true;
     		}
     		
-    		if(key.keyCode == 32)
+    		if(key.keyCode == 90)//shoot
     		{
     			if(this.space_released)
     			{
@@ -322,7 +322,7 @@ function Player4(file, size_x, size_y, position_x, position_y)
     			this.down = false;
     		}
     		
-    		if(key.keyCode == 32)
+    		if(key.keyCode == 90)//shoots
     		{
     			this.space_released = true;
     		}
