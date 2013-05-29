@@ -16,9 +16,9 @@ function Game4SceneLevel4()
 
 		//file, size_x, size_y, pos_x, pos_y, vel_x, vel_y
 		this.ast.push(new Asteroide("imgs/game_4/asteroid.png", 40, 32, -5,5));
+		this.ast.push(new Asteroide("imgs/game_4/asteroid.png", 40, 32, -5,-2));
 		this.ast.push(new Asteroide("imgs/game_4/asteroid.png", 40, 32, -5,5));
-		this.ast.push(new Asteroide("imgs/game_4/asteroid.png", 40, 32, -5,5));
-		this.ast.push(new Asteroide("imgs/game_4/asteroid.png", 40, 32, -5,5));
+		this.ast.push(new Asteroide("imgs/game_4/asteroid.png", 40, 32, -5,-2));
 		this.ast.push(new Asteroide("imgs/game_4/asteroid.png", 40, 32, -5,5));
 		
 		this.button_back = new MyButton("imgs/close.png", 50, 50, 700, 50);
@@ -100,7 +100,7 @@ function Game4SceneLevel4()
 		
 				
 		//venceu no Aster�ide
-	   	if(this.pontos >= 10) //Pontuação para vencer 200 pontos
+	   	if(this.pontos >= 100) //Pontuação para vencer 100 pontos
 		{
 			game4.currentGameScene = game4.GAMESCENE.THEEND;
 			this.music_fundo.pause()

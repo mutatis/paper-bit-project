@@ -1,4 +1,5 @@
-function Player(file, size_x, size_y, position_x, position_y, velocity_y)
+function Player3(file, size_x, size_y, position_x, position_y, velocity_y)
+
 {//abre spencer
 
     this.image = new Image();
@@ -6,7 +7,7 @@ function Player(file, size_x, size_y, position_x, position_y, velocity_y)
         
     this.visible = true;
 	
-	this.ponints = 0;
+	this.pontos = 0;
                 
     this.position_x_dst = position_x; 
     this.position_y_dst = position_y;
@@ -23,12 +24,12 @@ function Player(file, size_x, size_y, position_x, position_y, velocity_y)
     this.position_x_src = 0; 
     this.position_y_src = 0;
     
-    this.velocity_x = 5;
+    this.velocity_x = 10;//velocidade pra ir pro lado
     this.velocity_y = 1;   
     
     this.gravity_x = 0;
     
-    this.gravity_y = 2000; //velocidade ao cair 
+    this.gravity_y = 0.75;//gravidade ao cair
         
     this.jump_move = false;
 	
@@ -36,7 +37,7 @@ function Player(file, size_x, size_y, position_x, position_y, velocity_y)
 	
 	this.can_jump = false;
 	
-	this.jumping_velocity_y = -2000;  //velocidade do pulo   
+	this.jumping_velocity_y = -50;    
     
     this.current_frame = 0;
         
@@ -74,6 +75,31 @@ function Player(file, size_x, size_y, position_x, position_y, velocity_y)
         
         this.move();
       
+	
+	/*
+	this.jump=function()
+    {//abre jump
+    
+		if(this.jump_move)
+		{
+		this.jumping = true;
+		
+		this.jumping_velocity_y;
+		}
+		
+    }//fecha jump
+                   
+    if(this.up == true)
+     {
+        
+     this.jump();
+                
+     this.move();
+        
+    //this.fall();
+        
+     }
+     */
      
      this.keepInScreen();
         
@@ -113,10 +139,10 @@ function Player(file, size_x, size_y, position_x, position_y, velocity_y)
         }
         
        //saida por baixo
-       if(this.position_y_dst > SCREENHEIGHT - this.size_y_dst*this.scale_y)//o player passar do canvas e sumir
-       {
-             this.position_y_dst = SCREENHEIGHT - this.size_y_dst*this.scale_y;
-       }
+       // if(this.position_y_dst > SCREENHEIGHT - this.size_y_dst*this.scale_y)
+       // {
+       //       this.position_y_dst = SCREENHEIGHT - this.size_y_dst*this.scale_y;
+       // }
 	   
     }//fecha keep
 
@@ -168,13 +194,13 @@ function Player(file, size_x, size_y, position_x, position_y, velocity_y)
                         this.left = true;
                 }
         
-                if(key.keyCode == 32)
+                if(key.keyCode == 38)
                 {
                         this.up = true;
                         if(this.can_jump)
                         {
-                        	this.can_jump = false; //Quando o player collide com obstaculo pode apetar o can_jump novamente
-                        	this.velocity_y = -100;
+                        	this.can_jump = false;
+                        	this.velocity_y = -17;
                         }
                 }
                 else if(key.keyCode == 40)
