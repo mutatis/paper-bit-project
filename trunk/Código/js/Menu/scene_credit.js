@@ -1,6 +1,7 @@
 function SceneCredit()
 {
-
+	this.reset=function()
+	{
 	//som do botão ao ser clicado
 	this.music = new Audio();
 	this.music.src = "sounds/Mouse.mp3"
@@ -18,7 +19,9 @@ function SceneCredit()
 	this.loaded = false;		
 	
     this.button_back = new MyButton("imgs/button_back.png", 70, 70, 720, 500);
-    
+    }
+	
+	this.reset();
 	this.update=function()
    	{
    	 this.fundo_move.update();
@@ -48,6 +51,7 @@ function SceneCredit()
 			this.music.play();//som ao ser clicado pelo botão
 			this.music_fundo.pause();//som pausado ao trocar de cena
 			this.button_back.current_frame = 1;
+			this.reset();
     	}
    	};
    

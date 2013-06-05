@@ -15,8 +15,8 @@ function PlayerGame2(arquivo, tamanho_w, tamanho_h)
     this.tamanho_h = tamanho_h;
     this.posicao_x = (SCREENWIDTH - this.tamanho_w)/2;
     this.posicao_y = SCREENHEIGHT - this.tamanho_h;
-    this.velocidade_x = 8;
-    this.velocidade_y = 5;
+    this.velocidade_x = 15;
+    this.velocidade_y = 15;
     this.velocidade_MAX = 15;
     
     this.direita = false;
