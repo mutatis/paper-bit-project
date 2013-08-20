@@ -1,5 +1,7 @@
 function Game3SceneIntro ()
 {
+    this.reset=function()
+	{
 	//abre Intro
         //file, size_x, size_y, pos_x, pos_y
 		this.fundo = new Fundo("imgs/game_3/intro_fundo.png", 600, 800, 0, 0);
@@ -18,6 +20,8 @@ function Game3SceneIntro ()
 		//this.music_fundo = new Audio();
 		//this.music_fundo.src = "sounds/game_3/Dunderpatrullen.mp3"
 		//this.music_fundo.volume = 1.0
+	}
+	this.reset();
 		
        	this.update=function()
 	{			
@@ -45,6 +49,7 @@ function Game3SceneIntro ()
 			this.music.play();//som ao ser clicado pelo botão
 			//this.music_fundo.pause();
 			this.button_start.current_frame = 1;
+			this.reset();
         }
 		
 		if(this.button_back.clicked(mouse)) //botão para voltar o menu
@@ -54,6 +59,7 @@ function Game3SceneIntro ()
 			this.music.play();//som ao ser clicado pelo botão
 			//this.music_fundo.pause();
 			this.button_back.current_frame = 1;
+			this.reset();
         }
         
     }

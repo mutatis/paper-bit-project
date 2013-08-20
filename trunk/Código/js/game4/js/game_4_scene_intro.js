@@ -1,6 +1,8 @@
 function Game4SceneIntro ()
 
 {
+	this.reset=function()
+	{
 	//abre Intro
         //file, size_x, size_y, pos_x, pos_y
 		this.fundo = new Fundo("imgs/game_4/menu.png", 600, 800, 0, 0);
@@ -14,6 +16,9 @@ function Game4SceneIntro ()
 		this.music = new Audio();
 		this.music.src = "sounds/Mouse.mp3"
 		this.music.volume = 1.0
+		}
+		
+		this.reset();
 		
        	this.update=function()
 	{			
@@ -40,6 +45,7 @@ function Game4SceneIntro ()
         	game4.currentGameScene = game4.GAMESCENE.LEVEL4;
 			this.music.play();//som ao ser clicado pelo botão
 			this.button_start.current_frame = 1;
+			this.reset();
         }
 		
 		if(this.button_back.clicked(mouse)) //botão para voltar o menu
@@ -47,6 +53,7 @@ function Game4SceneIntro ()
         	currentScene = SCENE.MENU 
 			this.music.play();//som ao ser clicado pelo botão
 			this.button_back.current_frame = 1;
+			this.reset();
         }
         
     }
