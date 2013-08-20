@@ -1,5 +1,7 @@
 function SceneIntroGame2()
 {//abre SCENEIntro
+	 this.reset=function()
+	{
 	
 	this.menu = new FundoGame2("imgs/game_2/menu.png", 0, 0)
 	this.jacy = new FundoGame2("imgs/game_2/jacy.png", 0, 0)
@@ -25,6 +27,9 @@ function SceneIntroGame2()
 	this.som_fundo.load();
 	this.som_fundo.loop = true; 
 	this.som_fundo.volume = 1.0;
+	}
+	
+	this.reset();
 		
 	this.update = function()
 	{//abre update
@@ -58,6 +63,7 @@ function SceneIntroGame2()
 			this.som_fundo.play();	
 			//this.som_intro.pause();
 			this.music.play();//som ao ser clicado pelo botão
+			this.reset();
 					
 		}//fecha if
 		
@@ -67,6 +73,7 @@ function SceneIntroGame2()
 			currentScene = SCENE.MENU; 
 			//this.som_intro.pause();
 			this.music.play();//som ao ser clicado pelo botão
+			this.reset();
 		
 		}//fecha if
 		
