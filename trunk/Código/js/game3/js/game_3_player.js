@@ -29,7 +29,7 @@ function Player3(file, size_x, size_y, position_x, position_y, velocity_y)
     
     this.gravity_x = 0;
     
-    this.gravity_y = 0.75;//gravidade ao cair
+    this.gravity_y = 1;//gravidade ao cair
         
     this.jump_move = false;
 	
@@ -37,7 +37,7 @@ function Player3(file, size_x, size_y, position_x, position_y, velocity_y)
 	
 	this.can_jump = false;
 	
-	this.jumping_velocity_y = -50;    
+	this.jumping_velocity_y = -55;    
     
     this.current_frame = 0;
         
@@ -200,7 +200,7 @@ function Player3(file, size_x, size_y, position_x, position_y, velocity_y)
                         if(this.can_jump)
                         {
                         	this.can_jump = false;
-                        	this.velocity_y = -17;
+                        	this.velocity_y = -20;
                         }
                 }
                 else if(key.keyCode == 40)
