@@ -73,6 +73,11 @@ function Player3(file, size_x, size_y, position_x, position_y, velocity_y)
         
         this.velocity_y += this.gravity_y;
         
+        if(this.velocity_y > 20)
+        {
+        	this.velocity_y = 20;
+        }
+        
         this.move();
       
 	
@@ -130,6 +135,7 @@ function Player3(file, size_x, size_y, position_x, position_y, velocity_y)
         if(this.position_y_dst < 0)
         {
                 this.position_y_dst = 0;
+                this.velocity_y = 0;
         }
         
         //saida pela esquerda

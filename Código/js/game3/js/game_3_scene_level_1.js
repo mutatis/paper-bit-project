@@ -27,7 +27,7 @@ function Game3SceneLevel1()
 		this.music.src = "sounds/game_3/gatinho.mp3"
 		this.music.volume = 1.0
 	
-		this.player.points = -20;
+		this.player.points = 0;
 		
 		this.gato_list = new Array();
 		
@@ -66,9 +66,8 @@ function Game3SceneLevel1()
 		this.obstaculos_list.push(obstaculo2);	
 		this.obstaculos_list.push(obstaculo3);	
 		this.obstaculos_list.push(obstaculo4);	
-		this.obstaculos_list.push(obstaculo5);			
-
-		
+		this.obstaculos_list.push(obstaculo5);
+				
 		}
 		
 		this.Obstaculos_variados();
@@ -163,6 +162,7 @@ function Game3SceneLevel1()
 		//perdeu no Fall
 		if(this.player.position_y_dst > 600) //Quando o player caire passar de 600_y = Game over
 		{
+			this.player.position_y_dst = 0;
 			game3.currentGameScene = game3.GAMESCENE.GAMEOVER;
 			this.music_fundo.pause();
 			this.reset();

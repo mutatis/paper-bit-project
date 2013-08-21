@@ -6,6 +6,7 @@ function SceneIntroGame2()
 	this.boca_move1 = new boca_move ("imgs/boca.png",127 , 80, 130, 225);
 	this.button_start = new MyButton("imgs/play1.png", 166, 72, 575, 350);
 	this.button_back = new MyButton("imgs/play2.png",166, 72, 575, 450);
+	this.balao1 = new Fundo("imgs/2.png", 204, 215,400,30);
 	
 	//som do botão ao ser clicado
 	this.music = new Audio();
@@ -41,6 +42,7 @@ function SceneIntroGame2()
 		this.button_back.draw();
 		this.jacy.draw();
 		this.boca_move1.draw();
+		this.balao1.draw();
 		
 	}//fecha draw
 	
@@ -55,6 +57,7 @@ function SceneIntroGame2()
 			this.som_fundo.play();	
 			//this.som_intro.pause();
 			this.music.play();//som ao ser clicado pelo botão
+			this.button_start.current_frame = 1;
 					
 		}//fecha if
 		
@@ -64,6 +67,7 @@ function SceneIntroGame2()
 			currentScene = SCENE.MENU; 
 			//this.som_intro.pause();
 			this.music.play();//som ao ser clicado pelo botão
+			this.button_back.current_frame = 1;
 		
 		}//fecha if
 		
@@ -85,12 +89,12 @@ function SceneIntroGame2()
    	
    };
    
-   this.mouse_move=function(mouse)
+  	this.mouse_move=function(mouse)
   	{
-  		console.log("Game3 mouse X " + mouse.x + " mouse Y " + mouse.y );
   		
   		if(this.button_start.mouse_over(mouse))
   		{
+  			
   			this.button_start.current_frame = 0;
   		}
   		else

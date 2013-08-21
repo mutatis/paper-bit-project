@@ -9,7 +9,7 @@ function Game3SceneIntro ()
 		this.boca_move1 = new boca_move ("imgs/boca.png",127 , 80, 130, 220);
 		this.button_start = new MyButton("imgs/play1.png", 166, 72, 575, 350);
 		this.button_back = new MyButton("imgs/play2.png",166, 72, 575, 450);
-		this.balao1 = new balao ("imgs/3.png", 204, 215,250,30);
+		this.balao1 = new Fundo ("imgs/3.png", 204, 215,250,30);
 		
 		//som do botão ao ser clicado
 		this.music = new Audio();
