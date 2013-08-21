@@ -34,18 +34,11 @@ function Gato ( file , size_x, size_y, pontos)
     };
     
     this.update=function()
-	
-	 {
-            this.reset(); 
-            
-            
-            
-            
-                
+	{
+            this.reset();     
     };
 	
-	  this.reset = function()
-    
+	this.reset = function()
     {           
         this.position_y = 0;
         this.position_x = Math.floor((Math.random()*(SCREEN_WIDTH-this.size_x))); 

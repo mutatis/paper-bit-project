@@ -1,91 +1,77 @@
-function Name(file, tamanho_w, tamanho_h, posicao_x, posicao_y)
-{//abre 
+function Name(file, tam_w, tam_h, pos_x, pos_y)
+{//abre botao
 
-        this.img = new Image();
-        this.img.src = file;
-        
-        this.visible = true;
-		
-		//this.pontos = pontos;
-        
-        this.posicao_x_dst = posicao_x;
-        this.posicao_y_dst = posicao_y;
-        
-        this.scale_x = 0.5;
-        this.scale_y = 0.5;
-        
-        this.tamanho_w_src = tamanho_w;
-        this.tamanho_h_src = tamanho_h;
-        
-        this.tamanho_w_dst = 250;
-        this.tamanho_h_dst = 250;
-        
-        this.posicao_x_src = 0;
-        this.posicao_y_src = 0;
-        
-        this.current_frame = 0;
-        this.frames = 0;
-        
-        this.fps = 0;//frames por segundo
-        this.time_per_frame = 1000/this.fps;
-        this.setFPS = function(newFPS)
-        {//abre setFPS
-        
-                this.fps = newFPS;
-                this.time_per_frame = 1000/this.fps;
-                
-        }//fecha setFPS
-        
-        this.delta_time = 0;
-        this.acumulated_delta_time = 0
-        this.last_draw_time = 0;
-        
-        this.update = function()
-        {//abre update
-                
-        }//fecha update
-        
-        this.draw = function()//funcao desenhar (draw)
-        {//abre draw
-                
-                
-                //console.log("oioio");
-                
-                if(this.visible)
-                screen.drawImage(this.img,
-                                        this.tamanho_w_src*this.current_frame,
-                                        this.posicao_y_src,
-                                        this.tamanho_w_src,
-                                        this.tamanho_h_src,
-                                        this.posicao_x_dst,
-                                        this.posicao_y_dst,
-                                        this.tamanho_w_dst*this.scale_x,
-                                        this.tamanho_h_dst*this.scale_y);
-                                        
-                this.delta_time = Date.now() - this.last_draw_time;
-                
-                if(this.acumulated_delta_time > this.time_per_frame)
-                {//abre if
-                        
-                        this.acumulated_delta_time = 0;
-                        this.current_frame++;
-                        if(this.current_frame >= this.frames)
-                        {//abre if
-                        
-                                this.current_frame = 0;
-                                
-                        }//fecha if
-                        
-                }//fecha if
-                else
-                {//abre else
-                
-                        this.acumulated_delta_time += this.delta_time;
-                        
-                }//fecha if
-                
-                this.last_draw_time = Date.now();
-                
-        }//fecha draw
-        
-}//fecha 
+	this.img = new Image();
+	this.img.src = file;
+
+	this.visible = true;
+
+	this.tamanho_w = tam_w;
+	this.tamanho_h = tam_h;
+
+	this.posicao_x = pos_x;
+	this.posicao_y = pos_y;
+
+	this.Update = function()
+	{//abre update
+
+
+
+	}//fecha update
+
+	this.draw = function()
+	{//abre draw
+
+		if(this.visible)
+		screen.drawImage(this.img, this.posicao_x, this.posicao_y, this.tamanho_w, this.tamanho_h)
+
+	}//fecha draw
+
+	this.mouse_down=function(mouse)
+	{
+  
+	};
+  
+  
+	this.key_down=function(key)
+	{
+    
+  
+	};
+  
+      
+	this.mouse_up=function(mouse)
+	{
+  
+  
+	};
+  
+	this.key_up=function(key)
+	{
+  
+  
+	};
+  
+	this.mouse_move=function(mouse)
+	{
+  
+  
+	};
+  
+
+	this.clicado = function(mouse)
+	{//abre botao clicado
+
+		if(Collide(mouse.x-10, mouse.y-12, 1, 1,
+		this.posicao_x, this.posicao_y, this.tamanho_w, this.tamanho_h))
+		{
+
+			return true;
+
+		}
+
+		return false;
+
+	}//fecha botao clicado
+
+}//fecha botao

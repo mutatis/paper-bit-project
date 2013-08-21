@@ -1,7 +1,9 @@
 function Game1SceneGameOver()
 
 {
-	//abre Intro
+	
+	
+		//abre Intro
         //file, size_x, size_y, pos_x, pos_y
 		this.fundo = new Fundo("imgs/game_1/point.png", 600, 800, 0, 0);
 		this.button_start = new MyButton("imgs/play1.png", 166, 72, 575, 350);
@@ -17,7 +19,7 @@ function Game1SceneGameOver()
 		this.music.src = "sounds/Mouse.mp3"
 		this.music.volume = 1.0
 		
-       	this.update=function()
+    this.update=function()
 	{			
 		this.button_start.update
 		this.button_back.update
@@ -33,31 +35,31 @@ function Game1SceneGameOver()
 		//mandando o botao start desenhar
         this.button_start.draw();
         //mandando o botao voltar desenhar	
-		this.button_back.draw();
-        
+		this.button_back.draw();        
 				          
     }
     //vendo se o botao do mouse foi pressionado
 	this.mouse_down=function(mouse)
    	{   		
 	//se o botao start for clicado, ele vai pra intro e sai um efeito sonoro 
-	if(this.button_start.clicked(mouse))
+		if(this.button_start.clicked(mouse))
         {
         	game1.currentGameScene = game1.GAMESCENE.INTRO;  //botão para o game
 			this.music_fundo.pause();
+			this.player.points = 0;
 			this.music.play();//som ao ser clicado pelo botão
         }
   		//se o botao voltar for clicado, ele vai pro menu principal e sai um efeito sonoro
 		if(this.button_back.clicked(mouse)) //botão para voltar o menu
         {
         	currentScene = SCENE.MENU;
-			game1.currentGameScene = game1.GAMESCENE.INTRO;
+			game1.currentGameScene = SCENE.MENU;
 			this.music_fundo.pause();
 			this.music.play();//som ao ser clicado pelo botão
 			
         	this.player.points = 0;
         
-        	this.reset();
+        	//this.reset();
         }
         
     }
@@ -104,4 +106,5 @@ function Game1SceneGameOver()
 		
   	};
     
+	
 }//fecha Intro
