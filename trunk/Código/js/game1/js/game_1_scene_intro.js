@@ -1,9 +1,6 @@
 function Game1SceneIntro ()
 {
-	
-	this.reset=function()
-	{
-		//abre Intro
+	//abre Intro
         //file, size_x, size_y, pos_x, pos_y
 		this.fundo = new Fundo("imgs/menu.png", 600, 800, 0, 0);
 		this.Sara = new Fundo("imgs/game_1/sara.png", 800, 600, 0, 0);
@@ -11,19 +8,16 @@ function Game1SceneIntro ()
 		this.button_start = new MyButton("imgs/play1.png", 166, 72, 575, 350);
 		//this.button_instru = new Button("imgs/instrucao.png",500, 90, 575, 450);
 		this.button = new MyButton("imgs/play2.png",166, 72, 575, 450);
-		this.balao1 = new balao ("imgs/1.png", 204, 215,250,30);
+		this.balao1 = new Fundo("imgs/1.png", 204, 215,400,30);
 	
 		
 		//som do botão ao ser clicado
 		this.music = new Audio();
 		this.music.src = "sounds/Mouse.mp3"
 		this.music.volume = 1.0
-	}
-	
-	this.reset();
        	
        	
-    this.update=function()
+       	this.update=function()
 	{			
 
     };
@@ -55,7 +49,6 @@ function Game1SceneIntro ()
         	game1.currentGameScene = game1.GAMESCENE.LEVEL1;  
 			this.music.play();//som ao ser clicado pelo botão
 			this.button_start.current_frame = 1;
-			this.reset();
         }
    		//se o botao voltar for clicado, ele vai pro menu e sai um efeito sonoro
         if(this.button.clicked(mouse))
@@ -63,7 +56,6 @@ function Game1SceneIntro ()
     		currentScene = SCENE.MENU;
 			this.music.play();//som ao ser clicado pelo botão
 			this.button.current_frame = 1;
-			this.reset();
     	}
       
 

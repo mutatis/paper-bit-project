@@ -1,17 +1,14 @@
 function Game1SceneLevel1()
 {
 		
-		
-		
 		//som do botão ao ser clicado
 		this.music = new Audio();
 		this.music.src = "sounds/Mouse.mp3"
 		this.music.volume = 1.0
 		
-		this.pontos = 0;
-		
 		this.barra_pontos = new Click_pontos("imgs/game_1/barra_pontos.png",180,80,5,20);
-		this.vida = new Click_pontos("imgs/game_1/vida.png", 180, 80, 5, 150);
+		this.vida = new Click_pontos("imgs/game_1/vida.png",180,80,5,100);
+
 		
 		this.button = new MyButton("imgs/close.png", 50, 50, 720, 10);
 		//source
@@ -32,15 +29,17 @@ function Game1SceneLevel1()
 		this.music_soco.volume = 1.0
 	    
 			//tempo de cada alvo, pontos,cronometro, game_over e game_win	
-		this.tempoSeg1 = 0
-		this.tempoSeg2 = 0
-		this.tempoSeg3 = 0
-		this.tempoSeg4 = 0
-		this.pontos = 0
-		this.cronometro = 0
+		this.tempoSeg1 = 0;
+		this.tempoSeg2 = 0;
+		this.tempoSeg3 = 0;
+		this.tempoSeg4 = 0;
+		this.tempoSeg5=0;
+		this.pontos = 0;
+		this.cronometro = 0;
 		this.game_over = false;
 		this.game_win = false;
-		this.life = 3;
+		this.life = 4;
+		
 		
 		
 		
@@ -110,7 +109,7 @@ function Game1SceneLevel1()
 		this.alvo5_reaparecer = 20;
 		this.alvo5_visivel = true;
 		
-		//Bandido
+		/*
 		this.alvo6_imagem = new Image();
 		this.alvo6_carregada = false;
 		this.alvo6_tamanho_w = 100;
@@ -122,6 +121,7 @@ function Game1SceneLevel1()
 		this.alvo6_pemanecer = 25;
 		this.alvo6_reaparecer = 20;
 		this.alvo6_visivel = true;
+		*/
 
 		
 	
@@ -148,7 +148,7 @@ function Game1SceneLevel1()
 	
 	
 	
-	if((this.alvo1_carregada)&&(this.alvo2_carregada)&&(this.alvo3_carregada)&&(this.alvo4_carregada))
+	if((this.alvo1_carregada)&&(this.alvo2_carregada)&&(this.alvo3_carregada)&&(this.alvo4_carregada)&&(this.alvo5_carregada))
 	{
 		this.Loop();		
 	}
@@ -167,8 +167,32 @@ this.update=function()
 			this.tempoSeg2++;
 			this.tempoSeg3++;
 			this.tempoSeg4++;
+			this.tempoSeg5++;
 			this.cronometro++;
+				
+			/*if(this.game_win == true)
+			{
+				game1.currentGameScene = game1.GAMESCENE.THEEND;  
+					this.pontos = 0;
+						this.cronometro = 0;
+							this.music.play();//som ao ser clicado pelo botão
+								this.button.current_frame = 1;
+									this.music_fundo.pause();
+										this.life = 3;
+			}
 			
+			if(this.game_over == true)
+			{
+				game1.currentGameScene = game1.GAMESCENE.GAMEOVER;  
+				this.pontos = 0;
+					this.cronometro = 0;
+						this.music.play();//som ao ser clicado pelo botão
+							this.button.current_frame = 1;
+								this.music_fundo.pause();
+									this.life = 3;
+				
+			}	*/
+						
 			//se o tempo for maior que 20 o alvo vai ficar invisivel, e depois que ele desaparecer ele vai demorar 50 para ser desenhado de novo e um posiçao aleatoria	
 			if(this.tempoSeg1 > 20)
 			{
@@ -218,80 +242,87 @@ this.update=function()
 				this.tempoSeg5 = 0
 			}
 			//se o tempo for maior que 20 o alvo vai ficar invisivel, e depois que ele desaparecer ele vai demorar 50 para ser desenhado de novo e um posiçao aleatoria
-			if(this.tempoSeg6 > 20)
+			/*if(this.tempoSeg6 > 20)
 			{
 				this.alvo6_visivel = true;
 				this.alvo6_posicao_x = Math.floor((Math.random()*(this.tela_tamanho_w - this.alvo6_tamanho_w))+1);
 				this.alvo6_posicao_y = Math.floor((Math.random()*(this.tela_tamanho_h - this.alvo6_tamanho_h))+1);
 				this.tempoSeg6 = 0
-			}
+			}*/
 			//se o cronometro for maior que 1000 e os pontos >= a 700 as imagens serao tiradas da tela, os tempos irao zerar, game_win sera true e vai mudar de cena
 			//pausando a musica do jogo, zerando o cronometro e os pontos vao para 5, pois quando voce clica para começar o jogo ele reconhece, entao para resolver
 			//esse problema colocamos o valor de 5 quando mudar de cena
-			if(this.cronometro > 1000 && this.pontos == 700 && this.life >=1)
-
-			{	
-					this.alvo1_visivel = false
-					this.alvo2_visivel = false
-					this.alvo3_visivel = false
-					this.alvo4_visivel = false
-					this.tempoSeg1 = 0
-					this.tempoSeg2 = 0
-					this.tempoSeg3 = 0
-					this.tempoSeg4 = 0
-					this.cronometro = 1000
-					this.game_win = true
+			
+			 if(this.pontos >= 100)
+				{
+					this.alvo1_visivel = false;
+					this.alvo2_visivel = false;
+					this.alvo3_visivel = false;
+					this.alvo4_visivel = false;
+					this.alvo5_visivel = false;
+					this.tempoSeg1 = 0;
+					this.tempoSeg2 = 0;
+					this.tempoSeg3 = 0;
+					this.tempoSeg4 = 0;
+					this.tempoSeg5 = 0;
+					this.cronometro = 1000;
+					this.game_win = true;
 					
 						if(this.game_win == true)
 						{
 							game1.currentGameScene = game1.GAMESCENE.THEEND;  
-							this.pontos = 5;
+							this.pontos = 0;
 							this.cronometro = 0;
 							this.music.play();//som ao ser clicado pelo botão
 							this.button.current_frame = 1;
 							this.music_fundo.pause();
-							this.game_win = false
+							this.life = 3;
 						}
-					
 
-				}
+					}	
+				
 				
 				//se nao acontecerem os fatos acima, as imagens serao tiradas da tela, os tempos irao zerar, game_over sera true e vai mudar de cena
 				//pausando a musica do jogo, zerando o cronometro e os pontos vao para 5, pois quando voce clica para começar o jogo ele reconhece, entao para resolver
 				//esse problema colocamos o valor de 5 quando mudar de cena
-				else if(this.life <= 0 && this.pontos <= 700)
+				if (this.life == -1 && this.pontos <= 100 || this.cronometro == 500)
+				
 				{
-					this.alvo1_visivel = false
-					this.alvo2_visivel = false
-					this.alvo3_visivel = false
-					this.alvo4_visivel = false
-					this.tempoSeg1 = 0
-					this.tempoSeg2 = 0
-					this.tempoSeg3 = 0
-					this.tempoSeg4 = 0
-					this.cronometro = 1000
-					this.game_over = true
+					this.alvo1_visivel = false;
+					this.alvo2_visivel = false;
+					this.alvo3_visivel = false;
+					this.alvo4_visivel = false;
+					this.alvo5_visivel = false;
+					this.tempoSeg1 = 0;
+					this.tempoSeg2 = 0;
+					this.tempoSeg3 = 0;
+					this.tempoSeg4 = 0;
+					this.tempoSeg5 = 0;
+					this.cronometro = 1000;
+					this.game_over = true;
 					
-					if(this.game_over == true)
-					{
-						game1.currentGameScene = game1.GAMESCENE.GAMEOVER;  
-						this.pontos = 5;
-						this.cronometro = 0;
-						this.music.play();//som ao ser clicado pelo botão
-						this.button.current_frame = 1;
-						this.music_fundo.pause();
-						this.game_over = false;
-					}
 					
-				}
-			
-			
+						if(this.game_over == true)
+						{
+							game1.currentGameScene = game1.GAMESCENE.GAMEOVER;  
+							this.pontos = 0;
+							this.cronometro = 0;
+							this.music.play();//som ao ser clicado pelo botão
+							this.button.current_frame = 1;
+							this.music_fundo.pause();
+							this.life = 3;
+					
+						}
+				
+				}			
 			
 	}
 
 
 this.draw=function()
 {		
+		
+		
 		//desenhando o fundo que se move
 		this.fundo_move.draw();
 		
@@ -301,13 +332,11 @@ this.draw=function()
 		//desenhando o botao
 		this.button.draw();
 		
-		//barra de vida
-		this.vida.draw();
-		
 		//desenhando a barra de pontos
 		this.barra_pontos.draw();
 		
-		
+		//barra de vida
+		this.vida.draw();
 		
 		//se todas as imgens forem igual a verdadeiro, elas serao desenhadas em suas posiçoes
 		if(this.fundo_visivel == true)
@@ -334,17 +363,17 @@ this.draw=function()
 		{
 			screen.drawImage(this.alvo5_imagem, this.alvo5_posicao_x, this.alvo5_posicao_y);
 		}
-		if(this.alvo6_visivel == true)
+		/*if(this.alvo6_visivel == true)
 		{
 			screen.drawImage(this.alvo6_imagem, this.alvo6_posicao_x, this.alvo6_posicao_y);
-		}
+		}*/
 			
 		screen.font = "40px Arial";
 		screen.fillStyle="ffffff";
 		//screen.fillText("Tempo: "+this.cronometro,  20, 40);
 		screen.fillText(this.pontos+"", 60, 80);//desenhando os pontos
-		screen.fillText(this.life,100, 210);//desenhar vida
-		//screen.fillText("Cromonometro "+this.cronometro,60 , 500);
+		screen.fillText(this.life,90, 155);
+		//screen.fillText(this.cronometro, 100, 500);
 			
 	}
 
@@ -391,21 +420,21 @@ this.mouse_down=function(mouse)
     	}
 		
 		//se o alvo for clicado ele ganhara ou perdera pontos de acordo com cada um, o alvo ficara invisivel, e tocara um efeito sonoro
-		if(Collide(mouse.x-10, mouse.y-30, 1, 1, this.alvo1_posicao_x, this.alvo1_posicao_y, this.alvo1_tamanho_w, this.alvo1_tamanho_h) && this.alvo1_visivel ==true)
+		if(Collide(mouse.x-10, mouse.y-30, 1, 1, this.alvo1_posicao_x, this.alvo1_posicao_y, this.alvo1_tamanho_w, this.alvo1_tamanho_h) && this.alvo1_visivel == true)
 		{
 			this.pontos+= 15;
 			this.alvo1_visivel = false;
 			//som_acertar.play();
 			this.music_soco.play();//som ao ser clicado pelo botão
 		}
-		else if(Collide(mouse.x-10, mouse.y-30, 1, 1, this.alvo2_posicao_x, this.alvo2_posicao_y, this.alvo2_tamanho_w, this.alvo2_tamanho_h)&& this.alvo2_visivel ==true)
+		else if(Collide(mouse.x-10, mouse.y-30, 1, 1, this.alvo2_posicao_x, this.alvo2_posicao_y, this.alvo2_tamanho_w, this.alvo2_tamanho_h)&& this.alvo2_visivel == true)
 		{
 			this.pontos+= 25;
 			this.alvo2_visivel = false;
 			//som_acertar.play();
 			this.music_soco.play();//som ao ser clicado pelo botão
 		}
-		else if(Collide(mouse.x-10, mouse.y-30, 1, 1, this.alvo3_posicao_x, this.alvo3_posicao_y, this.alvo3_tamanho_w, this.alvo3_tamanho_h)&& this.alvo3_visivel ==true)
+		else if(Collide(mouse.x-10, mouse.y-30, 1, 1, this.alvo3_posicao_x, this.alvo3_posicao_y, this.alvo3_tamanho_w, this.alvo3_tamanho_h)&& this.alvo3_visivel == true)
 		{
 			this.pontos+= 35;
 			this.alvo3_visivel = false;
@@ -413,7 +442,7 @@ this.mouse_down=function(mouse)
 			this.music_soco.play();//som ao ser clicado pelo botão
 		}
 		//Pontos bandido
-		else if(Collide(mouse.x-10, mouse.y-30, 1, 1, this.alvo4_posicao_x, this.alvo4_posicao_y, this.alvo4_tamanho_w, this.alvo4_tamanho_h)&& this.alvo4_visivel ==true)
+		else if(Collide(mouse.x-10, mouse.y-30, 1, 1, this.alvo4_posicao_x, this.alvo4_posicao_y, this.alvo4_tamanho_w, this.alvo4_tamanho_h)&& this.alvo4_visivel == true)
 		{
 			this.pontos-= 20;
 			this.alvo4_visivel = false;
@@ -421,29 +450,36 @@ this.mouse_down=function(mouse)
 			this.music_soco.play();//som ao ser clicado pelo botão
 			this.life-= 1;
 		}
-		else if(Collide(mouse.x-10, mouse.y-30, 1, 1, this.alvo5_posicao_x, this.alvo5_posicao_y, this.alvo5_tamanho_w, this.alvo5_tamanho_h)&& this.alvo5_visivel ==true)
+		else if(Collide(mouse.x-10, mouse.y-30, 1, 1, this.alvo5_posicao_x, this.alvo5_posicao_y, this.alvo5_tamanho_w, this.alvo5_tamanho_h)&& this.alvo5_visivel == true)
 		{
 			this.pontos+= 20;
 			this.alvo5_visivel = false;
 			//som_errar.play();
 			this.music_soco.play();//som ao ser clicado pelo botão
 		}
-		else if(Collide(mouse.x-10, mouse.y-30, 1, 1, this.alvo6_posicao_x, this.alvo6_posicao_y, this.alvo6_tamanho_w, this.alvo6_tamanho_h)&& this.alvo5_visivel ==true)
+		/*else if(Collide(mouse.x-10, mouse.y-30, 1, 1, this.alvo6_posicao_x, this.alvo6_posicao_y, this.alvo6_tamanho_w, this.alvo6_tamanho_h)&& this.alvo5_visivel == true)
 		{
 			this.pontos-= 20;
 			this.alvo5_visivel = false;
 			//som_errar.play();
 			this.music_soco.play();//som ao ser clicado pelo botão
 			this.life-= 1;
-		}
+		}*/
 		//se ele clicar errado, ele perder 5 pontos
 		else
 		{
 			this.pontos-= 5;
 			this.life -= 1;
 			
-		}		
+		}	
+	
+			
 	}
+
+
+
+	   	
+	   
 		//vendo se o botao do mouse foi solto	
 	    this.mouse_up=function(mouse)
     {
@@ -466,5 +502,7 @@ this.mouse_down=function(mouse)
   		}
 		
 	}
-		
-}  
+	
+  
+
+}
