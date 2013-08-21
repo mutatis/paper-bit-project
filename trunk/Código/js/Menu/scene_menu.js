@@ -38,7 +38,7 @@ function SceneMenu()
     this.button_game_5.position_x = 627;
     this.button_game_5.position_y = 010;
 	
-	this.name_grupo = new Name ("imgs/nome.png",150, 150, 630, 450);
+	this.name_grupo = new Name ("imgs/nome.png",150, 150, 630, 440);
     
 	this.update=function()
    	{
@@ -125,6 +125,11 @@ function SceneMenu()
     		//this.music.play();//som ao ser clicado pelo botão
     		//this.music_fundo.pause();
 			//this.button_game_5.current_frame = 1;
+    	}
+    	
+    	  if(this.name_grupo.clicado(mouse))
+    	{
+			window.open("https://www.facebook.com/PaperBitProductions?ref=ts&fref=ts")
     	}
     	
     };

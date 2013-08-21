@@ -34,11 +34,11 @@ function Game3SceneLevel1()
 		this.Gato_variados = function()
 		{
 		
-		var gato1 = new Gato("", 42,53,10);
-        var gato2 = new Gato("imgs/game_3/gato.png", 42,53,10);
-        var gato3 = new Gato("imgs/game_3/gato.png", 42,53,10);
-		var gato4 = new Gato("imgs/game_3/gato.png", 42,53,10);
-		var gato5 = new Gato("", 42,53,10);
+		var gato1 = new Gato("imgs/game_3/gato1.png", 42,53,10);
+        var gato2 = new Gato("imgs/game_3/gato1.png", 42,53,10);
+        var gato3 = new Gato("imgs/game_3/gato1.png", 42,53,10);
+		var gato4 = new Gato("imgs/game_3/gato1.png", 42,53,10);
+		var gato5 = new Gato("imgs/game_3/gato1.png", 42,53,10);
 		
 		this.gato_list.push(gato1);
 		this.gato_list.push(gato2);	
@@ -103,13 +103,11 @@ function Game3SceneLevel1()
 				if(this.gato_list[i].visible)
 				{
 				this.music.play();
-				this.player.points +=10; //Pontos para gato
+				this.player.points += 10; //Pontos para gato
 				this.gato_list[i].visible = false; //Quando colidir o gato some
 				}
 			}
 			
-					
-
 		}
 
 
@@ -138,92 +136,27 @@ function Game3SceneLevel1()
         	
         	//quando a plataforma sair completamente por baixo
         	//fazemos ela voltar para logo acima da tela
-        	if(this.obstaculos_list[1].position_y > SCREENHEIGHT)
+        	if(this.obstaculos_list[i].position_y > SCREENHEIGHT)
 			{
-				this.obstaculos_list[1].position_y = -this.obstaculos_list[1].size_y;
+				this.obstaculos_list[i].position_y = -this.obstaculos_list[i].size_y;
 				
-				this.obstaculos_list[1].position_x = Math.floor((Math.random()*(SCREENWIDTH-this.obstaculos_list[1].size_x)));
+				this.obstaculos_list[i].position_x = Math.floor((Math.random()*(SCREENWIDTH-this.obstaculos_list[i].size_x)));
 				
-				this.gato_list[1].visible = true;
+				this.gato_list[i].visible = true;
 				
 			}	
-				
-        	if(this.obstaculos_list[2].position_y > SCREENHEIGHT)
-			{
-				this.obstaculos_list[2].position_y = -this.obstaculos_list[2].size_y;
-				
-				this.obstaculos_list[2].position_x = Math.floor((Math.random()*(SCREENWIDTH-this.obstaculos_list[2].size_x)));
-				
-				this.gato_list[2].visible = true;				
-				
-			}
 			
-			if(this.obstaculos_list[3].position_y > SCREENHEIGHT)
-			{
-				this.obstaculos_list[3].position_y = -this.obstaculos_list[3].size_y;
-				
-				this.obstaculos_list[3].position_x = Math.floor((Math.random()*(SCREENWIDTH-this.obstaculos_list[3].size_x)));
-				
-				this.gato_list[3].visible = true;				
-				
-			}
-			
-			if(this.obstaculos_list[4].position_y > SCREENHEIGHT)
-			{
-				this.obstaculos_list[4].position_y = -this.obstaculos_list[4].size_y;
-				
-				this.obstaculos_list[4].position_x = Math.floor((Math.random()*(SCREENWIDTH-this.obstaculos_list[4].size_x)));
-				
-				this.gato_list[4].visible = true;				
-				
-			}
+
 
 		}
 		
 		for(var i = 0; i < this.gato_list.length ; i++)
 		{
 			//obstaculo1
-			this.gato_list[1].position_x = this.obstaculos_list[1].position_x+60;
+			this.gato_list[i].position_x = this.obstaculos_list[i].position_x+60;
 				
-			this.gato_list[1].position_y = this.obstaculos_list[1].position_y-50;
+			this.gato_list[i].position_y = this.obstaculos_list[i].position_y-50;
 			
-			//obstaculo2
-			this.gato_list[2].position_x = this.obstaculos_list[2].position_x+60;
-				
-			this.gato_list[2].position_y = this.obstaculos_list[2].position_y-50;	
-			
-			//obstaculo3
-			this.gato_list[3].position_x = this.obstaculos_list[3].position_x+60;
-				
-			this.gato_list[3].position_y = this.obstaculos_list[3].position_y-50;
-			
-			//obstaculo4
-			this.gato_list[4].position_x = this.obstaculos_list[4].position_x+60;
-				
-			this.gato_list[4].position_y = this.obstaculos_list[4].position_y-50;
-
-			
-			this.gato_list[i].update();
-			
-			if(Collide(
-                this.player.position_x_dst,
-                this.player.position_y_dst,
-                this.player.size_x_dst*this.player.scale_x,
-                this.player.size_y_dst*this.player.scale_y,
-                this.gato_list[i].position_x,
-                this.gato_list[i].position_y,
-                this.gato_list[i].size_x,
-                this.gato_list[i].size_y
-       		))
-       		
-       		
-			{
-			//	this.gato_list[0].position_y = this.obstaculos_list[0].position_y-5;
-			//	
-			//	this.gato_list[0].position_x =this.obstaculos_list[0].position_y+20;
-
-			}
-       		
 		}
 		
 		
@@ -252,22 +185,19 @@ function Game3SceneLevel1()
 		this.fundo_front.draw();
 		this.button_back.draw();
 		this.player.draw();
-		this.gato_placa.draw();
-					
+		this.gato_placa.draw();					
 		
 		for(var i = 0; i < this.obstaculos_list.length ; i++)
 		{
 			screen.drawImage(this.obstaculos_list[i].img, this.obstaculos_list[i].position_x, this.obstaculos_list[i].position_y);		
 		}	
 				
-					for(var i = 0; i < this.gato_list.length ; i++)
+		for(var i = 0; i < this.gato_list.length ; i++)
 		{
 			if(this.gato_list[i].visible)
 			screen.drawImage(this.gato_list[i].img, this.gato_list[i].position_x, this.gato_list[i].position_y);		
-
 		}
-		
-		
+	
         screen.font = "40px Arial";
         screen.fillStyle="#ffffff";
 		screen.fillText("" + this.player.points, 50, 65);

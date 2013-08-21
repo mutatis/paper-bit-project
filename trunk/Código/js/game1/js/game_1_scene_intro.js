@@ -1,8 +1,9 @@
 function Game1SceneIntro ()
 {
-	 this.reset=function()
+	
+	this.reset=function()
 	{
-	//abre Intro
+		//abre Intro
         //file, size_x, size_y, pos_x, pos_y
 		this.fundo = new Fundo("imgs/menu.png", 600, 800, 0, 0);
 		this.Sara = new Fundo("imgs/game_1/sara.png", 800, 600, 0, 0);
@@ -22,7 +23,7 @@ function Game1SceneIntro ()
 	this.reset();
        	
        	
-       	this.update=function()
+    this.update=function()
 	{			
 
     };
