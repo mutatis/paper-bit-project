@@ -27,13 +27,13 @@ function SceneLevel01Game2()
 	{
 		this.obstaculo.push(new ObstaculoGame2("imgs/game_2/panda1.png", 100, 100, 20, 0));
 
-		//this.obstaculo.push(new ObstaculoGame2("imgs/game_2/panda2.png", 100, 100, 0, 1));
+		this.obstaculo.push(new ObstaculoGame2("imgs/game_2/panda2.png", 100, 100, 30, 0));
 
 		this.obstaculo.push(new ObstaculoGame2("imgs/game_2/panda3.png", 70, 70, 5, 0));	
 
 		this.obstaculo.push(new ObstaculoGame2("imgs/game_2/panda4.png", 70, 70, 10, 0));
 	
-		this.obstaculo.push(new ObstaculoGame2("imgs/game_2/vida.png", 200, 50, 10, 1));
+		this.obstaculo.push(new ObstaculoGame2("imgs/game_2/vida.png", 200, 50, 0, 1));
 	}
 	
 	this.som_win = new Audio();
