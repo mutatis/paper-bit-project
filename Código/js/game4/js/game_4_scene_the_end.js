@@ -21,6 +21,7 @@ function Game4SceneTheEnd()
        	this.update=function()
 	{			
 		this.music_fundo.play();
+		completouJogo4 = true;
     };
     
 	}//fecha reset

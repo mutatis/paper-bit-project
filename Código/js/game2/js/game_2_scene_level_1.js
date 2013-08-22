@@ -65,6 +65,8 @@ function SceneLevel01Game2()
 	
 	this.update = function()
 	{
+	
+	
 		this.fundo.update();
 		
 		this.heroi.update();

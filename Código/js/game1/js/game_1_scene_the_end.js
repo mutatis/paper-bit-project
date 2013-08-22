@@ -18,11 +18,11 @@ function Game1SceneTheEnd()
 		this.music_fundo.src = "sounds/venceu.mp3"
 		this.music_fundo.volume = 1.0
 		
-       	this.update=function()
+    this.update=function()
 	{			
-	this.button_start
-	this.button_back
-	this.music_fundo.play();
+		this.music_fundo.play();
+		
+		completouJogo1 = true;
     };
     
 	}//fecha reset

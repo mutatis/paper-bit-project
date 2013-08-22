@@ -61,7 +61,15 @@ function SceneMenu()
 		this.button_game_2.draw();
 		this.button_game_3.draw();
 		this.button_game_4.draw();
-		this.button_game_5.draw();
+		if(completouJogo1 && completouJogo2 && completouJogo3 && completouJogo4)
+		{
+			this.button_game_5.draw();/////////////////liberado
+		}
+		else
+		{
+			this.button_game_5.draw();//travado normal
+		}
+		
 		this.name_grupo.draw();
 	};
   
@@ -121,10 +129,7 @@ function SceneMenu()
     	
     	if(this.button_game_5.clicked(mouse))
     	{
-    		//currentScene = SCENE.GAME5;		
-    		//this.music.play();//som ao ser clicado pelo botão
-    		//this.music_fundo.pause();
-			//this.button_game_5.current_frame = 1;
+    		showUnity();
     	}
     	
     	  if(this.name_grupo.clicado(mouse))
