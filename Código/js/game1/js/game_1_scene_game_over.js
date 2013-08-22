@@ -43,9 +43,10 @@ function Game1SceneGameOver()
 	//se o botao start for clicado, ele vai pra intro e sai um efeito sonoro 
 	if(this.button_start.clicked(mouse))
         {
-        	game1.currentGameScene = game1.GAMESCENE.INTRO;  //botão para o game
+        	game1.currentGameScene = game1.GAMESCENE.LEVEL1;  //botão para o game
 			this.music_fundo.pause();
 			this.music.play();//som ao ser clicado pelo botão
+			this.button_start.current_frame = 1;
         }
   		//se o botao voltar for clicado, ele vai pro menu principal e sai um efeito sonoro
 		if(this.button_back.clicked(mouse)) //botão para voltar o menu
@@ -54,6 +55,7 @@ function Game1SceneGameOver()
 			game1.currentGameScene = game1.GAMESCENE.INTRO;
 			this.music_fundo.pause();
 			this.music.play();//som ao ser clicado pelo botão
+			this.button_back.current_frame = 1;
 			
         	this.player.points = 0;
         

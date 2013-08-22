@@ -43,10 +43,11 @@ function SceneGameOverGame2()
 		if(this.button_start.clicked(mouse))
 		{//abre if
 			
-			game2.currentScene = game2.SCENE.INTRO;
+			game2.currentScene = game2.SCENE.LEVEL01;
 			game2.level01.som_over.pause();
 			this.resetGame2()
-			//game2.Intro.som_intro.play();	
+			//game2.Intro.som_intro.play();
+			this.button_start.current_frame = 1;			
 			
 		}//fecha if
 		
@@ -58,12 +59,14 @@ function SceneGameOverGame2()
 			game2.currentScene = game2.SCENE.INTRO;
 			game2.level01.som_over.pause();
 			this.resetGame2();
+			this.button_back.current_frame = 1;
 			
 		}//fecha if
 		
 			
 	}//fecha mouse down
 	
+
 	this.key_down=function(key)
    {
    	
