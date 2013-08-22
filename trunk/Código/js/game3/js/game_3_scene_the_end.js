@@ -21,6 +21,7 @@ function Game3SceneTheEnd()
        	this.update=function()
 	{			
          this.music_fundo.play();
+		 completouJogo3 = true;
     };
     
 	}//fecha reset

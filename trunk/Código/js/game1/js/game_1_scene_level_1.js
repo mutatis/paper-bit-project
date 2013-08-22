@@ -253,7 +253,7 @@ this.update=function()
 			//pausando a musica do jogo, zerando o cronometro e os pontos vao para 5, pois quando voce clica para começar o jogo ele reconhece, entao para resolver
 			//esse problema colocamos o valor de 5 quando mudar de cena
 			
-			 if(this.pontos >= 400)
+			 if(this.pontos >= 100)
 				{
 					this.alvo1_visivel = false;
 					this.alvo2_visivel = false;

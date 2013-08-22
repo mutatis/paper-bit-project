@@ -75,7 +75,157 @@
 		<script src="js/game5/js/game_5_scene_game_over.js"></script>
 		<script src="js/game5/js/game_5_scene_the_end.js"></script>
 		
+		<!-- UNITY -->
+  		
+  <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
+		<script type="text/javascript">
+		<!--
+		var unityObjectUrl = "http://webplayer.unity3d.com/download_webplayer-3.x/3.0/uo/UnityObject2.js";
+		if (document.location.protocol == 'https:')
+			unityObjectUrl = unityObjectUrl.replace("http://", "https://ssl-");
+		document.write('<script type="text\/javascript" src="' + unityObjectUrl + '"><\/script>');
+		-->
+		</script>
+		<script type="text/javascript">
+		<!--
+			var config = {
+				width: 800, 
+				height: 600,
+				params: { enableDebugging:"0" }
+				
+			};
+			var u = new UnityObject2(config);
+
+			jQuery(function() {
+
+				var $missingScreen = jQuery("#unityPlayer").find(".missing");
+				var $brokenScreen = jQuery("#unityPlayer").find(".broken");
+				$missingScreen.hide();
+				$brokenScreen.hide();
+				
+				u.observeProgress(function (progress) {
+					switch(progress.pluginStatus) {
+						case "broken":
+							$brokenScreen.find("a").click(function (e) {
+								e.stopPropagation();
+								e.preventDefault();
+								u.installPlugin();
+								return false;
+							});
+							$brokenScreen.show();
+						break;
+						case "missing":
+							$missingScreen.find("a").click(function (e) {
+								e.stopPropagation();
+								e.preventDefault();
+								u.installPlugin();
+								return false;
+							});
+							$missingScreen.show();
+						break;
+						case "installed":
+							$missingScreen.remove();
+						break;
+						case "first":
+						break;
+					}
+				});
+				u.initPlugin(jQuery("#unityPlayer")[0], "Catch_3d.unity3d");
+			});
+		-->
 		
+			<!-- UNITY -->
+			
+			var completouJogo1 = false;
+			var completouJogo2 = false;
+			var completouJogo3 = false;
+			var completouJogo4 = false;
+						
+	<!--nao preciso chamar pois a div ja comeca escondida...-->
+	function hideUnity() 
+	{
+		document.getElementById("unity").style.display = 'none';    
+    	document.getElementById("unity").style.visibility = 'hidden';
+    	document.getElementById("html5").style.display = 'inline';    
+    	document.getElementById("html5").style.visibility = 'visible';
+	} 
+
+	<!--chamo esta funcao qd acabar os 4 jogos, ja esconde o canvas...-->
+	function showUnity() 
+	{
+		//if(completouJogo1 && completouJogo2 && completouJogo3 && completouJogo4)
+		{
+			document.getElementById("unity").style.display = 'inline';    
+    		document.getElementById("unity").style.visibility = 'visible';
+    		document.getElementById("html5").style.display = 'none';    
+    		document.getElementById("html5").style.visibility = 'hidden';
+			
+			menu.music_fundo.volume = 0;
+		}
+	} 
+	
+		</script>
+		
+		<!-- UNITY -->
+		
+		<style type="text/css">
+		<!--
+		body {
+			font-family: Helvetica, Verdana, Arial, sans-serif;
+			background-color: white;
+			color: black;
+			
+		}
+		a:link, a:visited {
+			color: #000;
+		}
+		a:active, a:hover {
+			color: #666;
+		}
+		p.header {
+			font-size: small;
+		}
+		p.header span {
+			font-weight: bold;
+		}
+		p.footer {
+			font-size: x-small;
+		}
+		div.content {
+			/*margin: auto;
+			*/
+			width: 800px;
+		}
+		div.broken,
+		div.missing {
+			margin: auto;
+			position: relative;
+			top: 50%;
+			width: 193px;
+		}
+		div.broken a,
+		div.missing a {
+			height: 63px;
+			position: relative;
+			top: -31px;
+		}
+		div.broken img,
+		div.missing img {
+			border-width: 0px;
+		}
+		div.broken {
+			display: none;
+		}
+		div#unityPlayer {
+			cursor: default;
+			height: 600px;
+			width: 800px;
+		}
+		-->
+		</style>
+		
+		<!-- UNITY -->
+  
    </head>
 
 <div id="fb-root"></div>
@@ -88,7 +238,33 @@
 }(document, 'script', 'facebook-jssdk'));</script>      
 
    <body>
+   
+   <!-- unity game-->
+		<div id="unity">
+		<div class="content">
+			<div id="unityPlayer">
+				<div class="missing">
+					<a href="http://unity3d.com/webplayer/" title="Unity Web Player. Install now!">
+						<img alt="Unity Web Player. Install now!" src="http://webplayer.unity3d.com/installation/getunity.png" width="193" height="63" />
+					</a>
+				</div>
+				<div class="broken">
+					<a href="http://unity3d.com/webplayer/" title="Unity Web Player. Install now! Restart your browser after install.">
+						<img alt="Unity Web Player. Install now! Restart your browser after install." src="http://webplayer.unity3d.com/installation/getunityrestart.png" width="193" height="63" />
+					</a>
+				</div>
+			</div>
+		</div>
+		</div>
+		<script type="text/javascript">document.getElementById("unity").style.visibility = 'hidden'; document.getElementById("unity").style.display = 'none';</script>
+				
+		<!-- canvas html5 game-->
+		
+	<div id="html5">
    <canvas width="800" height="600" id="main" style="border:1px solid #000000;"></canvas>
+   </div>
+   
+   
    </body>
    </br>
 		<!--posição do botão de like-->

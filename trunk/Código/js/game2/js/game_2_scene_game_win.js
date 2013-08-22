@@ -19,7 +19,8 @@ function SceneGameWinGame2()
 	this.update = function()
 	{//abre update
 		
-		
+	completouJogo2 = true;
+	
 	};//fecha update
 
 	this.draw = function()
