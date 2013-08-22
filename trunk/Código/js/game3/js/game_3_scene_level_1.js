@@ -56,11 +56,11 @@ function Game3SceneLevel1()
 		{
 		 
         							//(file, size_x, size_y, pos_x, pos_y, vel_x, vel_y)
-        var obstaculo1 = new Obstaculo("imgs/game_3/obstaculo1.png", 150, 30, 50, 120, 0, 3);
-        var obstaculo2 = new Obstaculo("imgs/game_3/obstaculo1.png", 150, 30, 300, 240, 0, 3);
-        var obstaculo3 = new Obstaculo("imgs/game_3/obstaculo1.png", 150, 30, 150, 360, 0, 3);
-		var obstaculo4 = new Obstaculo("imgs/game_3/obstaculo1.png", 150, 30, 200, 480, 0, 3);
-		var obstaculo5 = new Obstaculo("imgs/game_3/obstaculo1.png", 150, 30, 500, 600, 0, 3);
+        var obstaculo1 = new Obstaculo("imgs/game_3/obstaculo1.png", 150, 40, 50, 120, 0, 3);
+        var obstaculo2 = new Obstaculo("imgs/game_3/obstaculo1.png", 150, 40, 300, 240, 0, 3);
+        var obstaculo3 = new Obstaculo("imgs/game_3/obstaculo1.png", 150, 40, 150, 360, 0, 3);
+		var obstaculo4 = new Obstaculo("imgs/game_3/obstaculo1.png", 150, 40, 200, 480, 0, 3);
+		var obstaculo5 = new Obstaculo("imgs/game_3/obstaculo1.png", 150, 40, 500, 600, 0, 3);
 		
 		this.obstaculos_list.push(obstaculo1);
 		this.obstaculos_list.push(obstaculo2);	

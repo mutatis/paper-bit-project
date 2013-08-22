@@ -43,7 +43,7 @@ function SceneGameWinGame2()
 		if(this.button_start.clicked(mouse))
 		{//abre if
 			
-			game2.currentScene = game2.SCENE.INTRO;
+			game2.currentScene = game2.SCENE.LEVEL01;
 			game2.level01.som_win.pause();
 			this.resetGame2();
 			//game2.Intro.som_intro.play();

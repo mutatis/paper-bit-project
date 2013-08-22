@@ -107,9 +107,6 @@ function Game4SceneLevel4()
 			this.reset();
 			
 		}
-		
-		
-		
     };
     
     this.draw=function()
