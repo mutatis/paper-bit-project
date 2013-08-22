@@ -75,7 +75,7 @@ function SceneLevel01Game2()
 		this.obstaculo[i].update();
 		
 		//Faz pessoa colidir com heroi e ganhar pontos ou vida.
-		if(Collide(this.obstaculo[i].posicao_x, this.obstaculo[i].posicao_y, this.obstaculo[i].tamanho_w, this.obstaculo[i].tamanho_h, this.heroi.posicao_x, this.heroi.posicao_y, this.heroi.tamanho_w, this.heroi.tamanho_h))	
+		if(Collide(this.obstaculo[i].posicao_x, this.obstaculo[i].posicao_y, this.obstaculo[i].tamanho_w, this.obstaculo[i].tamanho_h, this.heroi.posicao_x, this.heroi.posicao_y, this.heroi.tamanho_w, this.heroi.tamanho_h-170))	
 		{
 			this.obstaculo[i].reset();
 			this.heroi.pontos += this.obstaculo[i].pontos;
