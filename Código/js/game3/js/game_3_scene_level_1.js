@@ -34,11 +34,11 @@ function Game3SceneLevel1()
 		this.Gato_variados = function()
 		{
 		
-		var gato1 = new Gato("imgs/game_3/gato1.png", 42,53,10);
-        var gato2 = new Gato("imgs/game_3/gato1.png", 42,53,10);
-        var gato3 = new Gato("imgs/game_3/gato1.png", 42,53,10);
-		var gato4 = new Gato("imgs/game_3/gato1.png", 42,53,10);
-		var gato5 = new Gato("imgs/game_3/gato1.png", 42,53,10);
+		var gato1 = new Gato("imgs/game_3/gato.png", 42,53,10);
+        var gato2 = new Gato("imgs/game_3/gato.png", 42,53,10);
+        var gato3 = new Gato("imgs/game_3/gato.png", 42,53,10);
+		var gato4 = new Gato("imgs/game_3/gato.png", 42,53,10);
+		var gato5 = new Gato("imgs/game_3/gato.png", 42,53,10);
 		
 		this.gato_list.push(gato1);
 		this.gato_list.push(gato2);	
