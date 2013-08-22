@@ -131,10 +131,13 @@ function SceneMenu()
 			this.button_game_4.current_frame = 1;
     	}
     	
-    	if(this.button_game_5.clicked(mouse))
-    	{
-    		showUnity();
-    	}
+		if(completouJogo1 && completouJogo2 && completouJogo3 && completouJogo4)
+		{
+			if(this.cadeado.clicked(mouse))
+			{
+				showUnity();
+			}
+		}
     	
     	  if(this.name_grupo.clicado(mouse))
     	{
