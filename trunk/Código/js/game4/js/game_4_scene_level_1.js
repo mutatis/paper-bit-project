@@ -162,24 +162,20 @@ function Game4SceneLevel4()
     
     this.mouse_up=function(mouse)
     {
-                //
         
     }
     
-    		this.mouse_move=function(mouse)
-  	{
-  		//console.log("Game4 mouse X " + mouse.x + " mouse Y " + mouse.y );
-  		
-  		if(this.button_back.mouse_over(mouse))
-  		{
-  			
-  			this.button_back.current_frame = 0;
-  		}
-  		else
-  		{
-  			this.button_back.current_frame = 1;
-  		}
-		
+    	this.mouse_move=function(mouse)
+		{
+
+			if(this.button_back.mouse_over(mouse))
+			{
+				this.button_back.current_frame = 0;
+			}
+			else
+			{
+				this.button_back.current_frame = 1;
+			}		
 	}
     
     this.key_down=function(key)

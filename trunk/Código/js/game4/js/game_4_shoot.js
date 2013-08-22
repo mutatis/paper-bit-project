@@ -15,7 +15,6 @@ function Shoot(player4_position_x, player4_position_y, player4_rotation)
 	this.img.onload = function()
 	{
 		loaded = true; 
-		//console.log("carregamento pela classe SHOOT " + loaded);//to carregando repetidamente...
 	};
 	
 	this.size_x = 19;
@@ -24,9 +23,7 @@ function Shoot(player4_position_x, player4_position_y, player4_rotation)
     this.position_y = player4_position_y/1;
     this.velocity_x = Math.cos(this.degreesToRadians(player4_rotation)) * 20;
     this.velocity_y = Math.sin(this.degreesToRadians(player4_rotation)) * 20;
-    
-    console.log(this.velocity_x);
-    
+        
     this.update=function()
     {
     	//move the shoot

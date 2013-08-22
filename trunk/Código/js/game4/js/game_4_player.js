@@ -172,14 +172,10 @@ function Player4(file, size_x, size_y, position_x, position_y)
 		{
 			this.rotation -= this.rotateSpeed;
 		}
-		
-		//console.log(this.rotation);
 	}
 	
 	this.AutoMove=function()
 	{
-		
-		//console.log("AAAAAAAAAAAAAAAAA");
 		this.position_x_dst += this.velocity_x;
 		this.position_y_dst += this.velocity_y;
 	}

@@ -22,10 +22,7 @@ function Game3Button(file, size_x, size_y)
     };
     
     this.draw=function()
-    {  	
-    	
-    console.log("yadsjgbsj ");
-    	
+    {  	    	
     	if(this.visible)
     	screen.drawImage(this.image, this.position_x, this.position_y)
     };

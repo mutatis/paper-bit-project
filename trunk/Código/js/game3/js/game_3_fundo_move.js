@@ -9,7 +9,6 @@ function Fundo_move(source)
 	this.img.onload = function()
 	{
 		loaded = true; 
-		console.log("carregamento pela classe BACKGROUND" + loaded);
 	};
 	
 	this.size_x = 800;
