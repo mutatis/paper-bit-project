@@ -2,25 +2,14 @@ function Game5SceneLevel1()
 
 {//abre Intro
         //file, size_x, size_y, pos_x, pos_y
-		this.fundo = new Fundo("", 600, 800, 0, 0);
-		this.toy = new Player ("imgs/game_3/spencer_boy.png", 60, 70, ((SCREENWIDTH-94)/2)-40, 0);
+
 		
 		obstaculos_list = new Array(); 
 		function Obstaculos_variados()
 		{
 		 
         //file, size_x, size_y, pos_x, pos_y, vel_x, vel_y
-        var obstaculo1 = new Obstaculo("imgs/game_3/obstaculo1.png", 150, 30, 100, 100, 0, 2);
-        var obstaculo2 = new Obstaculo("imgs/game_3/obstaculo1.png", 150, 30, 300, 300, 0, 2);
-        var obstaculo3 = new Obstaculo("imgs/game_3/obstaculo1.png", 150, 30, 450, 450, 0, 2);
-		var obstaculo4 = new Obstaculo("imgs/game_3/obstaculo1.png", 150, 30, 550, 200, 0, 2);
-		var obstaculo5 = new Obstaculo("imgs/game_3/obstaculo1.png", 150, 30, 80, 200, 0, 2);
-		
-		obstaculos_list.push(obstaculo1);		
-		obstaculos_list.push(obstaculo2);
-		obstaculos_list.push(obstaculo3);
-		obstaculos_list.push(obstaculo4);
-		obstaculos_list.push(obstaculo5);
+ 
 		
 		}
 		
