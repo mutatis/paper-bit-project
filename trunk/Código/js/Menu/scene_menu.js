@@ -38,6 +38,10 @@ function SceneMenu()
     this.button_game_5.position_x = 627;
     this.button_game_5.position_y = 010;
 	
+	this.cadeado = new MyButton("imgs/aberta.png", 150, 150);
+    this.cadeado.position_x = 627;
+    this.cadeado.position_y = 010;
+	
 	this.name_grupo = new Name ("imgs/nome.png",150, 150, 630, 440);
     
 	this.update=function()
@@ -63,7 +67,7 @@ function SceneMenu()
 		this.button_game_4.draw();
 		if(completouJogo1 && completouJogo2 && completouJogo3 && completouJogo4)
 		{
-			this.button_game_5.draw();/////////////////liberado
+			this.cadeado.draw();/////////////////liberado
 		}
 		else
 		{
