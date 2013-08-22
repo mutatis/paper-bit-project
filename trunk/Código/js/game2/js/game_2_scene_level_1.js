@@ -148,7 +148,6 @@ function SceneLevel01Game2()
 		//se o botão for clicked, vai para o MENU/ESQUELETO.
 		if(this.button_back.clicked(mouse))
 		{//abre if
-			console.log("mous x " + mouse.x, "mouse y " + mouse.y)	
 			game2.currentScene = game2.SCENE.INTRO;
 			currentScene = SCENE.MENU; 
 			this.resetGame2();
@@ -177,8 +176,6 @@ function SceneLevel01Game2()
     
 	this.mouse_move=function(mouse)
   	{
-  		//console.log("Game3 mouse X " + mouse.x + " mouse Y " + mouse.y );
-  		
   		if(this.button_back.mouse_over(mouse))
   		{
   			
