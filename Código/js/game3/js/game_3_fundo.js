@@ -9,7 +9,6 @@ function Fundo3(file, size_x, size_y, posicao_x, posicao_y)
 	this.img.onload = function()
 	{
 	loaded = true;
-	console.log("carregou fundo" + loaded);
 	}
 	
 	this.size_w = 800;

@@ -86,8 +86,7 @@ function SceneGame5()
 	
 		  	this.mouse_move=function(mouse)
   	{
-  		console.log("Game5 mouse X " + mouse.x + " mouse Y " + mouse.y );
-  		
+  
   	};
 
 }

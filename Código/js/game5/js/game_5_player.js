@@ -65,9 +65,6 @@ function Player(file, size_x, size_y, position_x, position_y, velocity_y)
     
     this.update=function()
     {//abre update
-	
-		//console.log("VELOCIDADE " + this.velocity_y);
-		
         this.position_y_dst += this.velocity_y;
         
         this.velocity_y += this.gravity_y;
