@@ -9,7 +9,6 @@
 	this.img.onload = function()
 	{
 	loaded = true;
-	console.log("carregou fundo" + loaded);
 	}
 	
 	this.size_w = 800;
