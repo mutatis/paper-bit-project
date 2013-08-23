@@ -199,14 +199,14 @@ function SceneMenu()
   			this.button_game_4.current_frame = 1;
   		}
 		
-		//		if(this.button_game_5.mouse_over(mouse))
-  		//{
-  		//	this.button_game_5.current_frame = 0;
-  		//}
-  		//else
-  		//{
-  		//	this.button_game_5.current_frame = 1;
-  		//}
+				if(this.button_game_5.mouse_over(mouse))
+  		{
+  			this.button_game_5.current_frame = 0;
+  		}
+  		else
+  		{
+  			this.button_game_5.current_frame = 1;
+  		}
   	};
    
 }
